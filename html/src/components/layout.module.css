@@ -6,4 +6,5 @@ html, body {
   word-wrap: break-word;
   font-kerning: normal;
   background-color: #4829B2;
+  padding: 0;
 }

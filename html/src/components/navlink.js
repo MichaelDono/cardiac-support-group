@@ -8,6 +8,7 @@ export default (props) => (
             {props.imageURL != null &&
             <img width={64}
                 height={64}
+                alt=""
                 src={props.imageURL} />}
             <h1>{props.text}</h1>
         </Link>

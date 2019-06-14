@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import '../bootstrap/css/bootstrap.css';
-import "./layout.css"
+import LayoutStyles from "./layout.module.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -25,8 +25,8 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div class="container">
+        <Header siteTitle={data.site.siteMetadata.title}/>
+        <div>
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()} Sunderland Cardiac Support Group
