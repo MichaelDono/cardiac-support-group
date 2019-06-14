@@ -1,26 +1,13 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import Nav from "../components/nav"
+import NavLink from "../components/navlink"
 
-const Header = ({ siteTitle }) => (
+export default (props) => (
   <header>
-    <div>
-      <Link to="/">
-        <img width={64}
-          height={64}
-          src={'gatsby-icon.png'} />
-        <h1>You are not alone</h1>
-      </Link>
-    </div>
+    <Nav>
+      <NavLink linkTo="/" text="Home" imageURL="gatsby-icon.png"/>
+      <NavLink linkTo="/help" text="How We Can Help"/>
+      <NavLink linkTo="/about" text="Who We Are"/>
+    </Nav>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

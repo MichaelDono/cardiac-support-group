@@ -1,0 +1,21 @@
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+}
+
+.nav:hover {
+    background-color: #412e80;
+    transition: background-color 200ms linear;
+}
+
+.nav:not(:hover) {
+    background-color: inherit;
+    transition: background-color 250ms linear;
+}
