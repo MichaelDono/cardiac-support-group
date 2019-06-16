@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
+import {Grid} from 'react-bootstrap'
 import '../bootstrap/css/bootstrap.css';
 import LayoutStyles from "./layout.module.css"
 
@@ -27,7 +28,7 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title}/>
         <div>
-          <main>{children}</main>
+          <Grid className={LayoutStyles.grid}>{children}</Grid>
           <footer>
             © {new Date().getFullYear()} Sunderland Cardiac Support Group
           </footer>

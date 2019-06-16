@@ -9,6 +9,6 @@ import '../bootstrap/css/bootstrap.css';
 
 export default () => (
   <Layout>
-    <Title>Cardiac Group</Title>
+    Hey!
   </Layout>
 )

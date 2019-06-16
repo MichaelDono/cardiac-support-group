@@ -26,15 +26,5 @@ export default (props) => (
   </Navbar.Collapse>
   
 </Navbar>
-{/* 
-    <Navbar>
-      <Navbar.Header>
-        <NavbarBrand>
-          <a href="#brand">React-Bootstrap</a>
-        </NavbarBrand>
-        <Navbar.Toggle />
-      </Navbar.Header>
-      <NavLink linkTo="/" text="Home" imageURL="gatsby-icon.png"/>
-    </Navbar> */}
   </header>
 )
