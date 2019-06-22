@@ -1,0 +1,16 @@
+.BackgroundImage {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.Content {
+    text-align: center;
+    font-size: 1.6em;
+    color: #fafafa;
+}
+
+.Container {
+    display: table-cell;
+    vertical-align: middle;
+}

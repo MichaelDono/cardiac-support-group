@@ -1,5 +1,5 @@
 .navbar:hover {
-    background-color: #412e80;
+    background-color: #e6e6e6;
     transition: background-color 200ms linear;
 }
 
@@ -10,5 +10,5 @@
 
 .navbar {
     border: none;
-    /* padding-bottom: 20px; */
+    margin-bottom: 0;
 }
