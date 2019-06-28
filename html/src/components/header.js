@@ -10,7 +10,7 @@ export default (props) => (
   <Navbar className={NavbarStyles.navbar}>
   <Navbar.Header>
     <Navbar.Brand>
-      <NavLink linkTo="/" text="" imageURL="gatsby-icon.png"/>
+      <NavLink linkTo="/" imageURL="scsg-icon.svg"/>
     </Navbar.Brand>
     <Navbar.Toggle />
   </Navbar.Header>

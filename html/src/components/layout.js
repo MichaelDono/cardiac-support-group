@@ -9,11 +9,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
-import {Grid} from 'react-bootstrap'
-import '../bootstrap/css/bootstrap.css';
-import LayoutStyles from "./layout.module.css"
 
-const Layout = ({ children }) => (
+import '../bootstrap/css/bootstrap.css';
+
+
+const Layout = ({children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title}/>
         <div>
-          <Grid className={LayoutStyles.grid}>{children}</Grid>
+          {children}
           <footer>
             © {new Date().getFullYear()} Sunderland Cardiac Support Group
           </footer>
