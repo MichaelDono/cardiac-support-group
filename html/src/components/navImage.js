@@ -5,7 +5,10 @@ import navlinkStyles from "./navlink.module.css"
 export default (props) => (
     <li className={navlinkStyles.navLink}>
         <Link to={props.linkTo}>
-            <h1>{props.text}</h1>
+            <img className={navlinkStyles.navImage}
+                alt=""
+                src={props.imageURL} />
+            <p className={navlinkStyles.slogan}>Sunderland Cardiac Support Group</p>
         </Link>
     </li>
   )

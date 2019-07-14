@@ -1,5 +1,20 @@
 .navLink {
     list-style: none;
+    display: inline-block;
+}
+
+.slogan {
+    float: right;
+    font-weight: normal;
+    font-size: 13pt;
+    margin: 12px 8px;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+}
+
+.navImage {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
 }
 
 .navLink a, .navLink a:hover {
@@ -15,9 +30,24 @@
     margin: 0;
 }
 
-.navLink img {
-    padding: 1.67em 0;
-    margin-right: 1.5rem; 
-    height: 100%;
+/* Small devices i.e. tablets */
+@media screen and (min-width: 768px) {
+    .navImage {
+        height: 100px;
+        width: 100px;
+    }
+
+    .slogan {
+        font-size: 18pt;
+        margin: 30px 20px;
+    }
+}
+
+/* Medium devices i.e. desktops */
+@media screen and (min-width: 992px ) {
     
+}
+
+/* Large devices i.e. large desktops */
+@media screen and (min-width: 1200px ) {
 }
