@@ -2,13 +2,18 @@
   "defaultConnection": "default",
   "connections": {
     "default": {
-      "connector": "strapi-hook-bookshelf",
+      "connector": "strapi-hook-mongoose",
       "settings": {
-        "client": "sqlite",
-        "filename": ".tmp/data.db"
+        "database": "cms",
+        "host": "cluster0-cxfa0.mongodb.net",
+        "srv": "true",
+        "port": 27017,
+        "username": "${process.env.DATABASE_USERNAME || ''}",
+        "password": "${process.env.DATABASE_PASSWORD || ''}"
       },
       "options": {
-        "useNullAsDefault": true
+        "authenticationDatabase": "admin",
+        "ssl": true
       }
     }
   }

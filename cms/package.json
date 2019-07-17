@@ -2,13 +2,13 @@
   "name": "cms",
   "private": true,
   "version": "0.1.0",
-  "description": "The CMS for the Sunderland Cardiac Support Group website.",
+  "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "lint": "eslint"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
@@ -18,40 +18,26 @@
     "eslint-plugin-react": "^7.14.0"
   },
   "dependencies": {
-    "gatsby-source-strapi": "latest",
-    "knex": "latest",
     "lodash": "^4.17.5",
-    "sqlite3": "latest",
-    "strapi": "3.0.0-beta.11",
-    "strapi-admin": "3.0.0-beta.11",
-    "strapi-hook-bookshelf": "3.0.0-beta.11",
-    "strapi-hook-knex": "3.0.0-beta.11",
-    "strapi-hook-mongoose": "^3.0.0-beta.11",
-    "strapi-plugin-content-manager": "3.0.0-beta.11",
-    "strapi-plugin-content-type-builder": "3.0.0-beta.11",
-    "strapi-plugin-email": "3.0.0-beta.11",
-    "strapi-plugin-settings-manager": "3.0.0-beta.11",
-    "strapi-plugin-upload": "3.0.0-beta.11",
-    "strapi-plugin-users-permissions": "3.0.0-beta.11",
-    "strapi-utils": "3.0.0-beta.11"
+    "strapi": "3.0.0-beta.13",
+    "strapi-admin": "3.0.0-beta.13",
+    "strapi-utils": "3.0.0-beta.13",
+    "strapi-plugin-settings-manager": "3.0.0-beta.13",
+    "strapi-plugin-content-type-builder": "3.0.0-beta.13",
+    "strapi-plugin-content-manager": "3.0.0-beta.13",
+    "strapi-plugin-users-permissions": "3.0.0-beta.13",
+    "strapi-plugin-email": "3.0.0-beta.13",
+    "strapi-plugin-upload": "3.0.0-beta.13",
+    "strapi-hook-mongoose": "3.0.0-beta.13"
   },
   "author": {
-    "name": "Michael Dono",
-    "email": "michael@michaeldono.com",
-    "url": "https://www.michaeldono.com"
+    "name": "A Strapi developer"
   },
-  "maintainers": [
-    {
-      "name": "Michael Dono",
-    "email": "michael@michaeldono.com",
-    "url": "https://www.michaeldono.com"
-    }
-  ],
   "strapi": {
-    "uuid": "c856f198-743b-47ad-9036-bcfdef0e87f2"
+    "uuid": "cae5f547-d6b7-4dda-b175-26d2d0149c7b"
   },
   "engines": {
-    "node": "^10.0.0",
+    "node": ">= 10.0.0",
     "npm": ">= 6.0.0"
   },
   "license": "MIT"
