@@ -1,0 +1,9 @@
+backend:
+  name: git-gateway
+  repo: "MichaelDono/cardiac-support-group"
+  squash_merges: true
+
+site_url: "https://cardiacgroup.netlify.com"
+
+media_folder: "static/img"
+public_folder: "img"
