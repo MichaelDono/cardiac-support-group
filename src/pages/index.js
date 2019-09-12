@@ -10,7 +10,7 @@ import Footer from '../components/footer'
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-const carouselImageQuery = "?nf_resize=fit&h=300";
+const carouselImageQuery = "?nf_resize=fit&h=860";
 export default ({ data }) => (
 <>
   <NavBar />
