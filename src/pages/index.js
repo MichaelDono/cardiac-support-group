@@ -14,15 +14,15 @@ const carouselImageQuery = "?nf_resize=fit&h=860";
 export default ({ data }) => (
 <>
   <NavBar />
-  <Carousel height="100%">
+  <Carousel>
     <Carousel.Item>
-      <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery}/>
+      <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery} className="w-100"/>
     </Carousel.Item>
     <Carousel.Item>
-      <img src={"img/walking.jpeg" + carouselImageQuery}/>
+      <img src={"img/walking.jpeg" + carouselImageQuery} className="w-100"/>
     </Carousel.Item>
     <Carousel.Item>
-      <img src={"img/cafe.jpeg" + carouselImageQuery}/>
+      <img src={"img/cafe.jpeg" + carouselImageQuery} className="w-100"/>
     </Carousel.Item>
   </Carousel>
   <Footer />
