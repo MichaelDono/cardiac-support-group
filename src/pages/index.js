@@ -10,18 +10,19 @@ import Footer from '../components/footer'
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
+const carouselImageQuery = "?nf_resize=fit&h=300";
 export default ({ data }) => (
 <>
   <NavBar />
   <Carousel height="100%">
     <Carousel.Item>
-      <img src="img/chair-exercises-for-seniors.jpg" height="800"/>
+      <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery}/>
     </Carousel.Item>
     <Carousel.Item>
-      <img src="img/walking.jpeg" height="800"/>
+      <img src={"img/walking.jpeg" + carouselImageQuery}/>
     </Carousel.Item>
     <Carousel.Item>
-      <img src="img/cafe.jpeg" height="800"/>
+      <img src={"img/cafe.jpeg" + carouselImageQuery}/>
     </Carousel.Item>
   </Carousel>
   <Footer />
