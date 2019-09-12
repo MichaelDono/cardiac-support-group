@@ -17,7 +17,7 @@ export default () => (
         <Col>
             <Navbar bg="light" variant="light" className={styles.container}>
                 <Navbar.Brand className={styles.logo}>
-                    <img src="img/scsg-icon.png"
+                    <img src="img/logo.png"
                         height="40"
                         className="d-inline-block align-top" />
                 </Navbar.Brand>
