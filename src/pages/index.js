@@ -10,13 +10,15 @@ import Footer from '../components/footer'
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-const carouselImageQuery = "?nf_resize=fit&h=860";
+const carouselImageWidth = 1920;
+const carouselImageHeight = 860;
+const carouselImageQuery = "?nf_resize=smartcrop&h=" + carouselImageHeight + "&w=" + carouselImageWidth;
 export default ({ data }) => (
 <>
   <NavBar />
   <Carousel>
     <Carousel.Item>
-      <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery} className="w-100"/>
+      <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery} className="w-100" />
     </Carousel.Item>
     <Carousel.Item>
       <img src={"img/walking.jpeg" + carouselImageQuery} className="w-100"/>
@@ -26,17 +28,4 @@ export default ({ data }) => (
     </Carousel.Item>
   </Carousel>
   <Footer />
-</>
-  // <Layout>
-  //   {/* <Carousel controls={false} indicators={false} pauseOnHover={false}>
-  //     {data.allStrapiHeadline.edges.map(document => (
-  //       <CarouselItem className={LayoutStyles.CarouselItem}>
-  //         <Headline image={document.node.image.childImageSharp.fluid} 
-  //                   title={document.node.title} 
-  //                   content={document.node.content} />
-  //       </CarouselItem>
-  //     ))}
-  //   </Carousel> */}
-  //   <Grid></Grid>
-  // </Layout>
-)
+</>)
