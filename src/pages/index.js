@@ -11,22 +11,35 @@ import styles from './index.module.css'
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-const carouselImageWidth = 1920;
-const carouselImageHeight = 860;
-const carouselImageQuery = "?nf_resize=smartcrop&h=" + carouselImageHeight + "&w=" + carouselImageWidth;
+const domain = "https://cardiacgroup.netlify.com/";
+const carouselImageQuery = "?nf_resize";
+const ImageParams = "=smartcrop&h=800&w=450";
+const ImageParamsMed = "=smartcrop&h=1000&w=1600";
 
 export default ({ data }) => (
 <div className={styles.container}>
   <NavBar className={styles.navContainer + " bg-light text-dark"} />
   <Carousel className={styles.content}>
     <Carousel.Item className={styles.carouselImage} >
-      <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery} />
+      <picture>
+        <source media="(max-width: 499px)" srcset={`${domain}img/chair-exercises-for-seniors.jpg${carouselImageQuery}${ImageParams}`} />
+        <source media="(min-width: 500px)" srcset={`${domain}img/chair-exercises-for-seniors.jpg${carouselImageQuery}${ImageParamsMed}`} />
+        <img src={"img/chair-exercises-for-seniors.jpg" + carouselImageQuery} />
+      </picture>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage}>
-      <img src={"img/walking.jpeg" + carouselImageQuery} />
+      <picture>
+        <source media="(max-width: 499px)" srcset={`${domain}img/walking.jpeg${carouselImageQuery}${ImageParams}`} />
+        <source media="(min-width: 500px)" srcset={`${domain}img/walking.jpeg${carouselImageQuery}${ImageParamsMed}`} />
+        <img src={"img/walking.jpeg" + carouselImageQuery} />
+      </picture>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage}>
-      <img src={"img/cafe.jpeg" + carouselImageQuery} />
+      <picture>
+        <source media="(max-width: 499px)" srcset={`${domain}img/cafe.jpeg${carouselImageQuery}${ImageParams}`} />
+        <source media="(min-width: 500px)" srcset={`${domain}img/cafe.jpeg${carouselImageQuery}${ImageParamsMed}`} />
+        <img src={"img/cafe.jpeg" + carouselImageQuery} />
+      </picture>
     </Carousel.Item>
   </Carousel>
   <Footer className={styles.footerContainer + " bg-dark text-white"} />
