@@ -19,6 +19,12 @@ const ImageParamsMed = "=smartcrop&w=768&h=960";
 const ImageParamsLarge = "=smartcrop&w=992&h=960";
 const ImageParamsExtraLarge = "=smartcrop&w=1200&h=960";
 
+const Content = ({ children }) => (
+  <div className={styles.carouselContent}>
+    {children}
+  </div>
+)
+
 export default ({ data }) => (
 <div className={styles.container}>
   <NavBar className={styles.navContainer + " bg-light text-dark"} />
@@ -28,6 +34,9 @@ export default ({ data }) => (
         backgroundPosition: `center`,
         backgroundSize: `cover`}
         } >
+          <Content>
+            <p>Hi!</p>
+          </Content>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage} style={
         {backgroundImage: `url(img/walking.jpeg)`,
