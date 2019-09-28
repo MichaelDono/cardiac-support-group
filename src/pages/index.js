@@ -37,7 +37,8 @@ export default ({ data }) => (
         backgroundSize: `cover`}
         } >
           <Content>
-            <p>A charity run by former heart patients for the support of heart patients</p>
+            <p>Take part in our fun filled exercise classes run by our fully qualified instructors.</p>
+            {/* <p>A charity run by former heart patients for the support of heart patients</p> */}
           </Content>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage} style={
@@ -46,7 +47,7 @@ export default ({ data }) => (
         backgroundSize: `cover`}
         } >
           <Content>
-            <p>Join one of our trips...</p>
+            <p>Join one of our affordable summer day trips.</p>
           </Content>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage} style={
@@ -55,7 +56,7 @@ export default ({ data }) => (
         backgroundSize: `cover`}
         } >
           <Content>
-            <p>Sunderland Cardiac Support Group</p>
+            <p>Come along to our monthly relaxed and informal social evenings.</p>
           </Content>
     </Carousel.Item>
   </Carousel>

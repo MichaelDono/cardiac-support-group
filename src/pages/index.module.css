@@ -42,11 +42,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,.35);
+    background: rgba(0,0,0,.5);
 }
 
 .caption {
     position: absolute;
+    font-family: 'Roboto Slab';
     font-size: 1.5em;
     line-height: 1.2em;
     right: 10%;
@@ -57,4 +58,16 @@
     padding-bottom: 20px;
     color: #fff;
     text-align: right;
+}
+
+@media (min-width: 992px) {
+    .caption {
+        font-size: 3em;
+        line-height: 1.2em;
+        left: 50%;
+    }
+
+    .carouselContent {
+        background: rgba(0,0,0,.35);
+    }
 }
