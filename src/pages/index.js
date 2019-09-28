@@ -21,7 +21,9 @@ const ImageParamsExtraLarge = "=smartcrop&w=1200&h=960";
 
 const Content = ({ children }) => (
   <div className={styles.carouselContent}>
-    {children}
+    <div className={styles.caption}>
+      {children}
+    </div>
   </div>
 )
 
@@ -35,7 +37,7 @@ export default ({ data }) => (
         backgroundSize: `cover`}
         } >
           <Content>
-            <p>Hi!</p>
+            <p>A charity run by former heart patients for the support of heart patients</p>
           </Content>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage} style={
@@ -43,13 +45,18 @@ export default ({ data }) => (
         backgroundPosition: `center`,
         backgroundSize: `cover`}
         } >
+          <Content>
+            <p>Join one of our trips...</p>
+          </Content>
     </Carousel.Item>
     <Carousel.Item className={styles.carouselImage} style={
         {backgroundImage: `url(img/cafe.jpeg)`,
         backgroundPosition: `center`,
         backgroundSize: `cover`}
         } >
-
+          <Content>
+            <p>Sunderland Cardiac Support Group</p>
+          </Content>
     </Carousel.Item>
   </Carousel>
   <Footer className={styles.footerContainer + " bg-dark text-white"} />
