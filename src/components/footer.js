@@ -1,8 +1,7 @@
 import React from "react"
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import styles from './footer.module.css'
+// import styles from './footer.module.css'
 
 export default (props) => (
 <Row className={props.className}>

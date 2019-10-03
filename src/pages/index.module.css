@@ -10,6 +10,12 @@
     
 }
 
+.lower {
+    flex: 0 1 16em;
+    width: 100%;
+    background: rgb(236, 236, 236);
+}
+
 .content > div {
     position: absolute;
     /* height: 100%; */
@@ -29,6 +35,7 @@
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    background-color: #222;
 }
 
 .carouselImage {
@@ -58,6 +65,10 @@
     padding-bottom: 20px;
     color: #fff;
     text-align: right;
+}
+
+.card {
+    margin: 0.6em;
 }
 
 @media (min-width: 992px) {
