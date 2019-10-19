@@ -21,8 +21,8 @@ export default (props) => (
             </Navbar.Brand>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Link linkTo="/" eventKey="1" className={styles.link}>How We Can Help</Nav.Link>
-                    <Nav.Link linkTo="/" eventKey="2" className={styles.link}>Who We Are</Nav.Link>
+                    {/* <Nav.Link linkTo="/" eventKey="1" className={styles.link}>How We Can Help</Nav.Link>
+                    <Nav.Link linkTo="/" eventKey="2" className={styles.link}>Who We Are</Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
