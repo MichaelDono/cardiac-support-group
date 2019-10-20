@@ -68,7 +68,7 @@ export default ({ data }) => (
       <Card.Body>
         <Card.Title>Exercise Classes</Card.Title>
         <Card.Text>
-        Exercise classes for you and your Partner or Carer are held at Bede Tower, Burdon Road, Sunderland, SR2 7EA.
+        Exercise classes for you and your Partner or Carer are held at <a href="https://goo.gl/maps/Px9E6h3eVCryLMLW6">Bede Tower, Burdon Road, Sunderland, SR2 7EA</a>.
         <table className="table table-bordered my-3">
           <thead>
             <th>Day</th>
@@ -116,7 +116,7 @@ export default ({ data }) => (
       <Card.Body>
         <Card.Title>Monthly Activities</Card.Title>
         <Card.Text>
-          <p>The group holds social meetings on the 2nd Thursday of each month at The Refectory, Ground Floor, Education Centre, Sunderland Royal Hospital</p>
+          <p>The group holds free social meetings on the 2nd Thursday of each month at The Refectory, Ground Floor, Education Centre, Sunderland Royal Hospital</p>
           <p>It runs from 7pm till 9pm with guest speakers, a raffle and refreshments, alongside Bingo if time allows.</p>
         </Card.Text>
       </Card.Body>
