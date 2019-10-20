@@ -69,23 +69,29 @@ export default ({ data }) => (
         <Card.Title>Exercise Classes</Card.Title>
         <Card.Text>
         Exercise classes for you and your Partner or Carer are held at Bede Tower, Burdon Road, Sunderland, SR2 7EA.
-        <table className="table table-striped my-3">
+        <table className="table table-bordered my-3">
           <thead>
             <th>Day</th>
-            <th>Time</th>
+            <th>Times</th>
           </thead>
           <tbody>
           <tr>
-            <td>Monday</td>
-            <td>10:00 till 11:00</td>
+            <td rowSpan="2">Monday</td>
+            <td>10:00 - 11:00</td>
+          </tr>
+          <tr>
+              <td>11:15 - 12:15</td>
           </tr>
           <tr>
             <td>Wednesday</td>
-            <td>10:30 till 11:30</td>
+            <td>10:30 - 11:30</td>
           </tr>
           <tr>
-            <td>Thursday</td>
-            <td>10:00 till 11:00</td>
+            <td rowSpan="2">Thursday</td>
+            <td>10:00 - 11:00</td>
+          </tr>
+          <tr>
+              <td>11:15 - 12:15</td>
           </tr>
           </tbody>
         </table>
