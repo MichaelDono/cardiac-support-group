@@ -1,5 +1,5 @@
 import React from "react"
-
+import {Helmet} from "react-helmet"
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
@@ -31,6 +31,9 @@ const Content = ({ children }) => (
 
 export default ({ data }) => (
 <div className={styles.container}>
+  <Helmet>
+    <title>Sunderland Cardiac Support Group</title>
+  </Helmet>
   <NavBar className={styles.navContainer + " bg-light text-dark"} />
   <Carousel className={styles.content}>
     <Carousel.Item className={styles.carouselImage} style={
