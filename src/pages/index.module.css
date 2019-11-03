@@ -5,13 +5,13 @@
 }
 
 .content {
-    flex: 1 1 auto;
+    flex: 1 1 24em;
     width: 100%;
     
 }
 
 .lower {
-    flex: 0 1 16em;
+    flex: 0 1 auto;
     width: 100%;
     background: rgb(236, 236, 236);
 }
