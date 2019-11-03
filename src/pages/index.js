@@ -111,7 +111,7 @@ export default ({ data }) => (
         </Card.Text>
         <Card.Subtitle>How much does it cost?</Card.Subtitle>
         <Card.Text>
-          <p>As a charity we keep any charges and costs to an absolute minimum. Exercise classes are £2 each and it's £2 for a whole year of membership.</p>
+          <p>As a charity we keep any charges and costs to an absolute minimum. Exercise classes are £2 each and it's £2 for a whole year of membership of the group.</p>
         </Card.Text>
       </Card.Body>
     </Card>

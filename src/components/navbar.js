@@ -14,7 +14,7 @@ export default (props) => (
     <Col>
         <Navbar bg="light" variant="light" className={styles.container}>
             <Navbar.Brand className={styles.logo}>
-                <img src="img/logo.png"
+                <img src="img/header.svg"
                     height="40"
                     alt="Sunderland Cardiac Support Group Logo"
                     className="d-inline-block align-top" />
