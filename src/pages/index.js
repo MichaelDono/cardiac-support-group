@@ -139,5 +139,5 @@ export default ({ data }) => (
     </Card>
   </CardGroup>
   </div>
-  <Footer className={styles.footerContainer + " text-white"} />
+  <Footer className={styles.footerContainer} />
 </div>)
