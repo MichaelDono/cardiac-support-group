@@ -92,7 +92,7 @@ export default ({ data }) => (
         </Card.Text>
         <Card.Subtitle>Contact Us</Card.Subtitle>
         <Card.Text>
-          <p>You can reach the Barry Cook (Secretary) on 0191 5656892, or James Baker (Chairman) on 0191 5226750.</p>
+          <p>You can reach Barry Cook (Secretary) on 0191 5656892, or James Baker (Chairman) on 0191 5226750.</p>
         </Card.Text>
       </Card.Body>
     </Card>
