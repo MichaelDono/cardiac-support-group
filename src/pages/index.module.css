@@ -36,6 +36,9 @@
     margin-left: 0;
     margin-right: 0;
     background-color: #222;
+    color: #c5c5c5;
+    /* font-family: 'Raleway', sans-serif; */
+    font-size: 1em;
 }
 
 .carouselImage {

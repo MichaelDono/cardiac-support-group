@@ -7,9 +7,13 @@ export default (props) => (
 <Row className={props.className}>
     <Col lg="2"/>
     <Col>
-        <ul className="list-inline">
-            <li className="list-inline-item">© Sunderland Cardiac Support Group</li>
-            <li className="list-inline-item">Privacy Policy</li>
+        <ul className="nav justify-content-center nav-fill">
+            <li class="nav-item">
+                <p class="nav-link">© Sunderland Cardiac Support Group</p>
+            </li>
+            <li class="nav-item">
+                <p class="nav-link">Registered Charity Number 1126524</p>
+            </li>
         </ul>
     </Col>
     <Col lg="2" />
