@@ -40,6 +40,7 @@ export default ({ data }) => (
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff"></meta>
+    <meta name="description" content="We are a registered charity run by volunteers dedicated to providing help and support to the people of Sunderland and the surrounding districts who have or have suffered from some form of cardiac trauma. We provide exercise classes, walks, social evenings and much more."></meta>
   </Helmet>
   <NavBar className={styles.navContainer + " bg-light text-dark"} />
   <Carousel className={styles.content}>
