@@ -133,8 +133,9 @@ export default ({ data }) => (
         </Card.Text>
         <Card.Subtitle>Monthly Socials</Card.Subtitle>
         <Card.Text>
-          <p>The group holds free social meetings on the 2nd Thursday of each month at The Refectory, Ground Floor, Education Centre, Sunderland Royal Hospital</p>
-          <p>It runs from 7pm till 9pm with guest speakers, a raffle and refreshments, alongside Bingo if time allows.</p>
+          The group holds free social meetings on the 2nd Thursday of each month at The Refectory,
+           Ground Floor, Education Centre, Sunderland Royal Hospital.<br/>
+          It runs from 7pm till 9pm with guest speakers, a raffle and refreshments, alongside Bingo if time allows.
         </Card.Text>
       </Card.Body>
     </Card>
