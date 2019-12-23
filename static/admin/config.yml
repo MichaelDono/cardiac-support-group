@@ -1,17 +1,15 @@
 backend:
   name: git-gateway
   repo: "MichaelDono/cardiac-support-group"
-  squash_merges: true
-
-site_url: "https://cardiacgroup.netlify.com"
+  site_url: "https://www.sunderlandcardiac.org.uk/"
 
 media_folder: "static/img"
 public_folder: "img"
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "_posts/blog" # The path to the folder where the documents are stored
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "pages/posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
