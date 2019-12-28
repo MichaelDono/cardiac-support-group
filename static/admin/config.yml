@@ -24,3 +24,4 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Carousel", name: "carousel", widget: "list", fields: [{label: "Text", name: "text", widget: "string"}, {label: "Image", name: "imageUrl", widget: "string"}]}
+          - {label: "Carousel Mark 2", name: "carousel2", widget: "list", fields: [{label: "Text", name: "text", widget: "string"}, {label: "Image", name: "imageUrl", widget: "string"}]}
