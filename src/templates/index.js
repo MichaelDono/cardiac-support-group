@@ -33,7 +33,7 @@ export default ({ data }) => {
       </Helmet>
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
       <Carousel className={styles.content}
-      items={data.markdownRemark.frontmatter.carousel.items} />
+      items={data.markdownRemark.frontmatter.carousel} />
       <div className={styles.lower}>
       <CardGroup className={styles.card}>
         <Card>
