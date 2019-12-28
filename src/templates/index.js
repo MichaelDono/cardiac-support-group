@@ -33,15 +33,7 @@ export default ({ data }) => {
       </Helmet>
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
       <Carousel className={styles.content}
-      items={
-          [{text: "Take part in our fun-filled exercise classes run by our fully qualified instructors.",
-           imageUrl: "img/chair-exercises-for-seniors.jpg"},
-           {text: "Join one of our affordable summer day trips.",
-           imageUrl: "img/walking.jpeg"},
-           {text: "Come along to our monthly relaxed and informal social evenings.",
-           imageUrl: "img/cafe.jpeg"}]}>
-
-      </Carousel>
+      items={data.markdownRemark.frontmatter.carousel.items} />
       <div className={styles.lower}>
       <CardGroup className={styles.card}>
         <Card>
@@ -121,7 +113,12 @@ query($slug: String!) {
   markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
       title
-      heading
+      carousel {
+          items {
+            text
+            imageUrl
+          }
+      }
     }
   }
   site {
