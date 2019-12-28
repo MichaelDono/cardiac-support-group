@@ -4,12 +4,13 @@ import { Helmet } from "react-helmet"
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
-import Carousel from 'react-bootstrap/Carousel'
+// import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import NavBar from '../components/navbar'
 import Footer from '../components/footer'
-import CarouselSlide from '../components/carouselSlide'
+// import CarouselSlide from '../components/carouselSlide'
+import Carousel from '../components/carousel'
 import styles from '../pages/index.module.css'
 
 import '../bootstrap/css/bootstrap.css';
@@ -31,16 +32,15 @@ export default ({ data }) => {
         <meta name="description" content={data.site.siteMetadata.description}></meta>
       </Helmet>
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
-      <Carousel className={styles.content}>
-          <CarouselSlide imageUrl="img/chair-exercises-for-seniors.jpg">
-            <p>Take part in our fun-filled exercise classes run by our fully qualified instructors.</p>
-          </CarouselSlide>
-          <CarouselSlide imageUrl="img/walking.jpeg">
-            <p>Join one of our affordable summer day trips.</p>
-          </CarouselSlide>
-          <CarouselSlide imageUrl="img/cafe.jpeg">
-          <p>Come along to our monthly relaxed and informal social evenings.</p>
-          </CarouselSlide>
+      <Carousel className={styles.content}
+      items={
+          [{text: "Take part in our fun-filled exercise classes run by our fully qualified instructors.",
+           imageUrl: "img/chair-exercises-for-seniors.jpg"},
+           {text: "Join one of our affordable summer day trips.",
+           imageUrl: "img/walking.jpeg"},
+           {text: "Come along to our monthly relaxed and informal social evenings.",
+           imageUrl: "img/cafe.jpeg"}]}>
+
       </Carousel>
       <div className={styles.lower}>
       <CardGroup className={styles.card}>
