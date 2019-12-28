@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Sunderland Cardiac Support Group`,
-    description: `A Gatsby static site for the Sunderland Cardiac Support Group`,
+    description: `We are a registered charity run by volunteers dedicated to providing help and support to the people of Sunderland and the surrounding districts who have or have suffered from some form of cardiac trauma. We provide exercise classes, walks, social evenings and much more.`,
     author: `Michael Dono`,
   },
   plugins: [
