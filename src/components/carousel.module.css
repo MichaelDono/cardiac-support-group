@@ -1,8 +1,19 @@
 .carouselImage {
-    height: 100%;
-    width: 100%;
     background-position: center;
     background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    flex: 1 1 24em;
+    width: 100%;
+}
+
+.container > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 .carouselContent {
@@ -27,4 +38,16 @@
     padding-bottom: 20px;
     color: #fff;
     text-align: right;
+}
+
+@media (min-width: 992px) {
+    .caption {
+        font-size: 3em;
+        line-height: 1.2em;
+        left: 50%;
+    }
+
+    .carouselContent {
+        background: rgba(0,0,0,.35);
+    }
 }
