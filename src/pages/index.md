@@ -9,4 +9,3 @@ carousel:
   - text: Come along to our monthly relaxed and informal social evenings.
     imageUrl: img/cafe.jpeg
 
----
