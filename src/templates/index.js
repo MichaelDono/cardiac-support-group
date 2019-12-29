@@ -32,8 +32,8 @@ export default ({ data }) => {
         <meta name="description" content={data.site.siteMetadata.description}></meta>
       </Helmet>
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
-      <Carousel className={styles.content}
-      items={data.markdownRemark.frontmatter.carousel.items} />
+      {/* <Carousel className={styles.content}
+      items={data.markdownRemark.frontmatter.carousel.items} /> */}
       <div className={styles.lower}>
       <CardGroup className={styles.card}>
         <Card>
@@ -113,12 +113,6 @@ query($slug: String!) {
   markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
       title
-      carousel {
-          items {
-            text
-            imageUrl
-          }
-      }
     }
   }
   site {
