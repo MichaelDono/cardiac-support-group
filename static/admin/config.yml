@@ -23,4 +23,9 @@ collections:
         name: "index"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Carousel", name: "carousel", widget: "list", fields: [{label: "Text", name: "text", widget: "string"}, {label: "Image", name: "imageUrl", widget: "string"}] }
+          - label: "Carousel"
+            name: "carousel"
+            widget: "list" 
+            fields: 
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Image", name: "imageUrl", widget: "string"}

@@ -114,10 +114,8 @@ query($slug: String!) {
     frontmatter {
       title
       carousel {
-          items {
-            text
-            imageUrl
-          }
+        imageUrl
+        text
       }
     }
   }
