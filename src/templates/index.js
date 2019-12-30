@@ -4,12 +4,10 @@ import { Helmet } from "react-helmet"
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
-// import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import NavBar from '../components/navbar'
 import Footer from '../components/footer'
-// import CarouselSlide from '../components/carouselSlide'
 import Carousel from '../components/carousel'
 import styles from '../pages/index.module.css'
 
@@ -17,7 +15,7 @@ import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ data }) => {
-    //const content = data.markdownRemark;
+    const frontmatter = data.markdownRemark.frontmatter;
     return (
     <div className={styles.container}>
       <Helmet>
@@ -33,7 +31,7 @@ export default ({ data }) => {
       </Helmet>
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
       <Carousel className={styles.content}
-      items={data.markdownRemark.frontmatter.carousel} />
+      items={frontmatter.carousel} />
       <div className={styles.lower}>
       <CardGroup className={styles.card}>
         <Card>
