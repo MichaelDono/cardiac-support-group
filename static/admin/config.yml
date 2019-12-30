@@ -23,9 +23,10 @@ collections:
         name: "index"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
           - label: "Carousel"
             name: "carousel"
             widget: "list" 
             fields: 
               - {label: "Text", name: "text", widget: "string"}
-              - {label: "Image", name: "imageUrl", widget: "string"}
+              - {label: "Image", name: "imageUrl", widget: "image"}
