@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
+import SEO from '../components/seo'
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
@@ -18,17 +18,7 @@ export default ({ data }) => {
     const frontmatter = data.markdownRemark.frontmatter;
     return (
     <div className={styles.container}>
-      <Helmet>
-        <title>{data.site.siteMetadata.title}</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff"></meta>
-        <meta name="description" content={data.site.siteMetadata.description}></meta>
-      </Helmet>
+      <SEO metadata={data.site.siteMetadata} />
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
       <Carousel className={styles.content}
       items={frontmatter.carousel} />
