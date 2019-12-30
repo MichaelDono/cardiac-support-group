@@ -1,5 +1,6 @@
 ---
 title: Welcome
+templateKey: index
 carousel:
   - imageUrl: img/chair-exercises-for-seniors.jpg
     text: >-
