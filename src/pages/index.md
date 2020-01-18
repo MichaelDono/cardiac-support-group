@@ -13,4 +13,3 @@ carousel:
   - imageUrl: /img/whitby.jpeg
     text: Join one of our affordable day trips.
 ---
-
