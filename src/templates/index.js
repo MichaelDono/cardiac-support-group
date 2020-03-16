@@ -24,7 +24,7 @@ export default ({ data }) => {
       <Carousel className={styles.content}
       items={frontmatter.carousel} />
       <div className={styles.lower}>
-        <Alert variant={'primary'} className={'w-75 mt-4 mx-auto'}>
+        <Alert variant={'primary'} className={styles.alert}>
           <Alert.Heading>Coronavirus (COVID-19)</Alert.Heading>
           <p className="mb-2">
             In the light of the current situation we have been advised by the British Heart Foundation
@@ -39,7 +39,7 @@ export default ({ data }) => {
             Thank you.
           </p>
           <hr />
-          <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health" >Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
+          <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
         </Alert>
         <CardGroup className={styles.card}>
           <Card>
