@@ -16,7 +16,7 @@ export default ({ items }) => {
         </BootstrapCarousel.Item>
     ));
     return (
-        <BootstrapCarousel className={styles.container}>
+        <BootstrapCarousel className={styles.container} fade={true}>    
             {carouselItems}
         </BootstrapCarousel>
     )

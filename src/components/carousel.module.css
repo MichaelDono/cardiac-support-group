@@ -8,6 +8,7 @@
 .container {
     flex: 1 1 24em;
     width: 100%;
+    transition: opacity 500ms ease 0s;
 }
 
 .container > div {
