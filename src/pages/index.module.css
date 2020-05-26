@@ -31,3 +31,16 @@
 .card {
     margin: 0.6em;
 }
+
+.alert {
+    width: 100%;
+    padding-top: 20px;
+}
+
+@media (min-width: 1200px) {
+    .alert {
+        width: 75% !important;
+        margin:  3em auto;
+        padding-top: 16px;
+    }
+}
