@@ -4,7 +4,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
-        console.log(createFilePath({ node, getNode }))
         const value = createFilePath({ node, getNode, basePath: `pages` })
         createNodeField({
         name: `slug`,
@@ -35,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     `)
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      if (node.frontmatter.templateKey) {
         createPage({
           path: node.fields.slug,
           component: path.resolve(
@@ -46,5 +46,6 @@ exports.createPages = async ({ graphql, actions }) => {
             slug: node.fields.slug,
           },
         })
-      })
+      }
+    })
 }
