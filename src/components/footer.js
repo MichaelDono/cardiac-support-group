@@ -9,11 +9,11 @@ export default (props) => (
         <div className={styles.contact}>
             <h1 className={styles.header}>Contact Us</h1>
             <div>
-                <span>phone</span>
+                <i className="material-icons">phone</i>
                 <span>0191 5656892</span>
             </div>
             <div>
-                <span>email</span>
+                <i className="material-icons">mail_outline</i>
                 <span>hello@sunderlandcardiac.org.uk</span>
             </div>
         </div>
