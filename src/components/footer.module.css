@@ -26,25 +26,26 @@
 }
 
 .contact > div {
+    padding-top: 0.2em;
     display: flex;
     align-items: center;
 }
 
-.contact > div > span {
+
+.contactMethod, .contactMethod:active, .contactMethod:hover  {
     margin-left: 0.6em;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .quickLinks > div {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.quickLinks > div > div {
-    flex: 0 0 100%;
+    /* flex: 0 0 100%; */
+    width: 100%;
+    padding-top: 0.2em;
     display: flex;
 }
 
-.quickLinks > div > div > a {
+.quickLinks > div > a {
     flex: 0 0 10em;
 }
 
@@ -96,7 +97,7 @@
         padding: 0.7em 0;
     }
 
-    .quickLinks > div > div > a {
+    .quickLinks > div > a {
         flex: 0 0 8em;
     }
 
@@ -139,11 +140,11 @@
         flex: 1 1 20em;
     }
 
-    .quickLinks > div > div > a {
+    .quickLinks > div > a {
         flex: 0 0 10em;
     }
 
-    .quickLinks > div > a {
+    .quickLinks > a {
         flex: 0 0 9em;
     }
 
@@ -190,7 +191,7 @@
         height: 3.2em;
     }
     
-    .quickLinks > div > div > a {
+    .quickLinks > div > a {
         flex: 0 1 9em;
     }
 
