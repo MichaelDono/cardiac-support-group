@@ -4,6 +4,7 @@
     background-color: #2C2D38;
     color: #FFFFFF;
     font-size: 0.9rem;
+    padding: 0.7em 2em;
 }
 
 .header {
@@ -22,6 +23,15 @@
 .contact, .quickLinks {
     flex: 1 1 14em;
     margin: 0 1em;
+}
+
+.contact > div {
+    display: flex;
+    align-items: center;
+}
+
+.contact > div > span {
+    margin-left: 0.6em;
 }
 
 .quickLinks > div {
@@ -59,14 +69,25 @@
 .legal {
     flex: 3 0 20em;
     margin: 0 1em;
+    padding-bottom: 1.5em;
+    font-size: 0.8rem;
+    color: #E8E8E8;
+    align-self: flex-end;
 }
 
-.content > * {
-    /* border: 1px solid red; */
+.legal p {
+    margin: 0;
+    text-align: center;
 }
 
 .legalLinks > a {
     flex: 0 0 10em;
+}
+
+@media (min-width: 576px) {
+    .container {
+        padding: 0.7em 7em;
+    }
 }
 
 @media (min-width: 768px) {
@@ -74,11 +95,6 @@
     .container {
         padding: 0.7em 0;
     }
-
-    /* .contact, .quickLinks {
-        flex: 0 0 12em;
-        margin: 0 0.1em;
-    } */
 
     .quickLinks > div > div > a {
         flex: 0 0 8em;
@@ -105,6 +121,7 @@
 
     .legal {
         order: 3;
+        padding-bottom: 0;
     }
 
     .legal > p {
@@ -131,32 +148,54 @@
     }
 
     .legalLinks > a {
-        flex: 0 1 7em;
+        flex: 0 1 9em;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        padding: 0.7em 14em;
+        padding: 0.7em 11em;
     }
 
     .contact, .quickLinks {
         flex: 0 1 20em;
-        margin-right: 2.5em;
+        /* margin-right: 2.5em; */
     }
 
     .logo img {
         height: 3em;
     }
+
+    .legal {
+        font-size: 0.9rem;
+    }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1450px) {
     .container {
-        padding: 0.7em 17em;
+        padding: 0.7em 12em;
+        font-size: 1.1rem;
+    }
+
+    .contact, .quickLinks {
+        flex: 0 1 16em;
+        /* margin-right: 2.5em; */
+    }
+
+    .logo {
+        padding: 0.5em 0;
     }
 
     .logo img {
-        height: 3.6em;
+        height: 3.2em;
+    }
+    
+    .quickLinks > div > div > a {
+        flex: 0 1 9em;
+    }
+
+    .legalLinks > a {
+        flex: 0 1 6.7em;
     }
 }
 
@@ -165,7 +204,14 @@
         padding: 0.7em 20%;
     }
 
-    .logo img {
-        height: 4em;
+    .contact, .quickLinks {
+        flex: 0 1 18em;
+        margin-right: 2.5em;
     }
+
+    .logo img {
+        height: 3em;
+    }
+
+    
 }
