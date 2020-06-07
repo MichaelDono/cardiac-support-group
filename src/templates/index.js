@@ -27,10 +27,8 @@ export default ({ data }) => {
         <Alert variant={'primary'} className={styles.alert}>
           <Alert.Heading>Coronavirus (COVID-19)</Alert.Heading>
           <p className="mb-2">
-            In the light of the current situation we have been advised by the British Heart Foundation
-            to cancel our exercise sessions, social meetings, board meetings and possibly the day trip to Whitby
-            on the 25th April. We will contact our members to advise of any changes.
-            We apologise for this, but the safety of our members is our main concern.
+          Our Exercise sessions are still on hold following government guidelines. 
+          When it is safe to resume, we will contact all members who attend the sessions and give further information.
           </p>
           <p className="mb-2">
             For any more information please contact Barry on 0191 5656892 or Jim on 0191 5226750.
