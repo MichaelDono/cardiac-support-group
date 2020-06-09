@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20em;
+    margin: 1em;
+    overflow: hidden;
+}
+
+.headerImage {
+    background-color: teal;
+    font-family: 'Tisa Sans Pro', sans-serif;
+    
+}
+
+.headerImage > img {
+    width: 100%;
+}
+
+.content {
+    position: relative;
+}
+
+.content > div:not(:first-child) {
+    margin: 0.1em 1em;
+}
+
+.content div.bodyText {
+    margin-top: 2.2em;
+    font-size: 1.1em;
+    line-height: 1.33;
+    color: #4A4A4A;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.date {
+    color: #6C6C6C;
+    font-size: 1em;
+}
+
+.readmore {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    color: #A23BD5;
+    padding: 0.25em 0.5em;
+    
+}
+
+.readmore:hover {
+    background-color: #F3DDF1;
+    border-radius: 0.25em;
+}

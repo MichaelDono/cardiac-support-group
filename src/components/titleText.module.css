@@ -1,0 +1,21 @@
+.container {
+    display: block;
+    margin-top: -85px;
+    margin-bottom: 4px;
+    padding: 0 20px;
+    font-size: 1.7em;
+    line-height: 1.2;
+    width: 75%;
+    color: #000;
+}
+
+.container:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.container span {
+    display: inline;
+    outline: 5px solid #fff;
+    background: #fff;
+}
