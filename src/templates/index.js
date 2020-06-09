@@ -10,6 +10,7 @@ import NavBar from '../components/navbar'
 import Footer from '../components/footer'
 import Alert from 'react-bootstrap/Alert'
 import Carousel from '../components/carousel'
+import NewsItem from '../components/newsItem'
 import styles from '../pages/index.module.css'
 
 import '../bootstrap/css/bootstrap.css';
@@ -21,8 +22,6 @@ export default ({ data }) => {
     <div className={styles.container}>
       <SEO metadata={data.site.siteMetadata} />
       <NavBar className={styles.navContainer + " bg-light text-dark"} />
-      <Carousel className={styles.content}
-      items={frontmatter.carousel} />
       <div className={styles.lower}>
         <Alert variant={'primary'} className={styles.alert}>
           <Alert.Heading>Coronavirus (COVID-19)</Alert.Heading>
@@ -106,6 +105,14 @@ export default ({ data }) => {
             </Card.Body>
           </Card>
         </CardGroup>
+        <div className={styles.newsEvents}>
+          <h2>News and Events</h2>
+          <div className={styles.newsItems}>
+            <NewsItem />
+            <NewsItem />
+            <NewsItem />
+          </div>
+        </div>
       </div>
       <Footer className={styles.footerContainer} />
     </div>
