@@ -4,7 +4,7 @@ import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Alert from 'react-bootstrap/Alert'
 import Header from '../components/header'
-import NewsItem from '../components/newsItem'
+import News from '../components/news'
 import CallToAction from '../components/cta'
 import styles from '../pages/index.module.css'
 
@@ -40,15 +40,7 @@ export default ({ data }) => {
           <hr />
           <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
         </Alert>
-        <div className={styles.newsEvents}>
-          <h2>News and Events</h2>
-          <div className={styles.newsItems}>
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-          </div>
-          <div className={styles.viewAll}>View All Articles</div>
-        </div>
+        <News />
       </div>
       <Footer className={styles.footerContainer} />
     </div>
