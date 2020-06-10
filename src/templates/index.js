@@ -22,14 +22,20 @@ export default ({ data }) => {
         <Alert variant={'primary'} className={styles.alert}>
           <Alert.Heading>Coronavirus (COVID-19)</Alert.Heading>
           <p className="mb-2">
-          Our Exercise sessions are still on hold following government guidelines. 
-          When it is safe to resume, we will contact all members who attend the sessions and give further information.
+          Our exercise classes and other activities are still on hold following government guidelines. 
+          Our funding is secure, and we will reinstate them once we are confident that the appropriate 
+          measures have been implemented to ensure your health and wellbeing.
           </p>
           <p className="mb-2">
-            For any more information please contact Barry on 0191 5656892 or Jim on 0191 5226750.
+          Once again, despite some charities closing due to financial pressures, the group is not in 
+          that position and The Trustees look forward to seeing you all again in the future.
+          </p>
+          <p className="mb-2">
+          We will contact our members in due course – should you wish to contact us please contact 
+          Barry on 0191 5656892 or Jim on 0191 5226750.
           </p>
           <p>
-            Thank you.
+          Thank you and stay safe.
           </p>
           <hr />
           <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
