@@ -26,6 +26,13 @@
     font-size: 1.11em;
 }
 
+.content .viewAll:hover {
+    /* background-color: #c4c4c4;
+    color: #ffffff; */
+    background-color: #e7e7e7;
+    transition: background-color 200ms ease;
+}
+
 .newsItems {
     display: flex;
     justify-content: space-between;
@@ -33,10 +40,7 @@
     flex-wrap: wrap;
 }
 
-.content .viewAll:hover {
-    background-color: #c4c4c4;
-    color: #ffffff;
-}
+
 
 @media (min-width: 768px) { 
     .newsItems {

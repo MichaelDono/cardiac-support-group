@@ -20,21 +20,19 @@
     padding: 2em 0;
 }
 
-.content .buttonContainer {
-
-}
-
 .content .button {
     display: block;
     width: 8.6em;
     background-color: #7E4891;
     padding: 0.7em 1.1em;
     border-radius: 0.6em;
+    text-decoration: none;
 }
 
 .content .button span {
     color: #ffffff;
     text-transform: uppercase;
+    
 }
 
 .content h1 {

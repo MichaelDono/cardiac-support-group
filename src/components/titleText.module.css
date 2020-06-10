@@ -2,7 +2,7 @@
     position: absolute;
     display: block;
     bottom: 16px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     font-size: 1.7em;
     line-height: 1;
     width: 75%;
@@ -15,8 +15,9 @@
 }
 
 .container span {
+    padding: 0.2em 0.2em 0.2em 0.8em;
     display: inline;
-    outline: 5px solid #fff;
     background: #fff;
+    -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
