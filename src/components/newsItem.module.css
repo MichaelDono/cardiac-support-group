@@ -7,9 +7,9 @@
 }
 
 .headerImage {
-    background-color: teal;
     font-family: 'Tisa Sans Pro', sans-serif;
-    
+    position: relative;
+    /* z-index: 1; */
 }
 
 .headerImage > img {
@@ -17,15 +17,16 @@
 }
 
 .content {
-    position: relative;
+    /* margin-top: calc(4px + 1em); */
+    margin-top: 12px;
 }
 
-.content > div:not(:first-child) {
+.content > div {
     margin: 0.1em 1em;
 }
 
 .content div.bodyText {
-    margin-top: 2.2em;
+    /* margin-top: 1em; */
     font-size: 1.1em;
     line-height: 1.33;
     color: #4A4A4A;

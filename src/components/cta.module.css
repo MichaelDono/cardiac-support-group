@@ -1,0 +1,121 @@
+
+.container {
+    background-color: #ececec;
+    font-family: 'Tisa Sans Pro', sans-serif;
+    padding: 2em 0.8em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    
+}
+
+.content .text {
+    /* height: 10em; */
+    flex: 1 1 10em;
+    padding: 2em 0;
+}
+
+.content .buttonContainer {
+
+}
+
+.content .button {
+    display: block;
+    width: 8.6em;
+    background-color: #7E4891;
+    padding: 0.7em 1.1em;
+    border-radius: 0.6em;
+}
+
+.content .button span {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.content h1 {
+    font-weight: 500;
+    font-size: 2.5em;
+}
+
+.content h2 {
+    font-weight: 400;
+    font-size: 1.33em;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .container {
+        padding: 3em 3em;
+    }
+
+    .content .text {
+        width: 26em;
+        padding-right: 1.6em;
+    }
+
+    .content .imgContainer {
+        order: 2;
+        display: flex;
+        justify-content: flex-start;
+        width: 16em;
+    }
+
+    .content .imgContainer img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        height: 16em;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        padding: 4em 12em;
+    }
+
+    .content .text {
+        width: 24em;
+        padding-right: 0;
+    }
+
+    .content .imgContainer {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        height: 100%;
+    }
+
+    .content .imgContainer img {
+        width: auto;
+        height: 100%;
+    }
+
+    
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 4em 16em;
+    }
+}
+
+@media (min-width: 1450px) {
+    .container {
+        padding: 4em 20em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        padding: 4em 32em;
+    }
+}
