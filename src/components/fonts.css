@@ -1,17 +1,1 @@
-@font-face {
-    font-family: 'Tisa Sans Pro';
-        src: url('TisaSansPro_400.woff') format('woff'), /* Pretty Modern Browsers */
-            url('TisaSansPro_400.otf')  format('opentype'); /* Safari, Android, iOS */
-    font-weight: 400;
-    font-style: normal;
-}
-  
-@font-face {
-    font-family: 'Tisa Sans Pro';
-      src: url('TisaSansPro_500.woff') format('woff'), /* Pretty Modern Browsers */
-          url('TisaSansPro_500.otf')  format('opentype'); /* Safari, Android, iOS */
-    font-weight: 500;
-    font-style: normal;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Cabin|Material+Icons|Roboto+Slab:300|Raleway&display=swap');
