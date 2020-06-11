@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Tisa Sans Pro';
+  src: url('TisaSansPro_400.woff') format('woff'), /* Pretty Modern Browsers */
+      url('TisaSansPro_400.otf')  format('opentype'), /* Safari, Android, iOS */
+}
+
 html,
 body {
   color: #444;
