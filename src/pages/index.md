@@ -1,6 +1,7 @@
 ---
 title: Welcome
 templateKey: index
+image: /img/whitby.jpg
 carousel:
   - imageUrl: img/chair-exercises-for-seniors.jpg
     text: >-
