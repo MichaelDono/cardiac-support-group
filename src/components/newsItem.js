@@ -1,13 +1,26 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import TitleText from './titleText'
 import styles from './newsItem.module.css'
+import Image from 'gatsby-image'
 
 export default () => { 
+    const data = useStaticQuery(graphql`
+    query {
+        file(relativePath: {eq: "whitby.jpeg"}) {
+            childImageSharp {
+            fluid {
+                ...GatsbyImageSharpFluid
+                }
+            }
+          }
+    }
+  `)
     return (
         <div className={styles.container}>
             <a href="/" className={styles.headerImage}> {/*image & title*/}
-                <img src="img/whitby.jpeg"></img>
+                {/* <img src="img/whitby.jpeg"></img> */}
+                <Image fluid={data.file.childImageSharp.fluid}></Image>
                 <TitleText>Fish &amp; Chip Walk June 2020</TitleText>
             </a>
             <div className={styles.content}> {/* Body Text */ }
