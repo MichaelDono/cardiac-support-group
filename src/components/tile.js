@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import StyledButton from './styledButton'
 import styles from './tile.module.css'
 
