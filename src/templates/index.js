@@ -5,7 +5,7 @@ import Footer from '../components/footer'
 import Alert from 'react-bootstrap/Alert'
 import Header from '../components/header'
 import NewsItem from '../components/newsItem'
-import Tile from '../components/Tile'
+import Tile from '../components/tile'
 import CallToAction from '../components/cta'
 import styles from '../pages/index.module.css'
 
