@@ -11,7 +11,7 @@ export default () => {
                     <h2>We can help you on your path to recovery.</h2>
                 </div>
                 <div className={styles.imgContainer}>
-                    <img src="./img/sitting_1.png" height="256"/>
+                    <img src="img/sitting_1.png" />
                 </div>
                 <div className={styles.buttonContainer}>
                     <Link to="/" className={styles.button}>
