@@ -40,7 +40,7 @@ export default ({ data }) => {
           <hr />
           <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
         </Alert>
-        <News image={frontmatter.image} />
+        <News />
       </div>
       <Footer className={styles.footerContainer} />
     </div>
