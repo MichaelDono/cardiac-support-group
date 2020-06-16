@@ -9,7 +9,6 @@
 .headerImage {
     font-family: 'Tisa Sans Pro', sans-serif;
     position: relative;
-    /* z-index: 1; */
 }
 
 .headerImage > img {
