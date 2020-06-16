@@ -2,7 +2,7 @@
 .container {
     background-color: #FBF8FB;
     font-family: 'Tisa Sans Pro', sans-serif;
-    padding: 2em 0.8em;
+    padding: 2em 1.55em;
 }
 
 .content {
@@ -17,7 +17,7 @@
 .content .text {
     /* height: 10em; */
     flex: 1 1 10em;
-    padding: 2em 0;
+    padding: 2em 0 0 0;
 }
 
 .content .button {
@@ -45,7 +45,19 @@
     font-size: 1.33em;
 }
 
+.content .imgContainer {
+    width: 100%;
+    padding: 1em;
+}
 
+.content .imgContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.content .buttonContainer {
+    margin: 3em 0;
+}
 
 
 @media (min-width: 768px) {
@@ -72,6 +84,10 @@
 
     .content {
         height: 16em;
+    }
+
+    .content .buttonContainer {
+        margin: 0;
     }
 }
 
