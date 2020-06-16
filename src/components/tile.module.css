@@ -1,0 +1,33 @@
+.container {
+    background-color: #C7E2EC;
+    padding: 0.5em 0.8em;
+    flex: 1 1 12em;
+    margin: 1.5em;
+    padding: 1.2em 1.6em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container h1 {
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+.container .bodyText {
+    flex: 1 0 auto;
+    margin: 0.5em 0;
+}
+
+.container .imgContainer {
+    flex: 0 0 4em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1em;
+}
+
+.container .imgContainer img {
+    width: 100%;
+}

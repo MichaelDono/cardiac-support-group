@@ -4,7 +4,8 @@ import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Alert from 'react-bootstrap/Alert'
 import Header from '../components/header'
-import News from '../components/news'
+import NewsItem from '../components/newsItem'
+import Tile from '../components/Tile'
 import CallToAction from '../components/cta'
 import styles from '../pages/index.module.css'
 
@@ -40,11 +41,40 @@ export default ({ data }) => {
           <hr />
           <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
         </Alert>
+        <TileContainer />
         <News />
       </div>
       <Footer className={styles.footerContainer} />
     </div>
     )
+}
+
+let TileContainer = () => {
+  return (
+  <div className={styles.tileContainer}>
+    <div className={styles.tiles}>
+        <Tile title="Exercise Classes" color="#3A4A50" backgroundColor="#C7E2EC" imageUrl="img/exercise_class_1.png" />
+        <Tile title="Day Trips" color="#3B5A42" backgroundColor="#D3E4DB" imageUrl="img/day_trip_1.png" />
+        <Tile title="Walks" color="#3A4A50" backgroundColor="#EEE9DD" imageUrl="img/walking_1.png" />
+    </div>
+  </div>
+  )
+}
+
+let News = () => {
+  return (
+  <div className={styles.newsContainer}>
+    <div className={styles.newsContent}>
+        <h2>News and Events</h2>
+        <div className={styles.newsItems}>
+            <NewsItem />
+            <NewsItem />
+            <NewsItem />
+        </div>
+        <div className={styles.viewAll}>View All Articles</div>
+    </div>
+  </div>
+  )
 }
 
 export const query = graphql`
