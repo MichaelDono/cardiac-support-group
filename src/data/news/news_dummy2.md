@@ -1,5 +1,5 @@
 ---
-title: June Coronavirus (COVID-19) Update
+title: Fish & Chip Walk June 2020
 templateKey: news-post
 featuredimage: ../img/whitby.jpeg
 ---
