@@ -5,8 +5,7 @@ image: /img/whitby.jpg
 isPage: true
 carousel:
   - imageUrl: img/chair-exercises-for-seniors.jpg
-    text: >-
-      Take part in our fun-filled exercise classes run by our fully qualified
+    text: Take part in our fun-filled exercise classes run by our fully qualified
       instructors.
   - imageUrl: img/walking.jpeg
     text: Join us on one of our easy and local walks
