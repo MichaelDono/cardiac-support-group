@@ -16,7 +16,7 @@ export default (props) => {
             <p className={styles.bodyText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget sagittis eros. Proin vel sollicitudin nulla.</p>
             
             <div className={styles.imgContainer}>
-                <img src={imageUrl}></img>
+                <img src={imageUrl} height="230" ></img>
             </div>
             <StyledButton align="right" color={color} variant="outlined" />
         </div>

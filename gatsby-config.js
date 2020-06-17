@@ -24,6 +24,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     'gatsby-transformer-sharp', 
     'gatsby-transformer-remark',
     // {
