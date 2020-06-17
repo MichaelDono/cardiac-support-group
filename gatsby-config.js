@@ -8,35 +8,27 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     'gatsby-transformer-sharp', 
     'gatsby-transformer-remark',
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          'gatsby-remark-relative-images',
-          {
-            resolve: 'gatsby-remark-images',
-            options: { },
-          }
-        ],
+        path: `${__dirname}/src/pages`
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data`
+      },
+    },
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`
       },
     },
     'gatsby-plugin-netlify-cms'

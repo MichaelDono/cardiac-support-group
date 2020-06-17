@@ -4,24 +4,14 @@ import TitleText from './titleText'
 import styles from './newsItem.module.css'
 import Image from 'gatsby-image'
 
-export default () => { 
-    const data = useStaticQuery(graphql`
-    query {
-        file(relativePath: {eq: "whitby.jpeg"}) {
-            childImageSharp {
-            fluid {
-                ...GatsbyImageSharpFluid
-                }
-            }
-          }
-    }
-  `)
+export default (props) => { 
+    //const imageFluid = props.imageFluid ?? data.file.childImageSharp.fluid;
+    const title = props.title ?? "Fish & Chip Walk June 2020"
     return (
         <div className={styles.container}>
             <a href="/" className={styles.headerImage}> {/*image & title*/}
-                {/* <img src="img/whitby.jpeg"></img> */}
-                <Image fluid={data.file.childImageSharp.fluid}></Image>
-                <TitleText>Fish &amp; Chip Walk June 2020</TitleText>
+                <Image fluid={props.imageFluid}></Image>
+                <TitleText>{title}</TitleText>
             </a>
             <div className={styles.content}> {/* Body Text */ }
                 <div className={styles.bodyText}>

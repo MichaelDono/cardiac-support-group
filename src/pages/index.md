@@ -2,6 +2,7 @@
 title: Welcome
 templateKey: index
 image: /img/whitby.jpg
+isPage: true
 carousel:
   - imageUrl: img/chair-exercises-for-seniors.jpg
     text: >-
@@ -11,6 +12,6 @@ carousel:
     text: Join us on one of our easy and local walks
   - imageUrl: img/cafe.jpeg
     text: Come along to our monthly relaxed and informal social evenings.
-  - imageUrl: /img/whitby.jpeg
+  - imageUrl: img/whitby.jpeg
     text: Join one of our affordable day trips.
 ---

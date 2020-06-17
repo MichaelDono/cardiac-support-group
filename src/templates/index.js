@@ -13,7 +13,8 @@ import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ data }) => {
-    const frontmatter = data.markdownRemark.frontmatter;
+    const frontmatter = data.index.frontmatter;
+    let newsItems = data.news.edges;
     return (
     <div className={styles.container}>
       <SEO metadata={data.site.siteMetadata} />
@@ -42,7 +43,7 @@ export default ({ data }) => {
           <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
         </Alert>
         <TileContainer />
-        <News />
+        <News newsItems={newsItems} />
       </div>
       <Footer className={styles.footerContainer} />
     </div>
@@ -61,15 +62,15 @@ let TileContainer = () => {
   )
 }
 
-let News = () => {
+let News = ({newsItems}) => {
   return (
   <div className={styles.newsContainer}>
     <div className={styles.newsContent}>
         <h2>News and Events</h2>
         <div className={styles.newsItems}>
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
+            {newsItems.map( ({node}) => (
+              <NewsItem imageFluid={node.frontmatter.featuredimage.childImageSharp.fluid} title={node.frontmatter.title} />
+            ))}
         </div>
         <div className={styles.viewAll}>View All Articles</div>
     </div>
@@ -79,12 +80,28 @@ let News = () => {
 
 export const query = graphql`
 query($slug: String!) {
-  markdownRemark(fields: { slug: { eq: $slug } }) {
+  index: markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
       title
       carousel {
         imageUrl
         text
+      }
+    }
+  }
+  news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3) {
+    edges {
+      node {
+        frontmatter {
+          title
+          featuredimage {
+            childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 270) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }
