@@ -45,7 +45,7 @@ export default () => {
                 <Link to="/">Cookies</Link>
             </div>
             <Link className={styles.logo} to="/">
-                <img src="img/header_white.svg"
+                <img src="/img/header_white.svg"
                         height="42"
                         alt="Sunderland Cardiac Support Group Logo"/>
             </Link>
