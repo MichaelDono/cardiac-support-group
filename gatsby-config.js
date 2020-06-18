@@ -30,6 +30,26 @@ module.exports = {
         path: `${__dirname}/static/img`
       },
     },
-    'gatsby-plugin-netlify-cms'
+    'gatsby-plugin-netlify-cms',
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        useAutoGen: true,
+        crumbLabelUpdates: [
+          {
+            pathname: '/information-support',
+            crumbLabel: 'Information and Support'
+          },
+          {
+            pathname: '/join',
+            crumbLabel: 'How to Join'
+          },
+          {
+            pathname: '/about',
+            crumbLabel: 'About Us'
+          }
+        ],
+      }
+    }
   ],
 }

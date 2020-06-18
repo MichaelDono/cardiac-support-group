@@ -1,5 +1,5 @@
 ---
 title: Welcome
-templateKey: index
+templateKey: about
 isPage: true
 ---

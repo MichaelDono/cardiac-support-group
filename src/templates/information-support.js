@@ -11,29 +11,30 @@ import styles from './information-support.module.css'
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-export default ({ data }) => {
-    return (
-    <div className={styles.container}>
-      <SEO metadata={data.site.siteMetadata} />
-      <Navbar />
-      <div className={styles.content}>
-        <Breadcrumbs />
-        <Header imageFluid={data.page.frontmatter.featuredimage.childImageSharp.fluid}/>
-        <div className={styles.exerciseClassesContainer}>
-          <div className={styles.exerciseClassesContent}>
-            <div className={styles.exerciseClassesBody}>
-              <h2 className={styles.exerciseClassesBodyHeader}>Exercise Classes</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique vulputate orci, a pretium dolor varius non. Donec eget aliquam purus, sed scelerisque elit.</p>
-              <p>Maecenas nulla neque, consectetur hendrerit blandit a, rutrum vitae diam. Maecenas non aliquam ante. Nulla id placerat lorem. </p>
-              <StyledButton variant="outlined" color="#ffffff" align="right" />
-            </div>
-            <Img fluid={data.page.frontmatter.exerciseClassesImage.childImageSharp.fluid} className={styles.exerciseClassesImage} />
+export default ({ pageContext, data }) => {
+  const { breadcrumb: { crumbs }} = pageContext;
+  return (
+  <div className={styles.container}>
+    <SEO metadata={data.site.siteMetadata} />
+    <Navbar />
+    <div className={styles.content}>
+      <Breadcrumbs crumbs={crumbs} />
+      <Header imageFluid={data.page.frontmatter.featuredimage.childImageSharp.fluid}/>
+      <div className={styles.exerciseClassesContainer}>
+        <div className={styles.exerciseClassesContent}>
+          <div className={styles.exerciseClassesBody}>
+            <h2 className={styles.exerciseClassesBodyHeader}>Exercise Classes</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique vulputate orci, a pretium dolor varius non. Donec eget aliquam purus, sed scelerisque elit.</p>
+            <p>Maecenas nulla neque, consectetur hendrerit blandit a, rutrum vitae diam. Maecenas non aliquam ante. Nulla id placerat lorem. </p>
+            <StyledButton variant="outlined" color="#ffffff" align="right" />
           </div>
+          <Img fluid={data.page.frontmatter.exerciseclassesImageurl.childImageSharp.fluid} className={styles.exerciseClassesImage} />
         </div>
       </div>
-      <Footer className={styles.footerContainer} />
     </div>
-    )
+    <Footer className={styles.footerContainer} />
+  </div>
+  )
 }
 
 let Header = ({imageFluid}) => {
@@ -66,9 +67,10 @@ query($slug: String!) {
           }
         }
       }
-      exerciseClassesImage {
+      exerciseclassesText
+      exerciseclassesImageurl {
         childImageSharp {
-          fluid(maxWidth: 650, maxHeight: 400) {
+          fluid(maxWidth: 650) {
             ...GatsbyImageSharpFluid
           }
         }

@@ -82,10 +82,6 @@ query($slug: String!) {
   index: markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
       title
-      carousel {
-        imageUrl
-        text
-      }
     }
   }
   news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3, sort: {fields: frontmatter___datetime, order: DESC}) {

@@ -14,8 +14,8 @@ export default () => {
             
             <ul>
                 <li><Link to="/information-support">Information and Support</Link></li>
-                <li><Link to="/">How to Join</Link></li>
-                <li><Link to="/">About Us</Link></li>
+                <li><Link to="/join">How to Join</Link></li>
+                <li><Link to="/about">About Us</Link></li>
             </ul>
         </div>
     )

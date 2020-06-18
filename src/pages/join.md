@@ -1,5 +1,5 @@
 ---
 title: Welcome
-templateKey: index
+templateKey: join
 isPage: true
 ---
