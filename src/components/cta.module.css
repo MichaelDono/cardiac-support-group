@@ -15,7 +15,6 @@
 }
 
 .content .text {
-    /* height: 10em; */
     flex: 1 1 10em;
     padding: 2em 0 0 0;
 }
@@ -46,13 +45,9 @@
 }
 
 .content .imgContainer {
-    width: 100%;
+    flex: 1 0 auto;
     padding: 1em;
-}
-
-.content .imgContainer img {
     width: 100%;
-    height: auto;
 }
 
 .content .buttonContainer {
@@ -72,14 +67,7 @@
 
     .content .imgContainer {
         order: 2;
-        display: flex;
-        justify-content: flex-start;
-        width: 16em;
-    }
-
-    .content .imgContainer img {
-        width: 100%;
-        height: auto;
+        width: 22em;
     }
 
     .content {
@@ -102,17 +90,8 @@
     }
 
     .content .imgContainer {
-        display: flex;
-        justify-content: center;
-        width: auto;
-        height: 100%;
+        width: 22em;
     }
-
-    .content .imgContainer img {
-        width: auto;
-        height: 100%;
-    }
-
     
 }
 

@@ -19,7 +19,7 @@ export default ({ data }) => {
       <SEO metadata={data.site.siteMetadata} />
       <Header />
       <div className={styles.lower}>
-        <CallToAction />
+        <CallToAction image={data.index.frontmatter.ctaImage.childImageSharp} />
         <Alert variant={'primary'} className={styles.alert}>
           <Alert.Heading>Coronavirus (COVID-19)</Alert.Heading>
           <p className="mb-2">
@@ -82,6 +82,13 @@ query($slug: String!) {
   index: markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
       title
+      ctaImage {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
   news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3, sort: {fields: frontmatter___datetime, order: DESC}) {
