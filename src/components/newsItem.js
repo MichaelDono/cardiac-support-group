@@ -1,11 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import TitleText from './titleText'
 import styles from './newsItem.module.css'
 import Image from 'gatsby-image'
 
 export default (props) => { 
-    //const imageFluid = props.imageFluid ?? data.file.childImageSharp.fluid;
     const title = props.title ?? "Fish & Chip Walk June 2020"
     return (
         <div className={styles.container}>

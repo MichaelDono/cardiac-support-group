@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer {
+    background-color: #FBF8FB;
+}
+
+.headerContent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.headerContent h1 {
+    font-family: 'Tisa Sans Pro', sans-serif;
+    font-weight: 400;
+    color: #444444;
+    padding: 1.2em 0 0.5em 0;
+}
+
+.headerImage{
+    height: 25em;
+    margin: 2.2em 0;
+}
+
+.content {
+    flex: 0 1 auto;
+    margin-top: 5em;
+    width: 100%;
+    background: #FFFFFF;
+}
+
+.exerciseClassesBody {
+    background-color: #7E4891;
+    color: #FFFFFF;
+    width: 45%;
+    z-index: 10;
+    position: relative;
+    padding: 1.5em 2em;
+    overflow: hidden;
+}
+
+.exerciseClassesBodyHeader {
+    font-weight: 400;
+    padding-bottom: 0.3em;
+}
+
+.exerciseClassesContent {
+    padding: 2em 6em;
+}
+
+.exerciseClassesImage {
+    width: 65%;
+    float: right;
+    position: relative;
+    top: -15em;
+    margin-bottom: -10em;
+    height: 20em;
+}
+
+.footerContainer {
+    flex: 0 50px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #2C2D38;
+    color: #c5c5c5;
+    font-size: 1em;
+}
+
+@media (min-width: 1200px) {
+    .headerContainer, .exerciseClassesContainer {
+        padding: 0 6em;
+    }
+}
+
+
+@media (min-width: 1450px) {
+    .headerContainer, .exerciseClassesContainer {
+        padding: 0 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .headerContainer, .exerciseClassesContainer {
+        padding: 0 24em;
+    }
+}

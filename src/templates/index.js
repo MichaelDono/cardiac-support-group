@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql} from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Alert from 'react-bootstrap/Alert'
@@ -7,13 +7,12 @@ import Header from '../components/header'
 import NewsItem from '../components/newsItem'
 import Tile from '../components/tile'
 import CallToAction from '../components/cta'
-import styles from '../pages/index.module.css'
+import styles from './index.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ data }) => {
-    const frontmatter = data.index.frontmatter;
     let newsItems = data.news.edges;
     return (
     <div className={styles.container}>
@@ -89,7 +88,7 @@ query($slug: String!) {
       }
     }
   }
-  news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3) {
+  news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3, sort: {fields: frontmatter___datetime, order: DESC}) {
     edges {
       node {
         frontmatter {

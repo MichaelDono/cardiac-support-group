@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import styles from './footer.module.css'
 
 export default () => {
@@ -7,10 +7,10 @@ export default () => {
         graphql`
             query {
                 site {
-                siteMetadata {
-                    phone
-                    email
-                }
+                    siteMetadata {
+                        phone
+                        email
+                    }
                 }
             }
         `
@@ -32,23 +32,23 @@ export default () => {
             <div className={styles.quickLinks}>
                 <h1 className={styles.header}>Quick Links</h1>
                 <div>
-                    <a>Info &amp; Support</a>
-                    <a>About Us</a>
+                    <Link to="/information-support">Info &amp; Support</Link>
+                    <Link to="/">About Us</Link>
                 </div>
                 <div>
-                    <a>How to Join</a>
-                    <a>News &amp; Events</a>
+                    <Link to="/">How to Join</Link>
+                    <Link to="/">News &amp; Events</Link>
                 </div>
             </div>
             <div className={styles.legalLinks}>
-                <a>Your Privacy</a>
-                <a>Cookies</a>
+                <Link to="/">Your Privacy</Link>
+                <Link to="/">Cookies</Link>
             </div>
-            <a className={styles.logo} href="/">
+            <Link className={styles.logo} to="/">
                 <img src="img/header_white.svg"
                         height="42"
                         alt="Sunderland Cardiac Support Group Logo"/>
-            </a>
+            </Link>
             <div className={styles.legal}>
                 <p>© 2020 Sunderland Cardiac Support Group.</p>
                 <p>Registered charity in England and Wales (1126524).</p>

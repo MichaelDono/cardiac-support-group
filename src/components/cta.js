@@ -11,10 +11,10 @@ export default () => {
                     <h2>We can help you on your path to recovery.</h2>
                 </div>
                 <div className={styles.imgContainer}>
-                    <img src="img/sitting_1.png" />
+                    <img src="img/sitting_1.png" alt="" />
                 </div>
                 <div className={styles.buttonContainer}>
-                    <Link to="/" className={styles.button}>
+                    <Link to="/information-support" className={styles.button}>
                         <span>Learn More</span>
                     </Link>
                 </div>

@@ -20,6 +20,11 @@
     justify-content: space-between;
 }
 
+.content a, .content a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
 .contact, .quickLinks {
     flex: 1 1 14em;
     margin: 0 1em;

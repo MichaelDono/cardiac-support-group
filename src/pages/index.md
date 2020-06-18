@@ -1,7 +1,6 @@
 ---
 title: Welcome
 templateKey: index
-image: /img/whitby.jpg
 isPage: true
 carousel:
   - imageUrl: img/chair-exercises-for-seniors.jpg
