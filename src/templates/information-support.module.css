@@ -36,7 +36,7 @@
 .exerciseClassesBody {
     background-color: #7E4891;
     color: #FFFFFF;
-    width: 45%;
+    width: 48%;
     z-index: 10;
     position: relative;
     padding: 1.5em 2em;
@@ -56,9 +56,9 @@
     width: 65%;
     float: right;
     position: relative;
-    top: -15em;
+    top: -19em;
     margin-bottom: -10em;
-    height: 20em;
+    height: 22em;
 }
 
 .footerContainer {
