@@ -63,15 +63,15 @@ query($slug: String!) {
       featuredimage {
         childImageSharp {
           fluid(maxWidth: 1440, maxHeight: 960) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       exerciseclassesText
       exerciseclassesImageurl {
         childImageSharp {
-          fluid(maxWidth: 650) {
-            ...GatsbyImageSharpFluid
+          fluid(maxWidth: 750) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

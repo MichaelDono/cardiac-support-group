@@ -99,7 +99,7 @@ query($slug: String!) {
           featuredimage {
             childImageSharp {
               fluid(maxWidth: 400, maxHeight: 270) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
