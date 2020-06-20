@@ -2,7 +2,7 @@ import React from "react"
 import { graphql} from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
-import Navbar from '../components/header'
+import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import StyledButton from '../components/styledButton'
 import Img from "gatsby-image/withIEPolyfill"

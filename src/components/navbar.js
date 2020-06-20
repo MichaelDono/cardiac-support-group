@@ -1,31 +1,23 @@
 import React from "react"
-// import { Link } from "gatsby"
-
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Navbar from 'react-bootstrap/Navbar'
-import '../bootstrap/css/bootstrap.css';
+import { Link } from "gatsby"
 import styles from './navbar.module.css'
-import Nav from "react-bootstrap/Nav";
 
-export default (props) => (
-<Row className={props.className}>
-    <Col lg="3"/>
-    <Col>
-        <Navbar bg="light" variant="light" className={styles.container}>
-            <Navbar.Brand className={styles.logo}>
-                <img src="img/header.svg"
-                    height="40"
+export default () => { 
+    return (
+        <div className={styles.container}>
+            <Link to="/">
+                <img src="/img/header.svg"
+                    height="46"
                     alt="Sunderland Cardiac Support Group Logo"
                     className="d-inline-block align-top" />
-            </Navbar.Brand>
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="ml-auto">
-                    {/* <Nav.Link linkTo="/" eventKey="1" className={styles.link}>How We Can Help</Nav.Link>
-                    <Nav.Link linkTo="/" eventKey="2" className={styles.link}>Who We Are</Nav.Link> */}
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    </Col>
-    <Col lg="3" />
-</Row>)
+            </Link>
+            
+            <ul>
+                <li><Link to="/information-support">Information and Support</Link></li>
+                <li><Link to="/join">How to Join</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+            </ul>
+        </div>
+    )
+
+}

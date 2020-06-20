@@ -3,7 +3,7 @@ import { graphql} from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Alert from 'react-bootstrap/Alert'
-import Header from '../components/header'
+import Navbar from '../components/navbar'
 import NewsItem from '../components/newsItem'
 import Tile from '../components/tile'
 import CallToAction from '../components/cta'
@@ -17,7 +17,7 @@ export default ({ data }) => {
     return (
     <div className={styles.container}>
       <SEO metadata={data.site.siteMetadata} />
-      <Header />
+      <Navbar />
       <div className={styles.lower}>
         <CallToAction image={data.index.frontmatter.ctaImage.childImageSharp} />
         <Alert variant={'primary'} className={styles.alert}>

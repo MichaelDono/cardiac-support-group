@@ -2,7 +2,7 @@ import React from "react"
 import { graphql} from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
-import Navbar from '../components/header'
+import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import styles from './information-support.module.css'
 
