@@ -39,6 +39,10 @@
     position: static;
 }
 
+.alert {
+    white-space: pre-wrap;
+}
+
 @media (min-width: 1200px) {
     .alert {
         width: 75% !important;

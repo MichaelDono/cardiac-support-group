@@ -38,9 +38,38 @@ collections:
           - label: "Features"
             name: "features"
             widget: "object"
-            fields: 
-              - {label: "Title", name: "text", widget: "string"}
-              - {label: "Description", name: "text", widget: "string"}
+            fields: [
+              { label: "First",
+                name: "firstCTA",
+                required: true,
+                widget: "object",
+                fields:
+                [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "string"}
+                ]
+              },
+              { label: "Second",
+                name: "secondCTA",
+                required: true,
+                widget: "object",
+                fields:
+                [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "string"}
+                ]
+              },
+              { label: "Thrd",
+                name: "thirdCTA",
+                required: true,
+                widget: "object",
+                fields:
+                [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "string"}
+                ]
+              },
+            ]
           - label: "Carousel"
             name: "carousel"
             widget: "list"

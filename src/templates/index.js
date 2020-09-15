@@ -2,7 +2,7 @@ import React from "react"
 import { graphql} from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
-import Alert from 'react-bootstrap/Alert'
+import BootstrapAlert from 'react-bootstrap/Alert'
 import Navbar from '../components/navbar'
 import NewsItem from '../components/newsItem'
 import Tile from '../components/tile'
@@ -20,28 +20,8 @@ export default ({ data }) => {
       <Navbar />
       <div className={styles.lower}>
         <CallToAction image={data.index.frontmatter.ctaImage.childImageSharp} />
-        <Alert variant={'primary'} className={styles.alert}>
-          <Alert.Heading>Coronavirus (COVID-19)</Alert.Heading>
-          <p className="mb-2">
-          Our exercise classes and other activities are still on hold following government guidelines. 
-          Our funding is secure, and we will reinstate them once we are confident that the appropriate 
-          measures have been implemented to ensure your health and wellbeing.
-          </p>
-          <p className="mb-2">
-          Once again, despite some charities closing due to financial pressures, the group is not in 
-          that position and The Trustees look forward to seeing you all again in the future.
-          </p>
-          <p className="mb-2">
-          We will contact our members in due course – should you wish to contact us please contact 
-          Barry on 0191 5656892 or Jim on 0191 5226750.
-          </p>
-          <p>
-          Thank you and stay safe.
-          </p>
-          <hr />
-          <Alert.Link href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/coronavirus-and-your-health">Coronavirus: what it means for you if you have heart or circulatory disease.</Alert.Link>
-        </Alert>
-        <TileContainer />
+        <Alert alert={data.index.frontmatter.importantInfo} variant={'primary'} className={styles.alert} />
+        <TileContainer items={data.index.frontmatter.features} />
         <News newsItems={newsItems} />
       </div>
       <Footer className={styles.footerContainer} />
@@ -49,20 +29,39 @@ export default ({ data }) => {
     )
 }
 
-let TileContainer = () => {
+let Alert = ({alert, variant, className}) => {
+  return (
+    <BootstrapAlert variant={variant} className={className}>
+      <BootstrapAlert.Heading>{alert.heading}</BootstrapAlert.Heading>
+        <p>{alert.body}</p>
+        {alert.footer && 
+        <>
+          <hr />
+          <BootstrapAlert.Link href={alert.footer.url}>{alert.footer.body}</BootstrapAlert.Link>
+        </>
+        }
+    </BootstrapAlert>
+  )
+}
+
+let TileContainer = ({items}) => {
   return (
   <div className={styles.tileContainer}>
     <div className={styles.tiles}>
-        <Tile title="Exercise Classes" color="#3A4A50" backgroundColor="#C7E2EC" imageUrl="img/exercise_class_1.png" >
-          We run regular exercise classes structured to your needs and ability. 
-          They are led by quailied fitness instructors in a gym eqipped with a range of exercise equipment. 
+        <Tile title={items.firstCTA.title} 
+              color="#3A4A50" backgroundColor="#C7E2EC" 
+              imageUrl="img/exercise_class_1.png" >
+        {items.firstCTA.description}
         </Tile>
-        <Tile title="Day Trips" color="#3B5A42" backgroundColor="#D3E4DB" imageUrl="img/day_trip_1.png" >
-          Enjoy our affordable day trips which are held thoughout the year. 
-          Experience relaxing days out to places like the Lake District, Christmas Markets and many more.
+        <Tile title={items.secondCTA.title} 
+              color="#3B5A42" backgroundColor="#D3E4DB" 
+              imageUrl="img/day_trip_1.png" >
+        {items.secondCTA.description}
         </Tile>
-        <Tile title="Walks" color="#3A4A50" backgroundColor="#EEE9DD" imageUrl="img/walking_1.png" >
-          
+        <Tile title={items.thirdCTA.title} 
+              color="#3A4A50" backgroundColor="#EEE9DD" 
+              imageUrl="img/walking_1.png" >
+        {items.thirdCTA.description}
         </Tile>
     </div>
   </div>
@@ -95,6 +94,28 @@ query($slug: String!) {
           fluid {
             ...GatsbyImageSharpFluid
           }
+        }
+      }
+      importantInfo {
+        heading
+        body
+        footer {
+          body
+          url
+        }
+      }
+      features {
+        firstCTA {
+          title
+          description
+        }
+        secondCTA {
+          title
+          description
+        }
+        thirdCTA {
+          title
+          description
         }
       }
     }
