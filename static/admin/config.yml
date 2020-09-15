@@ -35,6 +35,12 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
+          - label: "Features"
+            name: "features"
+            widget: "object"
+            fields: 
+              - {label: "Title", name: "text", widget: "string"}
+              - {label: "Description", name: "text", widget: "string"}
           - label: "Carousel"
             name: "carousel"
             widget: "list"

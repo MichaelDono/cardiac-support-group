@@ -53,9 +53,17 @@ let TileContainer = () => {
   return (
   <div className={styles.tileContainer}>
     <div className={styles.tiles}>
-        <Tile title="Exercise Classes" color="#3A4A50" backgroundColor="#C7E2EC" imageUrl="img/exercise_class_1.png" />
-        <Tile title="Day Trips" color="#3B5A42" backgroundColor="#D3E4DB" imageUrl="img/day_trip_1.png" />
-        <Tile title="Walks" color="#3A4A50" backgroundColor="#EEE9DD" imageUrl="img/walking_1.png" />
+        <Tile title="Exercise Classes" color="#3A4A50" backgroundColor="#C7E2EC" imageUrl="img/exercise_class_1.png" >
+          We run regular exercise classes structured to your needs and ability. 
+          They are led by quailied fitness instructors in a gym eqipped with a range of exercise equipment. 
+        </Tile>
+        <Tile title="Day Trips" color="#3B5A42" backgroundColor="#D3E4DB" imageUrl="img/day_trip_1.png" >
+          Enjoy our affordable day trips which are held thoughout the year. 
+          Experience relaxing days out to places like the Lake District, Christmas Markets and many more.
+        </Tile>
+        <Tile title="Walks" color="#3A4A50" backgroundColor="#EEE9DD" imageUrl="img/walking_1.png" >
+          
+        </Tile>
     </div>
   </div>
   )

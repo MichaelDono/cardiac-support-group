@@ -13,7 +13,7 @@ export default (props) => {
     return (
         <div className={styles.container} style={backgroundColorStyle}>
             <h1>{title}</h1>
-            <p className={styles.bodyText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget sagittis eros. Proin vel sollicitudin nulla.</p>
+            <p className={styles.bodyText}>{props.children || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget sagittis eros. Proin vel sollicitudin nulla."}</p>
             
             <div className={styles.imgContainer}>
                 <img src={imageUrl} height="230" alt="" ></img>
