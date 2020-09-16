@@ -35,6 +35,20 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
+          - label: "Info Banner"
+            name: "importantInfo"
+            widget: "object"
+            fields:
+                - {label: "Heading", name: "heading", widget: "string"}
+                - {label: "Content", name: "body", widget: "markdown"}
+                - label: "Footer"
+                  name: "footer"
+                  required: false
+                  widget: "object"
+                  fields: 
+                    - {label: "Content", name: "body", widget: "string"}
+                    - {label: "Link URL", name: "url", widget: "string"}
+                }
           - label: "Features"
             name: "features"
             widget: "object"
