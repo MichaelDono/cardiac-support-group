@@ -19,16 +19,15 @@ export default ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      <Header imageFluid={data.page.frontmatter.featuredimage.childImageSharp.fluid}/>
+      <Header content={data.page.frontmatter.featured} />
       <div className={styles.exerciseClassesContainer}>
         <div className={styles.exerciseClassesContent}>
           <div className={styles.exerciseClassesBody}>
             <h2 className={styles.exerciseClassesBodyHeader}>Exercise Classes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique vulputate orci, a pretium dolor varius non. Donec eget aliquam purus, sed scelerisque elit.</p>
-            <p>Maecenas nulla neque, consectetur hendrerit blandit a, rutrum vitae diam. Maecenas non aliquam ante. Nulla id placerat lorem. </p>
+            <p>{data.page.frontmatter.exerciseClasses.body}</p>
             <StyledButton variant="outlined" color="#ffffff" align="right" />
           </div>
-          <Img fluid={data.page.frontmatter.exerciseclassesImageurl.childImageSharp.fluid} className={styles.exerciseClassesImage} />
+          <Img fluid={data.page.frontmatter.exerciseClasses.imageUrl.childImageSharp.fluid} className={styles.exerciseClassesImage} />
         </div>
       </div>
     </div>
@@ -37,13 +36,13 @@ export default ({ pageContext, data }) => {
   )
 }
 
-let Header = ({imageFluid}) => {
+let Header = ({content}) => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <h1>Information and Support</h1>
-        <p>Cardiac rehab is a vital part of your long term recovery. Read on to find out what support we can offer you.</p>
-        <Img fluid={imageFluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%"></Img>
+        <p>{content.body}</p>
+        <Img fluid={content.imageUrl.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%"></Img>
       </div>
     </div>
     )
@@ -60,20 +59,25 @@ query($slug: String!) {
   page: markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
       title
-      featuredimage {
-        childImageSharp {
-          fluid(maxWidth: 1440, maxHeight: 960) {
-            ...GatsbyImageSharpFluid_withWebp
+      featured {
+        body
+        imageUrl {
+          childImageSharp {
+            fluid(maxWidth: 1440, maxHeight: 960) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
       }
-      exerciseclassesText
-      exerciseclassesImageurl {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid_withWebp
+      exerciseClasses {
+        imageUrl {
+          childImageSharp {
+            fluid(maxWidth: 750) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
+        body
       }
     }
   }

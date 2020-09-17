@@ -43,6 +43,10 @@
     overflow: hidden;
 }
 
+.exerciseClassesBody > p {
+    white-space: pre-wrap;
+}
+
 .exerciseClassesBodyHeader {
     font-weight: 400;
     padding-bottom: 0.3em;
