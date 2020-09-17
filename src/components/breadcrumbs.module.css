@@ -1,6 +1,7 @@
 
 .container { 
     background-color: #ffffff;
+    padding: 0 1.55em;
 }
 
 .content {
@@ -9,6 +10,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.socialMedia {
+    display: none;
 }
 
 .breadcrumbs a.home {
@@ -32,6 +37,10 @@
 @media (min-width: 1200px) {
     .container {
         padding: 0 6em;
+    }
+
+    .socialMedia {
+        display: unset;
     }
 }
 
