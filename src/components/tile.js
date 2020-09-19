@@ -18,7 +18,7 @@ export default (props) => {
             <div className={styles.imgContainer}>
                 <img src={imageUrl} height="230" alt="" ></img>
             </div>
-            <StyledButton align="right" color={color} variant="outlined" />
+            <StyledButton align="right" color={color} variant="outlined" linkTo={props.linkTo ?? "information-support/"} />
         </div>
     )
 

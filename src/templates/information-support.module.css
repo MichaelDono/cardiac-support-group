@@ -33,38 +33,6 @@
     background: #FFFFFF;
 }
 
-.exerciseClassesBody {
-    background-color: #7E4891;
-    color: #FFFFFF;
-    width: 48%;
-    z-index: 10;
-    position: relative;
-    padding: 1.5em 2em;
-    overflow: hidden;
-}
-
-.exerciseClassesBody > p {
-    white-space: pre-wrap;
-}
-
-.exerciseClassesBodyHeader {
-    font-weight: 400;
-    padding-bottom: 0.3em;
-}
-
-.exerciseClassesContent {
-    padding: 2em 6em;
-}
-
-.exerciseClassesImage {
-    width: 65%;
-    float: right;
-    position: relative;
-    top: -19em;
-    margin-bottom: -10em;
-    height: 22em;
-}
-
 .footerContainer {
     flex: 0 50px;
     width: 100%;
@@ -76,20 +44,137 @@
 }
 
 @media (min-width: 1200px) {
-    .headerContainer, .exerciseClassesContainer {
+    .headerContainer {
         padding: 0 6em;
     }
 }
 
 
 @media (min-width: 1450px) {
-    .headerContainer, .exerciseClassesContainer {
+    .headerContainer {
         padding: 0 12em;
     }
 }
 
 @media (min-width: 1800px) {
-    .headerContainer, .exerciseClassesContainer {
+    .headerContainer {
+        padding: 0 24em;
+    }
+}
+
+/* exercise classes */ 
+
+.exerciseClasses > div:first-child {
+    background-color: #7E4891;
+    color: #FFFFFF;
+    width: 48%;
+    z-index: 5;
+    position: relative;
+    padding: 1.5em 2em;
+    overflow: hidden;
+}
+
+.exerciseClasses > div > h2 {
+    font-weight: 400;
+    padding-bottom: 0.3em;
+}
+
+.exerciseClasses > div > p {
+    white-space: pre-wrap;
+}
+
+.exerciseClassesImage {
+    width: 65%;
+    float: right;
+    position: relative;
+    top: -19em;
+    margin-bottom: -10em;
+    height: 22em;
+}
+
+@media (min-width: 768px) {
+    .exerciseClasses {
+        margin: 2em 3em;
+    }
+}
+
+@media (min-width: 992px) {
+    .exerciseClasses {
+        margin: 2em 6em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .exerciseClasses {
+        padding: 0 6em;
+    }
+}
+
+
+@media (min-width: 1450px) {
+    .exerciseClasses {
+        padding: 0 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .exerciseClasses {
+        padding: 0 24em;
+    }
+}
+
+/* mainContent */
+
+.mainContent {
+    background-color: #F6F6F6;
+    padding: 1em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    color: #444444;
+}
+
+.mainContent > div {
+    flex: 0 1 auto;
+}
+
+
+.mainContent h2 {
+    font-weight: 500;
+    padding-bottom: 0.3em;
+}
+
+.mainContent p {
+    white-space: pre-wrap;
+    font-size: 1.1em;
+    font-family: 'Open Sans';
+    margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+    .mainContent {
+        flex-wrap: nowrap;
+    }
+
+    .mainContent > div {
+        padding: 1em 1em;
+    }
+}
+
+@media (min-width: 1450px) {
+    .mainContent {
+        padding: 0 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .mainContent {
         padding: 0 24em;
     }
 }

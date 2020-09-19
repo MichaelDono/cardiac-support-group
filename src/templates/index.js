@@ -50,7 +50,8 @@ let TileContainer = ({items}) => {
     <div className={styles.tiles}>
         <Tile title={items.firstCTA.title} 
               color="#3A4A50" backgroundColor="#C7E2EC" 
-              imageUrl="img/exercise_class_1.png" >
+              imageUrl="img/exercise_class_1.png"
+              linkTo={"information-support/exercise-classes/"} >
         {items.firstCTA.description}
         </Tile>
         <Tile title={items.secondCTA.title} 

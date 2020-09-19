@@ -41,6 +41,10 @@ module.exports = {
             crumbLabel: 'Information and Support'
           },
           {
+            pathname: '/information-support/exercise-classes',
+            crumbLabel: 'Exercise Classes'
+          },
+          {
             pathname: '/join',
             crumbLabel: 'How to Join'
           },

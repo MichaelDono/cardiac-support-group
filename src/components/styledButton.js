@@ -18,7 +18,7 @@ export default (props) => {
     }
     return (
         <div className={styles.container} >
-            <Link to="/information-support" className={btnClass} style={buttonStyle}>
+            <Link to={props.linkTo ?? "/information-support"} className={btnClass} style={buttonStyle}>
                 <span>Learn More</span>
             </Link>
         </div>

@@ -20,16 +20,8 @@ export default ({ pageContext, data }) => {
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
       <Header content={data.page.frontmatter.featured} />
-      <div className={styles.exerciseClassesContainer}>
-        <div className={styles.exerciseClassesContent}>
-          <div className={styles.exerciseClassesBody}>
-            <h2 className={styles.exerciseClassesBodyHeader}>Exercise Classes</h2>
-            <p>{data.page.frontmatter.exerciseClasses.body}</p>
-            <StyledButton variant="outlined" color="#ffffff" align="right" />
-          </div>
-          <Img fluid={data.page.frontmatter.exerciseClasses.imageUrl.childImageSharp.fluid} className={styles.exerciseClassesImage} />
-        </div>
-      </div>
+      <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />
+      <MainContent content={data.page.frontmatter.main} />
     </div>
     <Footer className={styles.footerContainer} />
   </div>
@@ -46,6 +38,36 @@ let Header = ({content}) => {
       </div>
     </div>
     )
+}
+
+let ExerciseClasses = ({content}) => {
+  return (
+    <div className={styles.exerciseClasses}>
+        <div>
+          <h2>Exercise Classes</h2>
+          <p>{content.body}</p>
+          <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
+        </div>
+        <Img fluid={content.imageUrl.childImageSharp.fluid} className={styles.exerciseClassesImage} />
+    </div>
+  )
+}
+
+let MainContent = ({content}) => {
+  return (
+    <div className={styles.mainContent}>
+      <div>
+        <h2>Day Trips</h2>
+        <Img fluid={content.dayTrips.imageUrl.childImageSharp.fluid} />
+        <p>{content.dayTrips.body}</p>
+      </div>
+      <div>
+      <h2>Walks</h2>
+        <Img fluid={content.walks.imageUrl.childImageSharp.fluid} />
+        <p>{content.walks.body}</p>
+      </div>
+    </div>
+  )
 }
 
 export const query = graphql`
@@ -78,6 +100,28 @@ query($slug: String!) {
           }
         }
         body
+      }
+      main {
+        dayTrips {
+          body
+          imageUrl {
+            childImageSharp {
+              fluid(maxWidth: 750) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        walks {
+          body
+          imageUrl {
+            childImageSharp {
+              fluid(maxWidth: 750) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
       }
     }
   }
