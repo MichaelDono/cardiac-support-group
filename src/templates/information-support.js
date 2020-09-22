@@ -10,6 +10,7 @@ import styles from './information-support.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
+import { element } from "prop-types"
 
 export default ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
@@ -34,7 +35,7 @@ let Header = ({content}) => {
       <div className={styles.headerContent}>
         <h1>Information and Support</h1>
         <p>{content.body}</p>
-        <Img fluid={content.imageUrl.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%"></Img>
+        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%"></Img>
       </div>
     </div>
     )
@@ -48,7 +49,7 @@ let ExerciseClasses = ({content}) => {
           <p>{content.body}</p>
           <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
         </div>
-        <Img fluid={content.imageUrl.childImageSharp.fluid} className={styles.exerciseClassesImage} />
+        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.exerciseClassesImage} />
     </div>
   )
 }
@@ -56,16 +57,13 @@ let ExerciseClasses = ({content}) => {
 let MainContent = ({content}) => {
   return (
     <div className={styles.mainContent}>
-      <div>
-        <h2>Day Trips</h2>
-        <Img fluid={content.dayTrips.imageUrl.childImageSharp.fluid} />
-        <p>{content.dayTrips.body}</p>
-      </div>
-      <div>
-      <h2>Walks</h2>
-        <Img fluid={content.walks.imageUrl.childImageSharp.fluid} />
-        <p>{content.walks.body}</p>
-      </div>
+      {content.map( entry => (
+        <div>
+          <h2>{entry.heading}</h2>
+          <Img fluid={entry.image.url.childImageSharp.fluid} />
+          <p>{entry.body}</p>
+        </div>
+      ))}
     </div>
   )
 }
@@ -83,28 +81,20 @@ query($slug: String!) {
       title
       featured {
         body
-        imageUrl {
-          childImageSharp {
-            fluid(maxWidth: 1440, maxHeight: 960) {
-              ...GatsbyImageSharpFluid_withWebp
+        image {
+          url {
+            childImageSharp {
+              fluid(maxWidth: 1440, maxHeight: 960) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }
       }
       exerciseClasses {
-        imageUrl {
-          childImageSharp {
-            fluid(maxWidth: 750) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
         body
-      }
-      main {
-        dayTrips {
-          body
-          imageUrl {
+        image {
+          url {
             childImageSharp {
               fluid(maxWidth: 750) {
                 ...GatsbyImageSharpFluid_withWebp
@@ -112,9 +102,12 @@ query($slug: String!) {
             }
           }
         }
-        walks {
-          body
-          imageUrl {
+      }
+      main {
+        heading
+        body
+        image {
+          url {
             childImageSharp {
               fluid(maxWidth: 750) {
                 ...GatsbyImageSharpFluid_withWebp
