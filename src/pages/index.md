@@ -21,7 +21,7 @@ features:
         title: Exercise Classes
         description: >
             We run regular exercise classes structured to your needs and ability. 
-            They are led by quailied fitness instructors in a gym eqipped with a range of exercise equipment. 
+            They are led by qualified fitness instructors in a gym eqipped with a range of exercise equipment. 
     secondCTA:
         title: Day Trips
         description: >
