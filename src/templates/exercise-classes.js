@@ -20,7 +20,8 @@ export default ({ pageContext, data }) => {
       <Breadcrumbs crumbs={crumbs} />
       <Header content={data.page.frontmatter.featured} />
       <MainContent content={data.page.frontmatter.main} />
-      <div className={styles.main}>
+      <Schedule schedule={data.page.frontmatter.schedule} />
+      {/* <div className={styles.main}>
         <div>
           <table className={"table table-bordered my-3"}>
             <thead>
@@ -49,7 +50,7 @@ export default ({ pageContext, data }) => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </div>
     <Footer className={styles.footerContainer} />
   </div>
@@ -81,7 +82,7 @@ let MainContent = ({content}) => {
   )
 }
 
-let Schedule = ({content}) => {
+let Schedule = ({schedule}) => {
   return (
     <div className={styles.main}>
       <table className={"table table-bordered my-3"}>
@@ -90,11 +91,21 @@ let Schedule = ({content}) => {
           <th>Times</th>
         </thead>
         <tbody>
-          {content.map(entry => (
-            <tr>
-
-            </tr>
-          ))}
+          {schedule.map((entry, i) => {
+            return entry.sessions.map((session, index) => 
+              index === 0 ? (
+              <tr>
+                <td rowSpan={entry.sessions.length} key={i}>{entry.day}</td>
+                <td key={index}>{session}</td>
+              </tr>
+              ) : (
+              <tr>
+                <td key={index}>{session}</td>
+              </tr>
+              )
+            )
+            })
+          }
         </tbody>
       </table>
     </div>
