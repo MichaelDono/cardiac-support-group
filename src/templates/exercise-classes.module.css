@@ -13,6 +13,7 @@
 .main {
     background-color: #ffffff;
     padding: 0 1.55em;
+    font-family: 'Tisa Sans Pro', sans-serif;
 }
 
 .header {
@@ -37,6 +38,14 @@
 .headerImage{
     height: 25em;
     margin: 2.2em 0;
+}
+
+.main h2 {
+    font-weight: 400;
+}
+
+.main p {
+    font-size: 1.15em;
 }
 
 @media (min-width: 768px) {

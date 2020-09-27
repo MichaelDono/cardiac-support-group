@@ -62,7 +62,7 @@ let Header = ({content}) => {
       <div>
         <h1>Exercise Classes</h1>
         <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%"></Img>
+        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
       </div>
     </div>
     )
@@ -70,13 +70,33 @@ let Header = ({content}) => {
 
 let MainContent = ({content}) => {
   return (
-    <div className={styles.mainContent}>
+    <div className={styles.main}>
       {content.map( entry => (
         <div>
           <h2>{entry.heading}</h2>
           <p>{entry.body}</p>
         </div>
       ))}
+    </div>
+  )
+}
+
+let Schedule = ({content}) => {
+  return (
+    <div className={styles.main}>
+      <table className={"table table-bordered my-3"}>
+        <thead>
+          <th>Day</th>
+          <th>Times</th>
+        </thead>
+        <tbody>
+          {content.map(entry => (
+            <tr>
+
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -100,13 +120,17 @@ query($slug: String!) {
         Saturday
         Sunday
       }
+      schedule {
+        day
+        sessions
+      }
       featured {
         body
         image {
           alt
           url {
             childImageSharp {
-              fluid(maxWidth: 750) {
+              fluid(maxWidth: 1200) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

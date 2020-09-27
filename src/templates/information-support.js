@@ -10,7 +10,7 @@ import styles from './information-support.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
-import { element } from "prop-types"
+// import { element } from "prop-types"
 
 export default ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
@@ -35,7 +35,7 @@ let Header = ({content}) => {
       <div className={styles.headerContent}>
         <h1>Information and Support</h1>
         <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%"></Img>
+        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
       </div>
     </div>
     )
