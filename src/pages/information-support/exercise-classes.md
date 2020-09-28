@@ -1,14 +1,6 @@
 ---
 title: Welcome
 templateKey: exercise-classes
-times:
-  "Monday": ["10:00 - 11:00", "11:15 - 12:15"]
-  "Tuesday": [""]
-  "Wednesday": ["10:30 - 11:30"]
-  "Thursday": ["10:00 - 11:00", "11:15 - 12:15"]
-  "Friday": [""]
-  "Saturday": [""]
-  "Sunday": [""]
 schedule:
   - day: Monday
     sessions: ["10:00 - 11:00", "11:15 - 12:15"]
@@ -30,5 +22,11 @@ main:
   - heading: What does the programme involve?
     body: |
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - heading: How do I get involved?
+    body: |
+      Before taking part in our exercise classes you'll need to be referred by either your hospitial or GP.
+    links:
+      text: Click here to find out more about referrals.
+      url: "../../join"
 isPage: true
 ---

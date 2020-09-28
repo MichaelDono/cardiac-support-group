@@ -6,6 +6,7 @@ import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import Img from "gatsby-image/withIEPolyfill"
 import styles from './exercise-classes.module.css'
+import {Link} from 'gatsby'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
@@ -21,38 +22,8 @@ export default ({ pageContext, data }) => {
       <Header content={data.page.frontmatter.featured} />
       <MainContent content={data.page.frontmatter.main} />
       <Schedule schedule={data.page.frontmatter.schedule} />
-      {/* <div className={styles.main}>
-        <div>
-          <table className={"table table-bordered my-3"}>
-            <thead>
-              <th>Day</th>
-              <th>Times</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td rowspan="2">Monday</td>
-                <td>10:00 - 11:00</td>
-              </tr>
-              <tr>
-                <td>11:15 - 12:15</td>
-              </tr>
-              <tr>
-                <td>Wednesday</td>
-                <td>10:30 - 11:30</td>
-              </tr>
-              <tr>
-                <td rowspan="2">Thursday</td>
-                <td>10:00 - 11:00</td>
-              </tr>
-              <tr>
-                <td>11:15 - 12:15</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div> */}
     </div>
-    <Footer className={styles.footerContainer} />
+    <Footer />
   </div>
   )
 }
@@ -76,6 +47,10 @@ let MainContent = ({content}) => {
         <div>
           <h2>{entry.heading}</h2>
           <p>{entry.body}</p>
+          {entry.links && 
+          <div className={"mb-3"}>
+            <Link to={entry.links.url}>{entry.links.text}</Link>
+          </div>}
         </div>
       ))}
     </div>
@@ -85,7 +60,9 @@ let MainContent = ({content}) => {
 let Schedule = ({schedule}) => {
   return (
     <div className={styles.main}>
-      <table className={"table table-bordered my-3"}>
+      <h2>When are classes held?</h2>
+      <p>Exercise classes take place on Mondays, Wednesdays and Thursdays. Please check the table below for our current schedule.</p>
+      <table className={styles.table + " table table-bordered my-3"}>
         <thead>
           <th>Day</th>
           <th>Times</th>
@@ -102,8 +79,7 @@ let Schedule = ({schedule}) => {
               <tr>
                 <td key={index}>{session}</td>
               </tr>
-              )
-            )
+              ))
             })
           }
         </tbody>
@@ -122,15 +98,6 @@ query($slug: String!) {
   }
   page: markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
-      times {
-        Monday
-        Tuesday
-        Wednesday
-        Thursday
-        Friday
-        Saturday
-        Sunday
-      }
       schedule {
         day
         sessions
@@ -151,6 +118,10 @@ query($slug: String!) {
       main {
         heading
         body
+        links {
+          url
+          text
+        }
       }
     }
   }

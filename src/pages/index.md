@@ -32,5 +32,4 @@ features:
         description: >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget sagittis eros. 
             Proin vel sollicitudin nulla.
-            
 ---
