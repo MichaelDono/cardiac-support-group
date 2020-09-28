@@ -4,7 +4,7 @@ import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
-import styles from './information-support.module.css'
+import styles from './join.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
@@ -17,18 +17,41 @@ export default ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
+      <Header content={data.page.frontmatter.featured} />
     </div>
-    <Footer className={styles.footerContainer} />
+    <Footer />
   </div>
   )
 }
 
+let Header = ({content}) => {
+  return (
+    <div className={styles.header}>
+      <div>
+        <h1>How to Join</h1>
+        <p>{content.body}</p>
+      </div>
+    </div>
+    )
+}
+
 export const query = graphql`
-query {
+query($slug: String!) {
   site {
     siteMetadata {
       description
       title
+    }
+  }
+  page: markdownRemark(fields: { slug: { eq: $slug } }) {
+    frontmatter {
+      featured {
+        body
+      }
+      main {
+        heading
+        body
+      }
     }
   }
 }
