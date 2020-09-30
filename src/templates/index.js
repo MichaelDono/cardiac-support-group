@@ -13,7 +13,6 @@ import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ data }) => {
-    let newsItems = data.news.edges;
     return (
     <div className={styles.container}>
       <SEO metadata={data.site.siteMetadata} />
@@ -22,7 +21,7 @@ export default ({ data }) => {
         <CallToAction image={data.index.frontmatter.ctaImage.childImageSharp} />
         <Alert alert={data.index.frontmatter.importantInfo} variant={'primary'} className={styles.alert} />
         <TileContainer items={data.index.frontmatter.features} />
-        <News newsItems={newsItems} />
+        <News newsItems={data.news.edges} />
       </div>
       <Footer className={styles.footerContainer} />
     </div>
@@ -75,9 +74,9 @@ let News = ({newsItems}) => {
     <div className={styles.newsContent}>
         <h2>News and Events</h2>
         <div className={styles.newsItems}>
-            {newsItems.map( ({node}) => (
-              <NewsItem imageFluid={node.frontmatter.featuredimage.childImageSharp.fluid} title={node.frontmatter.title} />
-            ))}
+            {newsItems.map( ({node}) => 
+              <NewsItem item={node} />
+            )}
         </div>
         <div className={styles.viewAll}>View All Articles</div>
     </div>
@@ -124,8 +123,13 @@ query($slug: String!) {
   news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3, sort: {fields: frontmatter___datetime, order: DESC}) {
     edges {
       node {
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 140)
         frontmatter {
           title
+          datetime
           featuredimage {
             childImageSharp {
               fluid(maxWidth: 400, maxHeight: 270) {

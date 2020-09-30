@@ -5,12 +5,12 @@ export default (props) => {
     return (
     
     <> 
-    <a href="/" className={styles.hidden}>
+    <div className={styles.hidden}>
         <span>{props.children}</span>
-    </a>
-    <a href="/" className={styles.container}>
+    </div>
+    <div className={styles.container}>
         <span>{props.children}</span>
-    </a>
+    </div>
     </>
     );
 }

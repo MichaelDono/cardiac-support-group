@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     `)
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      if (node.frontmatter.isPage) {
+      //if (node.frontmatter.isPage) {
         createPage({
           path: node.fields.slug,
           component: path.resolve(
@@ -47,6 +47,6 @@ exports.createPages = async ({ graphql, actions }) => {
             slug: node.fields.slug,
           },
         })
-      }
+      //}
     })
 }

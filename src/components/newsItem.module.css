@@ -25,7 +25,6 @@
 }
 
 .content div.bodyText {
-    /* margin-top: 1em; */
     font-size: 1.1em;
     line-height: 1.33;
     color: #4A4A4A;
@@ -48,6 +47,11 @@
     color: #A23BD5;
     padding: 0.25em 0.5em;
     
+}
+
+a.readmore {
+    color: #A23BD5;
+    text-decoration: none;
 }
 
 .readmore:hover {
