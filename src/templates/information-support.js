@@ -10,7 +10,6 @@ import styles from './information-support.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
-// import { element } from "prop-types"
 
 export default ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
