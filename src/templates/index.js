@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql} from "gatsby"
+// import { Link } from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import BootstrapAlert from 'react-bootstrap/Alert'
@@ -74,11 +75,12 @@ let News = ({newsItems}) => {
     <div className={styles.newsContent}>
         <h2>News and Events</h2>
         <div className={styles.newsItems}>
-            {newsItems.map( ({node}) => 
-              <NewsItem item={node} />
+            {newsItems.map( ({node}, index) => 
+              <NewsItem item={node} key={index} />
             )}
         </div>
-        <div className={styles.viewAll}>View All Articles</div>
+        {/* uncomment below when news and events is added */}
+        {/* <Link to={"/"} className={styles.viewAll}>View All Articles</Link> */}
     </div>
   </div>
   )

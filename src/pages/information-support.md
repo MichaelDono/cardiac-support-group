@@ -1,7 +1,6 @@
 ---
 title: Welcome
 templateKey: information-support
-featuredimage: ../data/img/cafe_cropped.jpg
 featured:
   image:
     url: ../data/img/cafe_cropped.jpg

@@ -43,8 +43,8 @@ let Header = ({content}) => {
 let MainContent = ({content}) => {
   return (
     <div className={styles.main}>
-      {content.map( entry => (
-        <div>
+      {content.map( (entry, index) => (
+        <div key={index}>
           <h2>{entry.heading}</h2>
           <p>{entry.body}</p>
           {entry.links && 

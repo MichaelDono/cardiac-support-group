@@ -149,3 +149,21 @@
         padding: 0 24em;
     }
 }
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Tisa Sans Pro', sans-serif;
+    font-weight: 400;
+    color: #444444;
+    padding: 5em 5em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorContainer > div {
+    margin: 3em 5em;
+    flex: 1 0 30em;
+    width: 70em;
+}
