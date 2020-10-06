@@ -13,6 +13,12 @@ module.exports = {
     'gatsby-transformer-sharp', 
     'gatsby-transformer-remark',
     {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en'
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`
