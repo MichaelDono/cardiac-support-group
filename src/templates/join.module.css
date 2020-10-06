@@ -28,3 +28,53 @@
     color: #444444;
     padding: 1.2em 0 0.5em 0;
 }
+
+.main h2 {
+    font-weight: 400;
+}
+
+.main p, .main a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15em;
+}
+
+.main a {
+    color: #3C2F97;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+    .main {
+        padding: 0 6em;
+    }
+
+    .header {
+        padding: 0 6em;
+    }
+}
+
+@media (min-width: 1450px) {
+    .main {
+        padding: 0 12em;
+    }
+
+    .header {
+        padding: 0 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .main {
+        padding: 0 24em;
+    }
+
+    .header {
+        padding: 0 24em;
+    }
+}

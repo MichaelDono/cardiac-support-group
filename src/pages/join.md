@@ -2,6 +2,9 @@
 title: Welcome
 templateKey: join
 featured:
+  image:
+    url: ../data/img/join-temp.jpg
+    alt: empty
   body: |
     Joining the group is easy and can be done either through your GP or your hospital.
 main:

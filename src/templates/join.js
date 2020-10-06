@@ -1,5 +1,6 @@
 import React from "react"
-import { graphql} from "gatsby"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
@@ -18,6 +19,7 @@ export default ({ pageContext, data }) => {
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
       <Header content={data.page.frontmatter.featured} />
+      <MainContent content={data.page.frontmatter.main} />
     </div>
     <Footer />
   </div>
@@ -30,9 +32,27 @@ let Header = ({content}) => {
       <div>
         <h1>How to Join</h1>
         <p>{content.body}</p>
+        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
       </div>
     </div>
     )
+}
+
+let MainContent = ({content}) => {
+  return (
+    <div className={styles.main}>
+      {content.map( (entry, index) => (
+        <div key={index}>
+          <h2>{entry.heading}</h2>
+          <p>{entry.body}</p>
+          {entry.links && 
+          <div className={"mb-3"}>
+            <Link to={entry.links.url}>{entry.links.text}</Link>
+          </div>}
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export const query = graphql`
@@ -47,6 +67,16 @@ query($slug: String!) {
     frontmatter {
       featured {
         body
+        image {
+          alt
+          url {
+            childImageSharp {
+              fluid(maxWidth: 1200) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
       }
       main {
         heading
