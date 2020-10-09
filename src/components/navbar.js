@@ -1,8 +1,31 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styles from './navbar.module.css'
 
 export default () => { 
+    const [menuVisible, setMenuVisible] = useState(false);
+    const isDesktop = window.innerWidth > 768
+
+    useEffect( () => {
+        const resizeListener = () => {
+            setMenuVisible(window.innerWidth > 768)
+        }
+
+        window.addEventListener('resize', resizeListener)
+
+        return () => {
+            window.removeEventListener('resize', resizeListener)
+        }
+    }, [])
+
+    let handleKeyDown = (event) => {
+        const TAB_CHAR_CODE = 9
+        if (event.keyCode === TAB_CHAR_CODE) {
+            return
+        }
+        setMenuVisible(!menuVisible)
+    }
+
     return (
         <div className={styles.container}>
             <Link to="/">
@@ -11,8 +34,13 @@ export default () => {
                     alt="Sunderland Cardiac Support Group Logo"
                     className="d-inline-block align-top" />
             </Link>
-            
-            <ul>
+            <div className={styles.slideDownBtn} onClick={() => setMenuVisible(!menuVisible)} onKeyDown={(e) => handleKeyDown(e)} role="button" tabIndex="0">
+                <img src="../android-chrome-512x512.png"
+                    height="46"
+                    alt="Sunderland Cardiac Support Group Logo"
+                    className="d-inline-block align-top" />
+            </div>
+            <ul className={(menuVisible || isDesktop) ? styles.expanded : styles.collapsed}>
                 <li><Link to="/information-support">Information and Support</Link></li>
                 <li><Link to="/join">How to Join</Link></li>
                 <li><Link to="/about">About Us</Link></li>
@@ -21,3 +49,9 @@ export default () => {
     )
 
 }
+
+// let ToggleButton = () => {
+//     return (
+        
+//     )
+// }

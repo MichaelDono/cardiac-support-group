@@ -48,7 +48,6 @@ collections:
                   fields: 
                     - {label: "Content", name: "body", widget: "string"}
                     - {label: "Link URL", name: "url", widget: "string"}
-                }
           - label: "Features"
             name: "features"
             widget: "object"

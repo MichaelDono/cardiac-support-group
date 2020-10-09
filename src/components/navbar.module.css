@@ -7,20 +7,39 @@
     align-items: center;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     padding: 1em 1em;
     z-index: 10;
     background-color: #FFFFFF;
-    height: 5em;
+    min-height: 5em;
     box-shadow: 2px 2px 5px 2px #cfcfcf;
 }
 
 .container ul {
+    list-style: none;
+    margin: 0 0 0.75em 0;
+    text-align: right;
+    font-size: 1.33em;
+}
+
+.container ul li a {
+    display: inline-block;
+    padding: 0.15em 0;
+}
+
+.container ul.expanded  {
+    display: initial;
+    order: -1;
+    width: 100vw;
+    
+}
+
+.container ul.collapsed {
     display: none;
 }
 
 .container ul li a {
-    margin: 0.15em 1em;
     font-family: 'Tisa Sans Pro', sans-serif;
     font-weight: 500;
     color: #000;
@@ -35,12 +54,20 @@
         padding: 0.7em 0;
     }
 
-    .container ul {
+    .container ul.expanded  {
         display: flex;
-
-        list-style: none;
-        /* height: 100%; */
+        order: 3;
+        width: auto;
         margin: 0;
+        font-size: 1em;
+    }
+
+    .container ul li a {
+        margin: 0.15em 1em;
+    }
+
+    .slideDownBtn {
+        display: none;
     }
 }
 
