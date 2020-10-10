@@ -49,6 +49,10 @@
     text-decoration: none;
 }
 
+.slideDownBtn:focus {
+    outline: 0;
+}
+
 @media (min-width: 768px) {
     .container {
         padding: 0.7em 0;

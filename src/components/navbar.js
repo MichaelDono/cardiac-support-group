@@ -36,9 +36,9 @@ export default () => {
                     className="d-inline-block align-top" />
             </Link>
             <div className={styles.slideDownBtn} onClick={() => setMenuVisible(!menuVisible)} onKeyDown={(e) => handleKeyDown(e)} role="button" tabIndex="0">
-                <img src="../android-chrome-512x512.png"
-                    height="46"
-                    alt="Sunderland Cardiac Support Group Logo"
+                <img src="../Asset 1.png"
+                    height="56"
+                    alt="Show navigation links"
                     className="d-inline-block align-top" />
             </div>
             <ul className={(menuVisible || isDesktop) ? styles.expanded : styles.collapsed}>
