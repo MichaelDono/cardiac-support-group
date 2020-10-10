@@ -4,13 +4,14 @@ import styles from './navbar.module.css'
 
 export default () => { 
     const [menuVisible, setMenuVisible] = useState(false);
-    const [isDesktop, setIsDesktop] = useState(typeof window !== "undefined" ? window.innerWidth > 768 : false);
+    const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect( () => {
         const resizeListener = () => {
             setIsDesktop(window.innerWidth > 768)
         }
 
+        setIsDesktop(window.innerWidth > 768)
         window.addEventListener('resize', resizeListener)
 
         return () => {
