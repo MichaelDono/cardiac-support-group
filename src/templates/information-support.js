@@ -56,8 +56,8 @@ let ExerciseClasses = ({content}) => {
 let MainContent = ({content}) => {
   return (
     <div className={styles.mainContent}>
-      {content.map( entry => (
-        <div>
+      {content.map( (entry, index) => (
+        <div key={index}>
           <h2>{entry.heading}</h2>
           <Img fluid={entry.image.url.childImageSharp.fluid} />
           <p>{entry.body}</p>

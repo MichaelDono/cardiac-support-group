@@ -62,46 +62,66 @@
     }
 }
 
-/* exercise classes */ 
+ /* exercise classes */ 
+
+.exerciseClasses {
+    /* padding: 1em 2em; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background-color: #7E4891; */
+    /* color: #FFFFFF; */
+ }
+
+ .exerciseClasses div {
+     flex: 1 0 auto;
+ }
 
 .exerciseClasses > div:first-child {
     background-color: #7E4891;
     color: #FFFFFF;
-    width: 48%;
-    z-index: 5;
-    position: relative;
-    padding: 1.5em 2em;
-    overflow: hidden;
+    flex: 0 1 auto;
+    padding: 1em 2em;
 }
 
-.exerciseClasses > div > h2 {
-    font-weight: 400;
-    padding-bottom: 0.3em;
-}
-
-.exerciseClasses > div > p {
-    white-space: pre-wrap;
-}
-
-.exerciseClassesImage {
-    width: 65%;
-    float: right;
-    position: relative;
-    top: -19em;
-    margin-bottom: -10em;
-    height: 22em;
-}
 
 @media (min-width: 768px) {
+    .exerciseClasses > div:first-child {
+        background-color: #7E4891;
+        color: #FFFFFF;
+        width: 48%;
+        z-index: 5;
+        position: relative;
+        padding: 1.5em 2em;
+        overflow: hidden;
+    }
+
+    .exerciseClasses > div > h2 {
+        font-weight: 400;
+        padding-bottom: 0.3em;
+    }
+
+    .exerciseClasses > div > p {
+        white-space: pre-wrap;
+    }
+
+    .exerciseClassesImage {
+        width: 65%;
+        float: right;
+        position: relative;
+        top: -19em;
+        margin-bottom: -15em;
+        height: 22em;
+    }
+
     .exerciseClasses {
-        margin: 2em 3em;
+        background: none;
+        display: block;
+        
     }
 }
 
 @media (min-width: 992px) {
-    .exerciseClasses {
-        margin: 2em 6em;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -113,7 +133,7 @@
 
 @media (min-width: 1450px) {
     .exerciseClasses {
-        padding: 0 12em;
+        padding: 0 16em;
     }
 }
 

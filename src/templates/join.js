@@ -32,7 +32,7 @@ let Header = ({content}) => {
       <div>
         <h1>How to Join</h1>
         <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
+        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 100%" />
       </div>
     </div>
     )

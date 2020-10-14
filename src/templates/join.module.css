@@ -10,6 +10,12 @@
     background: #FFFFFF;
 }
 
+.main {
+    background-color: #ffffff;
+    padding: 0 1.55em;
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
 .header {
     background-color: #F8F9FB;
     font-family: 'Open Sans', sans-serif;
@@ -27,6 +33,15 @@
     font-weight: 400;
     color: #444444;
     padding: 1.2em 0 0.5em 0;
+}
+
+.header > div > p {
+    margin: 0 1em;
+}
+
+.headerImage{
+    height: 25em;
+    margin: 2.2em 0;
 }
 
 .main h2 {

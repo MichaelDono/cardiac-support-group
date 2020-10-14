@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styles from './breadcrumbs.module.css'
 
 export default ({ crumbs }) => { 
+    // console.log(crumbs)
     return (
         <div className={styles.container} >
             <div className={styles.content}>

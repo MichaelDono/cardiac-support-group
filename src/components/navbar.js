@@ -36,7 +36,7 @@ export default () => {
                     className="d-inline-block align-top" />
             </Link>
             <div className={styles.slideDownBtn} onClick={() => setMenuVisible(!menuVisible)} onKeyDown={(e) => handleKeyDown(e)} role="button" tabIndex="0">
-                <img src="../Asset 1.png"
+                <img src="/img/Asset 1.png"
                     height="56"
                     alt="Show navigation links"
                     className="d-inline-block align-top" />

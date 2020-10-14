@@ -35,6 +35,10 @@
     padding: 1.2em 0 0.5em 0;
 }
 
+.header > div > p {
+    margin: 0 1em;
+}
+
 .headerImage{
     height: 25em;
     margin: 2.2em 0;
