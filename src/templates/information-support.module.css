@@ -184,6 +184,7 @@
 
     .mainContent > div {
         padding: 1em 1em;
+        flex: 0 1 50%;
     }
 }
 

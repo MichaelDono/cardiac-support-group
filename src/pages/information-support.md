@@ -12,23 +12,19 @@ exerciseClasses:
     url: ../data/img/chair-exercises-for-seniors.jpg
     alt: empty
   body: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique vulputate orci, a pretium dolor varius non.
-    Donec eget aliquam purus, sed scelerisque elit. Maecenas nulla neque, consectetur hendrerit blandit a, rutrum vitae diam. 
-    Maecenas non aliquam ante. Nulla id placerat lorem.
+    Our exercise classes are specifically structured for heart patients that you can either attend alone or with a partner or carer. Try out our range of specially-selected exercises on a selection of machines and activities. Find out more information about the classes here.
 main:
     - heading: Day Trips
       image:
         url: ../data/img/whitby.jpeg
         alt: empty
       body: |
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique vulputate orci, a pretium dolor varius non. Donec eget aliquam purus, sed scelerisque elit.
-        Maecenas nulla neque, consectetur hendrerit blandit a, rutrum vitae diam. Maecenas non aliquam ante. Nulla id placerat lorem.
+        We run affordable day trips throughout the year to a range of places, favourites include The Lake District, Whitby and The Yorkshire Dales. We also make sure to include an annual festive trip, our last being to Edinburgh and we enjoyed the Christmas market! On our trips we can either travel around the location as a group or go your own way.
     - heading: Walks
       image:
         url: ../data/img/walking.jpeg
         alt: empty
       body: |
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique vulputate orci, a pretium dolor varius non. Donec eget aliquam purus, sed scelerisque elit.
-        Maecenas nulla neque, consectetur hendrerit blandit a, rutrum vitae diam. Maecenas non aliquam ante. Nulla id placerat lorem.
+        Why not come and take part on one of our monthly walks around the region? It is a great way to socialise and exercise in a different way to the classes. Some popular walks include riverside, history, and woodland walks and our favourite Tynemouth fish and chip walk. Feel free to bring friends, family and four-legged friends along with you! 
 isPage: true
 ---

@@ -20,16 +20,13 @@ features:
     firstCTA:
         title: Exercise Classes
         description: >
-            We run regular exercise classes structured to your needs and ability. 
-            They are led by qualified fitness instructors in a gym equipped with a range of exercise equipment. 
+            Our exercise classes are specifically structured for heart patients that you can either attend alone or with a partner/carer. Try out our range of specially-selected exercises on a selection of machines and activities. Find out more information about the classes here. 
     secondCTA:
         title: Day Trips
         description: >
-            Enjoy our affordable day trips which are held thoughout the year. 
-            Experience relaxing days out to places like the Lake District, Christmas Markets and many more.
+            We run affordable day trips throughout the year to a range of places, favourites include The Lake District, Whitby and The Yorkshire Dales. On our trips we can either travel around the location as a group or go your own way.
     thirdCTA:
         title: Walks
         description: >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget sagittis eros. 
-            Proin vel sollicitudin nulla.
+            Why not come and take part on one of our monthly walks around the region? It's a great way to socialise and exercise in a different way to the classes. Some popular walks include riverside, history, and woodland walks 0 There's something for everyone!
 ---

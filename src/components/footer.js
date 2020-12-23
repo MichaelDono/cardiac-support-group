@@ -33,7 +33,7 @@ export default () => {
                 <h1 className={styles.header}>Quick Links</h1>
                 <div>
                     <Link to="/information-support">Info &amp; Support</Link>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/information-support/exercise-classes">Exercise Classes</Link>
                 </div>
                 <div>
                     <Link to="/join">How to Join</Link>

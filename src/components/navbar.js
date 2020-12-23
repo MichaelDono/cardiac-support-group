@@ -43,8 +43,8 @@ export default () => {
             </div>
             <ul className={(menuVisible || isDesktop) ? styles.expanded : styles.collapsed}>
                 <li><Link to="/information-support">Information and Support</Link></li>
+                <li><Link to="/information-support/exercise-classes">Exercise Classes</Link></li>
                 <li><Link to="/join">How to Join</Link></li>
-                <li><Link to="/about">About Us</Link></li>
             </ul>
         </div>
     )
