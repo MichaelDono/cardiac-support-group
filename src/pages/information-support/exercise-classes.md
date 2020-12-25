@@ -17,7 +17,8 @@ featured:
 main:
   - heading: What do the classes involve?
     body: |
-      The exercise classes, ran by fully-qualified cardiac instructors, are structured specifically for heart patients. The classes start with a gradual warm-up, followed by a circuit of exercise activities such as treadmills, bikes, hula-hooping, rowers and more. These particular activities can be tackled at your own speed, comfort and expertise as well as opting to work out on your own or with a partner (a great social activity.) 
+      The exercise classes, ran by fully-qualified cardiac instructors, are structured specifically for heart patients. The classes start with a gradual warm-up, followed by a circuit of exercise activities such as treadmills, bikes, hula-hooping, rowers and more. These particular activities can be tackled at your own speed, comfort and expertise as well as opting to work out on your own or with a partner (a great social activity.)
+
       You can either attend the classes alone, with a partner/carer or partner up with one of the members of the class. The classes are then wound down with a steady cool down exercise as a group. The classes are around an hour but feel free to take breaks at any point you need, there is no pressure here!
   - heading: How do I get involved?
     body: |
