@@ -51,6 +51,7 @@
 .main p, .main a {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.15em;
+    white-space: pre-wrap;
 }
 
 .main a {
