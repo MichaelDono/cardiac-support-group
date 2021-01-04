@@ -10,7 +10,7 @@ featured:
 main:
   - heading: Hospital Referral
     body: |
-      Following your discharge from the Steps to Health Programme (formally Phase 3 Rehabilitation) you should be provided with a transfer form. This needs to be completed by a cardiac rehabilitation professional. 
+      Following your discharge from the Steps to Health programme (formally Phase 3 Rehabilitation) you should be provided with a transfer form. This needs to be completed by a cardiac rehabilitation professional. 
   - heading: GP Referral
     body: |
       The other way in joining us is to take our referral form to your GP and getting them to complete it along with their signature.
