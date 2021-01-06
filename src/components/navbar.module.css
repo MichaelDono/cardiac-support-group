@@ -1,16 +1,100 @@
-.link {
-    font-weight: 400;
-    font-family: 'Cabin';
-    font-size: 1.18em;
+.container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1em 1em;
+    z-index: 10;
+    background-color: #FFFFFF;
+    min-height: 5em;
+    box-shadow: 2px 2px 5px 2px #cfcfcf;
+}
+
+.container ul {
+    list-style: none;
+    margin: 0 0 0.75em 0;
+    text-align: right;
+    font-size: 1.33em;
+}
+
+.container ul li a {
+    display: inline-block;
+    padding: 0.15em 0;
+}
+
+.container ul.expanded  {
+    display: initial;
+    order: -1;
+    width: 100vw;
+    
+}
+
+.container ul.collapsed {
+    display: none;
+}
+
+.container ul li a {
+    font-family: 'Tisa Sans Pro', sans-serif;
+    font-weight: 500;
+    color: #000;
+}
+
+.container ul li a:hover {
+    text-decoration: none;
+}
+
+.slideDownBtn:focus {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0.7em 0;
+    }
+
+    .container ul.expanded  {
+        display: flex;
+        order: 3;
+        width: auto;
+        margin: 0;
+        font-size: 1em;
+    }
+
+    .container ul li a {
+        margin: 0.15em 1em;
+    }
+
+    .slideDownBtn {
+        display: none;
+    }
 }
 
 @media (min-width: 992px) {
     .container {
-        height: 92px;
-    }
-
-    .logo > img {
-        height: 60px;
+        padding: 0.7em 3em;
     }
 }
 
+@media (min-width: 1200px) {
+    .container {
+        padding: 0.7em 6em;
+    }
+}
+
+@media (min-width: 1450px) {
+    .container {
+        padding: 0.7em 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        padding: 0.7em 20%;
+    }
+}

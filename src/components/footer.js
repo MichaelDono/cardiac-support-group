@@ -1,20 +1,59 @@
 import React from "react"
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-// import styles from './footer.module.css'
+import { useStaticQuery, graphql, Link } from "gatsby"
+import styles from './footer.module.css'
 
-export default (props) => (
-<Row className={props.className}>
-    <Col lg="2"/>
-    <Col>
-        <ul className="nav justify-content-center nav-fill">
-            <li class="nav-item">
-                <p class="nav-link">© Sunderland Cardiac Support Group</p>
-            </li>
-            <li class="nav-item">
-                <p class="nav-link">Registered Charity Number 1126524</p>
-            </li>
-        </ul>
-    </Col>
-    <Col lg="2" />
-</Row>)
+export default () => {
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        phone
+                        email
+                    }
+                }
+            }
+        `
+    )
+    return (
+    <div className={styles.container}>
+        <div className={styles.content}>
+            <div className={styles.contact}>
+                <h1 className={styles.header}>Contact Us</h1>
+                <div>
+                    <i className="material-icons">phone</i>
+                    <span className={styles.contactMethod}>{site.siteMetadata.phone}</span>
+                </div>
+                <div>
+                    <i className="material-icons">mail_outline</i>
+                    <a href={"mailto: " + site.siteMetadata.email} className={styles.contactMethod}>{site.siteMetadata.email}</a>
+                </div>
+            </div>
+            <div className={styles.quickLinks}>
+                <h1 className={styles.header}>Quick Links</h1>
+                <div>
+                    <Link to="/information-support">Info &amp; Support</Link>
+                    <Link to="/information-support/exercise-classes">Exercise Classes</Link>
+                </div>
+                <div>
+                    <Link to="/join">How to Join</Link>
+                    <Link to="/">News &amp; Events</Link>
+                </div>
+            </div>
+            <div className={styles.legalLinks}>
+                <Link to="/">Your Privacy</Link>
+                <Link to="/">Cookies</Link>
+            </div>
+            <Link className={styles.logo} to="/">
+                <img src="/img/header_white.svg"
+                        height="42"
+                        alt="Sunderland Cardiac Support Group Logo"/>
+            </Link>
+            <div className={styles.legal}>
+                <p>© 2021 Sunderland Cardiac Support Group.</p>
+                <p>Registered charity in England and Wales (1126524).</p>
+            </div>
+        </div>
+    </div>
+    )
+}

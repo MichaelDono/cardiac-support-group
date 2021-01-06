@@ -1,12 +1,31 @@
 backend:
   name: git-gateway
   repo: "MichaelDono/cardiac-support-group"
+  branch: "new-homepage"
   site_url: "https://www.sunderlandcardiac.org.uk/"
 
 media_folder: "src/data/img"
 public_folder: "img"
 
 collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "src/pages/posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "news"
+    label: "News"
+    folder: "src/data/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "featuredimage", widget: "image"}
+      - {label: "Date", name: "datetime", widget: "datetime", dateFormat: "DD.MM.YYYY", timeFormat: "HH:mm" }
+      - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "pages"
     label: "Pages"
     files:
@@ -16,12 +35,54 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
+          - label: "Info Banner"
+            name: "importantInfo"
+            widget: "object"
+            fields:
+                - {label: "Heading", name: "heading", widget: "string"}
+                - {label: "Content", name: "body", widget: "markdown"}
+                - label: "Footer"
+                  name: "footer"
+                  required: false
+                  widget: "object"
+                  fields: 
+                    - {label: "Content", name: "body", widget: "string"}
+                    - {label: "Link URL", name: "url", widget: "string"}
           - label: "Features"
             name: "features"
             widget: "object"
-            fields: 
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "string"}
+            fields: [
+              { label: "First",
+                name: "firstCTA",
+                required: true,
+                widget: "object",
+                fields:
+                [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "string"}
+                ]
+              },
+              { label: "Second",
+                name: "secondCTA",
+                required: true,
+                widget: "object",
+                fields:
+                [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "string"}
+                ]
+              },
+              { label: "Thrd",
+                name: "thirdCTA",
+                required: true,
+                widget: "object",
+                fields:
+                [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "string"}
+                ]
+              },
+            ]
           - label: "Carousel"
             name: "carousel"
             widget: "list"

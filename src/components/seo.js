@@ -13,5 +13,6 @@ export default ({ metadata }) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
         <meta name="description" content={metadata.description}></meta>
+        {/* <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */}
     </Helmet>)
 }

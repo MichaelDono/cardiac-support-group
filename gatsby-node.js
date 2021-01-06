@@ -1,10 +1,10 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
+const webpack = require(`webpack`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
-        console.log(createFilePath({ node, getNode }))
         const value = createFilePath({ node, getNode, basePath: `pages` })
         createNodeField({
         name: `slug`,
@@ -28,6 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                     frontmatter {
                         templateKey
+                        isPage
                       }
                 }
             }
@@ -35,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     `)
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      //if (node.frontmatter.isPage) {
         createPage({
           path: node.fields.slug,
           component: path.resolve(
@@ -46,5 +48,16 @@ exports.createPages = async ({ graphql, actions }) => {
             slug: node.fields.slug,
           },
         })
-      })
+      //}
+    })
+}
+ 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^netlify-identity-widget$/,
+      }),
+    ],
+  })
 }

@@ -1,0 +1,114 @@
+
+.container {
+    background-color: #FBF8FB;
+    font-family: 'Tisa Sans Pro', sans-serif;
+    padding: 2em 1.55em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    
+}
+
+.content .text {
+    flex: 1 1 10em;
+    padding: 2em 0 0 0;
+}
+
+.content .button {
+    display: block;
+    width: 8.6em;
+    background-color: #7E4891;
+    padding: 0.7em 1.1em;
+    border-radius: 0.6em;
+    text-decoration: none;
+}
+
+.content .button span {
+    color: #ffffff;
+    text-transform: uppercase;
+    
+}
+
+.content h1 {
+    font-weight: 500;
+    font-size: 2.5em;
+}
+
+.content h2 {
+    font-weight: 400;
+    font-size: 1.33em;
+}
+
+.content .imgContainer {
+    flex: 1 0 auto;
+    padding: 1em;
+    width: 100%;
+}
+
+.content .buttonContainer {
+    margin: 3em 0;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        padding: 3em 3em;
+    }
+
+    .content .text {
+        width: 26em;
+        padding-right: 1.6em;
+    }
+
+    .content .imgContainer {
+        order: 2;
+        width: 22em;
+    }
+
+    .content {
+        height: 16em;
+    }
+
+    .content .buttonContainer {
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        padding: 4em 12em;
+    }
+
+    .content .text {
+        width: 24em;
+        padding-right: 0;
+    }
+
+    .content .imgContainer {
+        width: 22em;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 4em 16em;
+    }
+}
+
+@media (min-width: 1450px) {
+    .container {
+        padding: 4em 20em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        padding: 4em 32em;
+    }
+}

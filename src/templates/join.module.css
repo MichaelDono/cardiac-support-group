@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 0 1 auto;
+    margin-top: 5em;
+    width: 100%;
+    background: #FFFFFF;
+}
+
+.main {
+    background-color: #ffffff;
+    padding: 0 1.55em;
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
+.header {
+    background-color: #F8F9FB;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header > div > h1 {
+    font-family: 'Tisa Sans Pro', sans-serif;
+    font-weight: 400;
+    color: #444444;
+    padding: 1.2em 0 0.5em 0;
+}
+
+.header > div > p {
+    margin: 0 1em;
+}
+
+.headerImage{
+    height: 25em;
+    margin: 2.2em 0;
+}
+
+.main h2 {
+    font-weight: 400;
+}
+
+.main p, .main a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15em;
+}
+
+.main a {
+    color: #3C2F97;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+    .main {
+        padding: 0 6em;
+    }
+
+    .header {
+        padding: 0 6em;
+    }
+}
+
+@media (min-width: 1450px) {
+    .main {
+        padding: 0 12em;
+    }
+
+    .header {
+        padding: 0 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+    .main {
+        padding: 0 24em;
+    }
+
+    .header {
+        padding: 0 24em;
+    }
+}

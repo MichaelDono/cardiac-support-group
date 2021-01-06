@@ -1,0 +1,42 @@
+.container {
+    position: absolute;
+    display: block;
+    bottom: 16px;
+    font-size: 1.7em;
+    line-height: 1.1;
+    width: 75%;
+    color: #000;
+}
+
+.hidden {
+    position: absolute;
+    display: block;
+    bottom: 16px;
+    font-size: 1.7em;
+    line-height: 1.1;
+    width: 75%;
+    color: #ffffff;
+    
+}
+
+.hidden span {
+    background-color: #fff;
+    padding: 0.2em 0.2em 0.2em 0.8em;
+    display: inline;
+   
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.container:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.container span {
+    padding: 0.2em 0.2em 0.2em 0.8em;
+    display: inline;
+   
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
