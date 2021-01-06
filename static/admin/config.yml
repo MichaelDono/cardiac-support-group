@@ -8,6 +8,7 @@ media_folder: "src/data/img"
 public_folder: "img"
 
 collections:
+<<<<<<< HEAD
   - name: "post" # Used in routes, e.g., /admin/collections/blog
     label: "Post" # Used in the UI
     folder: "src/pages/posts" # The path to the folder where the documents are stored
@@ -26,6 +27,8 @@ collections:
       - {label: "Image", name: "featuredimage", widget: "image"}
       - {label: "Date", name: "datetime", widget: "datetime", dateFormat: "DD.MM.YYYY", timeFormat: "HH:mm" }
       - {label: "Body", name: "body", widget: "markdown", required: false}
+=======
+>>>>>>> origin
   - name: "pages"
     label: "Pages"
     files:
