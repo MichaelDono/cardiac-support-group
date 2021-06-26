@@ -6,11 +6,12 @@ ctaImage: ../data/img/sitting_1.png
 importantInfo:
     heading: Coronavirus (COVID-19)
     body: |
-        Our exercise classes and other activities are still on hold following government guidelines. Our funding is secure, and we will reinstate them once we are confident that the appropriate measures have been implemented to ensure your health and wellbeing.
-        
-        Once again, despite some charities closing due to financial pressures, the group is not in that position and The Trustees look forward to seeing you all again in the future.
+        We are now able to resume our exercise classes. These will be held observing Covid-19 Health and Safety restrictions.
 
-        We will contact our members in due course – should you wish to contact us please contact Barry on 0191 5656892 or Jim on 0191 5226750.
+        If you are an existing member, you should have recently received a letter or email telling you of the new restrictions and a contact number to book your session.
+
+        If you wish to join and come along to one of our sessions the details, including times, are on the Exercise Classes page.
+        For more information please contact Barry on 0191 5656892 or Jim on 0191 5226750.
 
         Thank you and stay safe.
     footer:
