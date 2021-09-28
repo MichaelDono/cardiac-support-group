@@ -11,7 +11,7 @@ importantInfo:
         If you are an existing member, you should have recently received a letter or email telling you of the new restrictions and a contact number to book your session.
 
         If you wish to join and come along to one of our sessions the details, including times, are on the Exercise Classes page.
-        For more information please contact Barry on 0191 5656892 or Jim on 0191 5226750.
+        For more information please contact Paul on 07766664004.
 
         Thank you and stay safe.
     footer:

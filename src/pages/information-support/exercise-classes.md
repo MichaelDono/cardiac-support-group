@@ -3,11 +3,11 @@ title: Welcome
 templateKey: exercise-classes
 schedule:
   - day: Monday
-    sessions: ["10:00 - 11:00", "11:15 - 12:15"]
+    sessions: ["10:00 - 11:00"]
   - day: Wednesday
-    sessions: ["10:30 - 11:30"]
+    sessions: ["11:00 - 12:00"]
   - day: Thursday
-    sessions: ["10:00 - 11:00", "11:15 - 12:15"]
+    sessions: ["10:00 - 11:00"]
 featured:
   image:
     url: "../../data/img/Seniors_exercising.jpeg"
@@ -22,7 +22,7 @@ main:
       You can either attend the classes alone, with a partner/carer or partner up with one of the members of the class. The classes are then wound down with a steady cool down exercise as a group. The classes are around an hour but feel free to take breaks at any point you need, there is no pressure here!
   - heading: How do I get involved?
     body: |
-      Before taking part in our exercise classes you'll need to be referred by either your hospitial or GP.
+      Before taking part in our exercise classes you'll need to be referred by either your hospitial or GP. To book please phone Paul on 07766664004.
     links:
       text: Click here to find out more about referrals.
       url: "../../join"
