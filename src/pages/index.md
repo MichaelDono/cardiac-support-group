@@ -29,5 +29,5 @@ features:
     thirdCTA:
         title: Walks
         description: >
-            Why not come and take part on one of our monthly walks around the region? It's a great way to socialise and exercise in a different way to the classes. Some popular walks include riverside, history, and woodland walks 0 There's something for everyone!
+            Why not come and take part on one of our monthly walks around the region? It's a great way to socialise and exercise in a different way to the classes. Some popular walks include riverside, history, and woodland walks - There's something for everyone!
 ---
