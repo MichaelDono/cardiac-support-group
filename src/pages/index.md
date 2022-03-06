@@ -8,7 +8,7 @@ importantInfo:
     body: |
         We are now able to resume our exercise classes. These will be held observing Covid-19 Health and Safety restrictions.
 
-        If you are an existing member, you should have recently received a letter or email telling you of the new restrictions and a contact number to book your session.
+        The next monthly social meeting will be held on Thursday 10 March 2022 between 14:00 and 16:00 at St Gabriel's Church Hall. The raffle will be held as usual and any prizes would be welcome.
 
         If you wish to join and come along to one of our sessions the details, including times, are on the Exercise Classes page.
         For more information please contact Paul on 07766664004.
