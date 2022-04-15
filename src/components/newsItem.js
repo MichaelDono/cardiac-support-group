@@ -1,7 +1,7 @@
 import React from "react"
 import TitleText from './titleText'
 import * as styles from './newsItem.module.css'
-import Image from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import dateFormatter from '../util/dateFormatter'
 import {Link} from 'gatsby'
 
@@ -13,7 +13,7 @@ export default ({item}) => {
     return (
         <div className={styles.container}>
             <Link to={item.slug} className={styles.headerImage}> {/*image & title*/}
-                {/* <Image fluid={item.frontmatter.featuredimage.childImageSharp.fluid}></Image> */}
+                {/* <StaticImage fluid={item.frontmatter.featuredimage.childImageSharp.fluid}></StaticImage> */}
                 <TitleText>{title}</TitleText>
             </Link>
             <div className={styles.content}> {/* Body Text */ }

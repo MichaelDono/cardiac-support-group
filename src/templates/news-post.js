@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql} from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
@@ -47,8 +47,9 @@ let Article = ({content}) => {
 
 let FeaturedImage = ({post}) => {
   if (post.featuredimage) {
+    const image = getImage(post.featuredimage)
     return (
-      <Img fluid={post.featuredimage.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
+      <GatsbyImage image={image} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
       )
   } else {
     return null;
@@ -65,17 +66,11 @@ query($slug: String!) {
       title
     }
   }
-  page: markdownRemark(fields: { slug: { eq: $slug } }) {
-    html
-    frontmatter {
-      title
-      datetime
-      featuredimage {
-        childImageSharp {
-          fluid(maxWidth: 1440, maxHeight: 960) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+  page: allGhostPost(filter: { slug: { eq: $slug } }) {
+    edges {
+      node {
+        html
+        title
       }
     }
   }

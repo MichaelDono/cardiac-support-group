@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql} from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
@@ -11,6 +11,7 @@ import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ data }) => {
+    //const image = getImage(data.page.frontmatter.featured.image);
     return (
     <div className={styles.container}>
       <SEO metadata={data.site.siteMetadata} />
@@ -19,7 +20,7 @@ export default ({ data }) => {
           <div className={styles.errorContainer}>
             <h1>Something went wrong</h1>
             <Link to="/">Click here to go back home</Link>
-            <Img fluid={data.page.frontmatter.featured.image.url.childImageSharp.fluid} />
+            {/* <GatsbyImage image={image} alt="" /> */}
           </div>
       </div>
       <Footer className={styles.footerContainer} />
@@ -28,26 +29,11 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-query($slug: String!) {
+query {
     site {
         siteMetadata {
             description
             title
-        }
-    }
-    page: markdownRemark(fields: { slug: { eq: $slug } }) {
-        frontmatter {
-            featured {
-                image {
-                    url {
-                        childImageSharp {
-                            fluid(maxWidth: 1200) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }

@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import * as styles from './cta.module.css'
-import Img from "gatsby-image/withIEPolyfill"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export default ({ image }) => { 
+export default ({ ctaImage }) => { 
+    const image = getImage(ctaImage);
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -12,7 +13,7 @@ export default ({ image }) => {
                     <h2>We can help you on your path to recovery.</h2>
                 </div>
                 <div className={styles.imgContainer}>
-                    <Img fluid={image.fluid} className={styles.img}/>
+                    <GatsbyImage image={image} alt="" className={styles.img}/>
                 </div>
                 <div className={styles.buttonContainer}>
                     <Link to="/information-support" className={styles.button}>

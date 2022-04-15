@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from './breadcrumbs.module.css'
+import * as styles from './breadcrumbs.module.css'
 
 export default ({ crumbs }) => { 
     // console.log(crumbs)

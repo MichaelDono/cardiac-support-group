@@ -5,8 +5,8 @@ import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import StyledButton from '../components/styledButton'
-import Img from "gatsby-image/withIEPolyfill"
-import styles from './information-support.module.css'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import * as styles from './information-support.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
@@ -29,18 +29,20 @@ export default ({ pageContext, data }) => {
 }
 
 let Header = ({content}) => {
+  const image = getImage(content.image.url);
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <h1>Information and Support</h1>
         <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
+        <GatsbyImage image={image} alt="" className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
       </div>
     </div>
     )
 }
 
 let ExerciseClasses = ({content}) => {
+  const image = getImage(content.image.url);
   return (
     <div className={styles.exerciseClasses}>
         <div>
@@ -48,18 +50,19 @@ let ExerciseClasses = ({content}) => {
           <p>{content.body}</p>
           <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
         </div>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.exerciseClassesImage} />
+        <GatsbyImage image={image} className={styles.exerciseClassesImage} />
     </div>
   )
 }
 
 let MainContent = ({content}) => {
+  const image = getImage(content.image.url);
   return (
     <div className={styles.mainContent}>
       {content.map( (entry, index) => (
         <div key={index}>
           <h2>{entry.heading}</h2>
-          <Img fluid={entry.image.url.childImageSharp.fluid} />
+          <GatsbyImage image={image} />
           <p>{entry.body}</p>
         </div>
       ))}
@@ -75,45 +78,11 @@ query($slug: String!) {
       title
     }
   }
-  page: markdownRemark(fields: { slug: { eq: $slug } }) {
-    frontmatter {
-      title
-      featured {
-        body
-        image {
-          url {
-            childImageSharp {
-              fluid(maxWidth: 1440, maxHeight: 960) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-      exerciseClasses {
-        body
-        image {
-          url {
-            childImageSharp {
-              fluid(maxWidth: 750) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-      main {
-        heading
-        body
-        image {
-          url {
-            childImageSharp {
-              fluid(maxWidth: 750) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
+  page: allGhostPage(filter: {slug: {eq: $slug}}) {
+    edges {
+      node {
+        html
+        title
       }
     }
   }

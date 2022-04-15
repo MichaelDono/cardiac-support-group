@@ -4,8 +4,8 @@ import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
-import Img from "gatsby-image/withIEPolyfill"
-import styles from './exercise-classes.module.css'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import * as styles from './exercise-classes.module.css'
 import {Link} from 'gatsby'
 
 import '../bootstrap/css/bootstrap.css';
@@ -29,12 +29,13 @@ export default ({ pageContext, data }) => {
 }
 
 let Header = ({content}) => {
+  const image = getImage(content.image.url);
   return (
     <div className={styles.header}>
       <div>
         <h1>Exercise Classes</h1>
         <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
+        <GatsbyImage image={image} alt="" className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
       </div>
     </div>
     )
@@ -96,32 +97,11 @@ query($slug: String!) {
       title
     }
   }
-  page: markdownRemark(fields: { slug: { eq: $slug } }) {
-    frontmatter {
-      schedule {
-        day
-        sessions
-      }
-      featured {
-        body
-        image {
-          alt
-          url {
-            childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-      main {
-        heading
-        body
-        links {
-          url
-          text
-        }
+  page: allGhostPage(filter: {slug: {eq: $slug}}) {
+    edges {
+      node {
+        html
+        title
       }
     }
   }

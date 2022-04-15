@@ -8,22 +8,10 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     'gatsby-transformer-sharp', 
-    'gatsby-transformer-remark',
-    {
-      resolve: 'gatsby-plugin-html-attributes',
-      options: {
-        lang: 'en'
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -34,12 +22,6 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`
-      },
-    },
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        enableIdentityWidget: false,
       },
     },
     {
@@ -63,7 +45,7 @@ module.exports = {
             crumbLabel: 'Exercise Classes'
           },
           {
-            pathname: '/join',
+            pathname: '/how-to-join',
             crumbLabel: 'How to Join'
           },
           {

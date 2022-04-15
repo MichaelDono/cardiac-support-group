@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
-import styles from './join.module.css'
+import * as styles from './how-to-join.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
@@ -18,8 +18,9 @@ export default ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      <Header content={data.page.frontmatter.featured} />
-      <MainContent content={data.page.frontmatter.main} />
+      {/* <Header content={data.page.frontmatter.featured} />
+      <MainContent content={data.page.frontmatter.main} /> */}
+      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
     </div>
     <Footer />
   </div>
@@ -27,12 +28,13 @@ export default ({ pageContext, data }) => {
 }
 
 let Header = ({content}) => {
+  const image = getImage(content.image)
   return (
     <div className={styles.header}>
       <div>
         <h1>How to Join</h1>
         <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 100%" />
+        <GatsbyImage image={image} className={styles.headerImage} objectFit="cover" objectPosition="50% 100%" />
       </div>
     </div>
     )
@@ -63,26 +65,9 @@ query($slug: String!) {
       title
     }
   }
-  page: markdownRemark(fields: { slug: { eq: $slug } }) {
-    frontmatter {
-      featured {
-        body
-        image {
-          alt
-          url {
-            childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-      main {
-        heading
-        body
-      }
-    }
+  page: ghostPage(slug: { eq: $slug }) {
+    html
+    title
   }
 }
 `

@@ -19,7 +19,7 @@ export default ({ data }) => {
       <SEO metadata={data.site.siteMetadata} />
       <Navbar />
       <div className={styles.lower}>
-        <CallToAction image={data.index.frontmatter.ctaImage.childImageSharp} />
+        <CallToAction ctaImage={data.index.frontmatter.ctaImage} />
         <Alert alert={data.index.frontmatter.importantInfo} variant={'primary'} className={styles.alert} />
         <TileContainer items={data.index.frontmatter.features} />
         <News newsItems={data.ghostNews.edges} />
@@ -88,58 +88,11 @@ let News = ({newsItems}) => {
 
 export const query = graphql`
 query($slug: String!) {
-  index: markdownRemark(fields: { slug: { eq: $slug } }) {
-    frontmatter {
-      title
-      ctaImage {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      importantInfo {
-        heading
-        body
-        footer {
-          body
-          url
-        }
-      }
-      features {
-        firstCTA {
-          title
-          description
-        }
-        secondCTA {
-          title
-          description
-        }
-        thirdCTA {
-          title
-          description
-        }
-      }
-    }
-  }
-  news: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-post"}}}, limit: 3, sort: {fields: frontmatter___datetime, order: DESC}) {
+  index: allGhostPage(filter: { slug: { eq: $slug } }) {
     edges {
       node {
-        fields {
-          slug
-        }
-        excerpt(pruneLength: 140)
-        frontmatter {
-          title
-          datetime
-          featuredimage {
-            childImageSharp {
-              fluid(maxWidth: 400, maxHeight: 270) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
+        html
+        title
       }
     }
   }
