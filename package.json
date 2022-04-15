@@ -19,6 +19,7 @@
     "gatsby-remark-images": "^3.8.0",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-source-ghost": "^4.2.4",
     "gatsby-transformer-remark": "^2.13.0",
     "gatsby-transformer-sharp": "^2.9.0",
     "mem": "^5.1.1",
@@ -40,9 +41,9 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "gatsby build",
-    "develop": "npm run clean && gatsby develop",
+    "restart": "npm run clean && gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "schema": "set GATSBY_GRAPHQL_IDE=playground&& gatsby develop"

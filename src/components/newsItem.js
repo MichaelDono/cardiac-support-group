@@ -7,7 +7,7 @@ import {Link} from 'gatsby'
 
 export default ({item}) => { 
     const title = item.frontmatter.title ?? "Fish & Chip Walk June 2020";
-    const publishDate = dateFormatter(item.frontmatter.datetime);
+    const publishDate = dateFormatter(item.frontmatter.datetime, false);
 
     return (
         <div className={styles.container}>

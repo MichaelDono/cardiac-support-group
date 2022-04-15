@@ -43,6 +43,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://ghost.sunderlandcardiac.org.uk`,
+        contentApiKey: `0e3db64e62621ac06627dd1af4`
+      }
+    },
+    {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         useAutoGen: true,
