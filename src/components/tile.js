@@ -1,6 +1,6 @@
 import React from "react"
 import StyledButton from './styledButton'
-import styles from './tile.module.css'
+import * as styles from './tile.module.css'
 
 export default (props) => { 
     const title = props.title || "Exercise Classes";

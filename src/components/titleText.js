@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './titleText.module.css'
+import * as styles from './titleText.module.css'
 
 export default (props) => { 
     return (

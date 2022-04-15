@@ -8,7 +8,7 @@ import Navbar from '../components/navbar'
 import NewsItem from '../components/newsItem'
 import Tile from '../components/tile'
 import CallToAction from '../components/cta'
-import styles from './index.module.css'
+import * as styles from './index.module.css'
 
 import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
@@ -22,7 +22,7 @@ export default ({ data }) => {
         <CallToAction image={data.index.frontmatter.ctaImage.childImageSharp} />
         <Alert alert={data.index.frontmatter.importantInfo} variant={'primary'} className={styles.alert} />
         <TileContainer items={data.index.frontmatter.features} />
-        <News newsItems={data.news.edges} />
+        <News newsItems={data.ghostNews.edges} />
       </div>
       <Footer className={styles.footerContainer} />
     </div>
@@ -140,6 +140,20 @@ query($slug: String!) {
             }
           }
         }
+      }
+    }
+  }
+  ghostNews: allGhostPost(sort: {fields: published_at, order: DESC}, limit: 3, filter: {visibility: {eq: "public"}}) {
+    edges {
+      node {
+        feature_image
+        html
+        page
+        title
+        excerpt
+        published_at
+        visibility
+        slug
       }
     }
   }

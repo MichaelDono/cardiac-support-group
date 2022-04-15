@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import classNames from 'classnames/bind';
-import styles from './styledButton.module.css'
+import * as styles from './styledButton.module.css'
 
 let cx = classNames.bind(styles);
 

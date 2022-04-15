@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from './cta.module.css'
+import * as styles from './cta.module.css'
 import Img from "gatsby-image/withIEPolyfill"
 
 export default ({ image }) => { 
