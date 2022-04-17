@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import * as styles from './navbar.module.css'
 
-export default () => { 
+const Navbar = () => { 
     const [menuVisible, setMenuVisible] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
 
@@ -44,15 +44,11 @@ export default () => {
             <ul className={(menuVisible || isDesktop) ? styles.expanded : styles.collapsed}>
                 <li><Link to="/information-support">Information and Support</Link></li>
                 <li><Link to="/information-support/exercise-classes">Exercise Classes</Link></li>
-                <li><Link to="/join">How to Join</Link></li>
+                <li><Link to="/how-to-join">How to Join</Link></li>
             </ul>
         </div>
     )
 
 }
 
-// let ToggleButton = () => {
-//     return (
-        
-//     )
-// }
+export default Navbar;

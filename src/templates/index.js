@@ -1,68 +1,52 @@
 import React from "react"
 import { graphql} from "gatsby"
-// import { Link } from "gatsby"
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Footer from '../components/footer'
-import BootstrapAlert from 'react-bootstrap/Alert'
 import Navbar from '../components/navbar'
 import NewsItem from '../components/newsItem'
 import Tile from '../components/tile'
 import CallToAction from '../components/cta'
 import * as styles from './index.module.css'
 
-import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-export default ({ data }) => {
-    return (
-    <div className={styles.container}>
-      <SEO metadata={data.site.siteMetadata} />
-      <Navbar />
-      <div className={styles.lower}>
-        <CallToAction ctaImage={data.index.frontmatter.ctaImage} />
-        <Alert alert={data.index.frontmatter.importantInfo} variant={'primary'} className={styles.alert} />
-        <TileContainer items={data.index.frontmatter.features} />
-        <News newsItems={data.ghostNews.edges} />
-      </div>
-      <Footer className={styles.footerContainer} />
-    </div>
-    )
-}
-
-let Alert = ({alert, variant, className}) => {
+const Home = ({ data }) => {
   return (
-    <BootstrapAlert variant={variant} className={className}>
-      <BootstrapAlert.Heading>{alert.heading}</BootstrapAlert.Heading>
-        <p>{alert.body}</p>
-        {alert.footer && 
-        <>
-          <hr />
-          <BootstrapAlert.Link href={alert.footer.url}>{alert.footer.body}</BootstrapAlert.Link>
-        </>
-        }
-    </BootstrapAlert>
+  <div className={styles.container}>
+    <Seo metadata={data.site.siteMetadata} />
+    <Navbar />
+    <div className={styles.lower}>
+      <CallToAction image={data.page.feature_image} />
+      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
+      <TileContainer edges={data.tiles.edges} />
+      <News newsItems={data.news.edges} />
+    </div>
+    <Footer className={styles.footerContainer} />
+  </div>
   )
 }
 
-let TileContainer = ({items}) => {
+
+
+let TileContainer = ({edges}) => {
   return (
   <div className={styles.tileContainer}>
     <div className={styles.tiles}>
-        <Tile title={items.firstCTA.title} 
+        <Tile title={edges[0].node.title} 
               color="#3A4A50" backgroundColor="#C7E2EC" 
-              imageUrl="img/exercise_class_1.png"
+              imageUrl={edges[0].node.feature_image}
               linkTo={"information-support/exercise-classes/"} >
-        {items.firstCTA.description}
+        {edges[0].node.excerpt}
         </Tile>
-        <Tile title={items.secondCTA.title} 
+        <Tile title={edges[1].node.title} 
               color="#3B5A42" backgroundColor="#D3E4DB" 
-              imageUrl="img/day_trip_1.png" >
-        {items.secondCTA.description}
+              imageUrl={edges[1].node.feature_image} >
+        {edges[1].node.excerpt}
         </Tile>
-        <Tile title={items.thirdCTA.title} 
+        <Tile title={edges[2].node.title} 
               color="#3A4A50" backgroundColor="#EEE9DD" 
-              imageUrl="img/walking_1.png" >
-        {items.thirdCTA.description}
+              imageUrl={edges[2].node.feature_image} >
+        {edges[2].node.excerpt}
         </Tile>
     </div>
   </div>
@@ -70,6 +54,14 @@ let TileContainer = ({items}) => {
 }
 
 let News = ({newsItems}) => {
+  newsItems = newsItems.filter( (item) => {
+    if (item.node.tags[0] !== undefined) { 
+      if (item.node.tags[0].name.slice(0, 1) === "#") {
+        return false
+      }
+    } 
+    return true;
+  }).slice(0, 3);
   return (
   <div className={styles.newsContainer}>
     <div className={styles.newsContent}>
@@ -86,17 +78,15 @@ let News = ({newsItems}) => {
   )
 }
 
+export default Home;
 export const query = graphql`
 query($slug: String!) {
-  index: allGhostPage(filter: { slug: { eq: $slug } }) {
-    edges {
-      node {
-        html
-        title
-      }
-    }
+  page: ghostPage(slug: { eq: $slug }) {
+    html
+    title
+    feature_image
   }
-  ghostNews: allGhostPost(sort: {fields: published_at, order: DESC}, limit: 3, filter: {visibility: {eq: "public"}}) {
+  news: allGhostPost(sort: {fields: published_at, order: DESC}, filter: {visibility: {eq: "public"}}) {
     edges {
       node {
         feature_image
@@ -107,6 +97,18 @@ query($slug: String!) {
         published_at
         visibility
         slug
+        tags {
+          name
+        }
+      }
+    }
+  }
+  tiles: allGhostPost(filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#tile"}}}}) {
+    edges {
+      node {
+        feature_image
+        title
+        excerpt
       }
     }
   }

@@ -25,8 +25,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     `)
     result.data.allGhostPage.edges.forEach(({ node }) => {
-      //if (node.frontmatter.isPage) {
         node.url = `/${node.slug}/`
+        if (node.slug == "index") {
+          node.url = "/"
+        }
         createPage({
           path: node.url,
           component: path.resolve(
@@ -38,6 +40,19 @@ exports.createPages = async ({ graphql, actions }) => {
             slug: node.slug,
           },
         })
-      //}
     })
+    result.data.allGhostPost.edges.forEach(({ node }) => {
+      node.url = `/${node.slug}/`
+      createPage({
+        path: node.url,
+        component: path.resolve(
+          `src/templates/news-post.js`
+        ),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.slug,
+        },
+      })
+  })
 }

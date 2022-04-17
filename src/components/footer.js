@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import * as styles from './footer.module.css'
 
-export default () => {
+const Footer = () => {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -57,3 +57,5 @@ export default () => {
     </div>
     )
 }
+
+export default Footer;

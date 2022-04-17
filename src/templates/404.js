@@ -7,7 +7,6 @@ import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import styles from './index.module.css'
 
-import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ data }) => {

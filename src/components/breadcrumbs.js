@@ -2,8 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import * as styles from './breadcrumbs.module.css'
 
-export default ({ crumbs }) => { 
-    // console.log(crumbs)
+const Breadcrumbs = ({ crumbs }) => { 
     return (
         <div className={styles.container} >
             <div className={styles.content}>
@@ -28,3 +27,5 @@ export default ({ crumbs }) => {
         </div>
     )
 }
+
+export default Breadcrumbs;

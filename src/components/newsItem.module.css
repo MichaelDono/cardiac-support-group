@@ -13,10 +13,10 @@
 
 .headerImage > img {
     width: 100%;
+    height: 100%;
 }
 
 .content {
-    /* margin-top: calc(4px + 1em); */
     margin-top: 12px;
 }
 
@@ -28,6 +28,11 @@
     font-size: 1.1em;
     line-height: 1.33;
     color: #4A4A4A;
+}
+
+.content div.bodyText p {
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 .actions {

@@ -1,22 +1,20 @@
 import React from "react"
 import { graphql} from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import dateFormatter from '../util/dateFormatter'
-import styles from './news-post.module.css'
+import * as styles from './news-post.module.css'
 
-import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
 export default ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
   crumbs[1].crumbLabel = "News";
   crumbs[1].pathname = "/" // delete once news page is created
-  if (data.page.frontmatter.title) {
-    crumbs[crumbs.length - 1].crumbLabel = data.page.frontmatter.title;
+  if (data.page.title) {
+    crumbs[crumbs.length - 1].crumbLabel = data.page.title;
   }
 
   return (
@@ -33,27 +31,16 @@ export default ({ pageContext, data }) => {
 }
 
 let Article = ({content}) => {
-  const publishDate = dateFormatter(content.frontmatter.datetime);
+  const publishDate = dateFormatter(content.published_at);
 
   return (
     <div className={styles.main}>
-      <FeaturedImage post={content.frontmatter} />
+      <img src={content.feature_image} />
       <p>{publishDate}</p>
-      <h1>{content.frontmatter.title}</h1>
+      <h1>{content.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: content.html }} />
     </div>
   )
-}
-
-let FeaturedImage = ({post}) => {
-  if (post.featuredimage) {
-    const image = getImage(post.featuredimage)
-    return (
-      <GatsbyImage image={image} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
-      )
-  } else {
-    return null;
-  }
 }
 
 
@@ -66,13 +53,11 @@ query($slug: String!) {
       title
     }
   }
-  page: allGhostPost(filter: { slug: { eq: $slug } }) {
-    edges {
-      node {
-        html
-        title
-      }
-    }
+  page: ghostPost(slug: { eq: $slug }) {
+    html
+    title
+    feature_image
+    published_at
   }
 }
 `

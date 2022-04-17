@@ -2,7 +2,7 @@ import React from "react"
 import StyledButton from './styledButton'
 import * as styles from './tile.module.css'
 
-export default (props) => { 
+const Tile = (props) => { 
     const title = props.title || "Exercise Classes";
     const imageUrl = props.imageUrl || "img/walking_1.png";
     let color = props.color || "#C7E2EC";
@@ -23,3 +23,5 @@ export default (props) => {
     )
 
 }
+
+export default Tile;

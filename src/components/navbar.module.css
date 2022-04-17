@@ -16,6 +16,10 @@
     box-shadow: 2px 2px 5px 2px #cfcfcf;
 }
 
+.container > a {
+    height: 46px;
+}
+
 .container ul {
     list-style: none;
     margin: 0 0 0.75em 0;
@@ -43,6 +47,7 @@
     font-family: 'Tisa Sans Pro', sans-serif;
     font-weight: 500;
     color: #000;
+    text-decoration: none;
 }
 
 .container ul li a:hover {

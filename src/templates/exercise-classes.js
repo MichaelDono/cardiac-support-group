@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql} from "gatsby"
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
@@ -8,14 +8,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from './exercise-classes.module.css'
 import {Link} from 'gatsby'
 
-import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-export default ({ pageContext, data }) => {
+const ExerciseClasses = ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
   return (
   <div className={styles.container}>
-    <SEO metadata={data.site.siteMetadata} />
+    <Seo metadata={data.site.siteMetadata} />
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
@@ -27,6 +26,9 @@ export default ({ pageContext, data }) => {
   </div>
   )
 }
+
+
+
 
 let Header = ({content}) => {
   const image = getImage(content.image.url);
@@ -89,6 +91,7 @@ let Schedule = ({schedule}) => {
   )
 }
 
+export default ExerciseClasses;
 export const query = graphql`
 query($slug: String!) {
   site {
