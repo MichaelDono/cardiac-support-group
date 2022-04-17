@@ -19,6 +19,13 @@
     padding: 2em 0 0 0;
 }
 
+.content .text > * {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
 .content .button {
     display: block;
     width: 8.6em;
@@ -39,7 +46,7 @@
     font-size: 2.5em;
 }
 
-.content h2 {
+.content .text h2 {
     font-weight: 400;
     font-size: 1.33em;
 }
@@ -47,6 +54,10 @@
 .content .imgContainer {
     flex: 1 0 auto;
     padding: 1em;
+    width: 100%;
+}
+
+.content .imgContainer .img {
     width: 100%;
 }
 

@@ -1,25 +1,24 @@
 import React from "react"
 import { graphql} from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
 import { Link } from "gatsby"
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
-import styles from './index.module.css'
+import * as styles from './index.module.css'
 
-import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-export default ({ data }) => {
+
+const Error404 = ({ data }) => {
     return (
     <div className={styles.container}>
-      <SEO metadata={data.site.siteMetadata} />
+      <Seo metadata={data.site.siteMetadata} />
       <Navbar />
       <div className={styles.lower}>
           <div className={styles.errorContainer}>
             <h1>Something went wrong</h1>
             <Link to="/">Click here to go back home</Link>
-            <Img fluid={data.page.frontmatter.featured.image.url.childImageSharp.fluid} />
+            <img src={data.page.feature_image} alt="Error"/>
           </div>
       </div>
       <Footer className={styles.footerContainer} />
@@ -27,6 +26,7 @@ export default ({ data }) => {
     )
 }
 
+export default Error404;
 export const query = graphql`
 query($slug: String!) {
     site {
@@ -35,20 +35,10 @@ query($slug: String!) {
             title
         }
     }
-    page: markdownRemark(fields: { slug: { eq: $slug } }) {
-        frontmatter {
-            featured {
-                image {
-                    url {
-                        childImageSharp {
-                            fluid(maxWidth: 1200) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    page: ghostPage(slug: { eq: $slug }) {
+        html
+        title
+        feature_image
+      }
 }
 `

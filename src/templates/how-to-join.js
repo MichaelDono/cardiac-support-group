@@ -1,14 +1,14 @@
 import React from "react"
-import { graphql} from "gatsby"
+import { graphql } from "gatsby"
 import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
-import * as styles from './exercise-classes.module.css'
+import * as styles from './how-to-join.module.css'
 
 import '../components/fonts.css'
 
-const ExerciseClasses = ({ pageContext, data }) => {
+const howToJoin =  ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
   return (
   <div className={styles.container}>
@@ -16,9 +16,7 @@ const ExerciseClasses = ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-       <Header content={data.page} />
-      {/*<MainContent content={data.page.frontmatter.main} />
-      <Schedule schedule={data.page.frontmatter.schedule} /> */}
+      <Header content={data.page} />
       <div dangerouslySetInnerHTML={{__html: data.page.html}} className={styles.main} />
     </div>
     <Footer />
@@ -30,7 +28,7 @@ let Header = ({content}) => {
   return (
     <div className={styles.header}>
       <div>
-        <h1>Exercise Classes</h1>
+        <h1>{content.title}</h1>
         <p>{content.feature_image_caption}</p>
         <img src={content.feature_image} alt={content.feature_image_alt} className={styles.headerImage} />
       </div>
@@ -38,7 +36,7 @@ let Header = ({content}) => {
     )
 }
 
-export default ExerciseClasses;
+export default howToJoin;
 export const query = graphql`
 query($slug: String!) {
   site {

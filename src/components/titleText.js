@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './titleText.module.css'
 
-export default (props) => { 
+const TitleText = (props) => { 
     return (
     
     <> 
@@ -14,3 +14,5 @@ export default (props) => {
     </>
     );
 }
+
+export default TitleText;

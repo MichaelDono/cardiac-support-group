@@ -21,9 +21,37 @@
     padding: 1.2em 0 0.5em 0;
 }
 
-.headerImage{
+.header {
+    background-color: #F8F9FB;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2.2rem;
+}
+
+.header > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header > div > h1 {
+    font-family: 'Tisa Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #444444;
+    padding: 1.2em 0 0.5em 0;
+}
+
+.header > div > p {
+    margin: 0 1em;
+}
+
+.headerImage {
     height: 25em;
-    margin: 2.2em 0;
+    width: 100%;
+    margin-top: 2.2em;
+    object-fit: cover;
+    object-position: 50% 10%;
 }
 
 .content {
@@ -41,6 +69,35 @@
     background-color: #2C2D38;
     color: #c5c5c5;
     font-size: 1em;
+}
+
+:global(.main) {
+    background-color: #ffffff;
+    padding: 0 1.55em;
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
+:global(.main) h2 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+:global(.main) p, :global(.main) a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15em;
+}
+
+:global(.main) a {
+    color: #3C2F97;
+    font-weight: 600;
+}
+
+@media (min-width: 992px) {
+    .header {
+        margin-bottom: 4rem;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -64,29 +121,49 @@
 
  /* exercise classes */ 
 
-.exerciseClasses {
-    /* padding: 1em 2em; */
+.cards {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    /* background-color: #7E4891; */
-    /* color: #FFFFFF; */
+    
  }
 
- .exerciseClasses div {
+ .cards div {
      flex: 1 0 auto;
  }
 
-.exerciseClasses > div:first-child {
+.cards > div:first-child {
     background-color: #7E4891;
     color: #FFFFFF;
     flex: 0 1 auto;
     padding: 1em 2em;
+    
+}
+
+.cards h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.cards p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cards .cardImage {
+    width: 100%;
+    object-fit: cover;
+    height: 22em;
 }
 
 
 @media (min-width: 768px) {
-    .exerciseClasses > div:first-child {
+    .cards {
+        background: none;
+        display: block;
+    }
+
+    .cards > div:first-child {
         background-color: #7E4891;
         color: #FFFFFF;
         width: 48%;
@@ -94,51 +171,50 @@
         position: relative;
         padding: 1.5em 2em;
         overflow: hidden;
+        min-height: 18em;
     }
 
-    .exerciseClasses > div > h2 {
+    .cards > div > h2 {
         font-weight: 400;
         padding-bottom: 0.3em;
     }
 
-    .exerciseClasses > div > p {
-        white-space: pre-wrap;
-    }
-
-    .exerciseClassesImage {
+    .cards .cardImage {
         width: 65%;
         float: right;
         position: relative;
+        object-fit: cover;
         top: -19em;
         margin-bottom: -15em;
         height: 22em;
     }
-
-    .exerciseClasses {
-        background: none;
-        display: block;
-        
-    }
 }
 
 @media (min-width: 992px) {
+    .cards .cardImage {
+        width: 60%;
+    }
 }
 
 @media (min-width: 1200px) {
-    .exerciseClasses {
+    .cards {
         padding: 0 6em;
+    }
+
+    .cards .cardImage {
+        width: 55%;
     }
 }
 
 
 @media (min-width: 1450px) {
-    .exerciseClasses {
-        padding: 0 16em;
+    .cards {
+        padding: 0 12em;
     }
 }
 
 @media (min-width: 1800px) {
-    .exerciseClasses {
+    .cards {
         padding: 0 24em;
     }
 }
@@ -158,6 +234,10 @@
     flex: 0 1 auto;
 }
 
+.mainContent img {
+    width: 100%;
+}
+
 
 .mainContent h2 {
     font-weight: 500;
@@ -165,7 +245,6 @@
 }
 
 .mainContent p {
-    white-space: pre-wrap;
     font-size: 1.1em;
     font-family: 'Open Sans';
     margin-top: 1em;
@@ -196,6 +275,32 @@
 
 @media (min-width: 1800px) {
     .mainContent {
+        padding: 0 24em;
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+    .header {
+        padding: 0 6em;
+    }
+}
+
+@media (min-width: 1450px) {
+
+    .header {
+        padding: 0 12em;
+    }
+}
+
+@media (min-width: 1800px) {
+
+    .header {
         padding: 0 24em;
     }
 }

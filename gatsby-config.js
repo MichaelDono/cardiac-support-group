@@ -8,22 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-    'gatsby-transformer-sharp', 
-    'gatsby-transformer-remark',
-    {
-      resolve: 'gatsby-plugin-html-attributes',
-      options: {
-        lang: 'en'
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -37,16 +22,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        enableIdentityWidget: false,
-      },
-    },
-    {
-      resolve: `gatsby-source-ghost`,
+      resolve: `@michaeldono/gatsby-source-ghost`,
       options: {
         apiUrl: `https://ghost.sunderlandcardiac.org.uk`,
-        contentApiKey: `0e3db64e62621ac06627dd1af4`
+        contentApiKey: `0e3db64e62621ac06627dd1af4`,
+        version: `v4`
       }
     },
     {
@@ -63,7 +43,7 @@ module.exports = {
             crumbLabel: 'Exercise Classes'
           },
           {
-            pathname: '/join',
+            pathname: '/how-to-join',
             crumbLabel: 'How to Join'
           },
           {

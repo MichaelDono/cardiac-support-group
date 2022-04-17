@@ -2,62 +2,65 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const webpack = require(`webpack`)
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({ node, getNode, basePath: `pages` })
-        createNodeField({
-        name: `slug`,
-        node,
-        value,
-        })
-    }
-}
-
 exports.createPages = async ({ graphql, actions }) => {
     // **Note:** The graphql function call returns a Promise
     // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
     const { createPage } = actions
     const result = await graphql(`
     query {
-        allMarkdownRemark {
-            edges {
-                node {
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        templateKey
-                        isPage
-                      }
-                }
-            }
+      allGhostPage {
+        edges {
+          node {
+            slug
+          }
         }
+      }
+      allGhostPost(sort: { order: ASC, fields: published_at }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
     `)
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      //if (node.frontmatter.isPage) {
+    result.data.allGhostPage.edges.forEach(({ node }) => {
+        node.url = `/${node.slug}/`
+        if (node.slug == "index") {
+          node.url = "/"
+        }
+        if (node.slug == "information-support-exercise-classes") {
+          node.component = path.resolve(
+            `src/templates/exercise-classes.js`
+          )
+          node.url = "/information-support/exercise-classes/"
+        } else {
+          node.component = path.resolve(
+            `src/templates/${String(node.slug)}.js`
+          )
+        }
         createPage({
-          path: node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(node.frontmatter.templateKey)}.js`
-          ),
+          path: node.url,
+          component: node.component,
           context: {
             // Data passed to context is available
             // in page queries as GraphQL variables.
-            slug: node.fields.slug,
+            slug: node.slug,
           },
         })
-      //}
     })
-}
- 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    plugins: [
-      new webpack.IgnorePlugin({
-        resourceRegExp: /^netlify-identity-widget$/,
-      }),
-    ],
+    result.data.allGhostPost.edges.forEach(({ node }) => {
+      node.url = `/${node.slug}/`
+      createPage({
+        path: node.url,
+        component: path.resolve(
+          `src/templates/news-post.js`
+        ),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.slug,
+        },
+      })
   })
 }

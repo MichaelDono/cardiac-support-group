@@ -5,7 +5,7 @@ import * as styles from './styledButton.module.css'
 
 let cx = classNames.bind(styles);
 
-export default (props) => { 
+const StyledButton = (props) => { 
     let btnClass = cx(  
         'button',
         getVariant(props.variant));
@@ -26,6 +26,8 @@ export default (props) => {
 
 }
 
-function getVariant(variant) {
+const getVariant = (variant) => {
     return (['contained', 'outlined', 'text'].includes(variant) ? variant : 'contained');
 }
+
+export default StyledButton;

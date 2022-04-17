@@ -1,5 +1,4 @@
-
-export default (unformattedDate, showYear = true) => {
+const dateFormatter =  (unformattedDate, showYear = true) => {
     const publishDate = new Date(unformattedDate);
 
     let dateOptions = { weekday: 'short', month: 'long', day: 'numeric' };
@@ -14,3 +13,5 @@ export default (unformattedDate, showYear = true) => {
 
     return `${dateString} • ${timeString}`
 }
+
+export default dateFormatter;

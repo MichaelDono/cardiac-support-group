@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet"
 
-export default ({ metadata }) => {
+const Seo = ({ metadata }) => {
     return (
     <Helmet>
         <title>{metadata.title}</title>
@@ -16,3 +16,5 @@ export default ({ metadata }) => {
         {/* <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */}
     </Helmet>)
 }
+
+export default Seo;

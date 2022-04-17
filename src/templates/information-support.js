@@ -1,27 +1,26 @@
 import React from "react"
 import { graphql} from "gatsby"
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import StyledButton from '../components/styledButton'
-import Img from "gatsby-image/withIEPolyfill"
-import styles from './information-support.module.css'
+import * as styles from './information-support.module.css'
 
-import '../bootstrap/css/bootstrap.css';
 import '../components/fonts.css'
 
-export default ({ pageContext, data }) => {
+const InformationSupport = ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
   return (
   <div className={styles.container}>
-    <SEO metadata={data.site.siteMetadata} />
+    <Seo metadata={data.site.siteMetadata} />
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      <Header content={data.page.frontmatter.featured} />
-      <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />
-      <MainContent content={data.page.frontmatter.main} />
+      <Header content={data.page} />
+      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
+      <Cards content={data.card.nodes} />
+      <MainContent content={data.tiles.nodes} /> 
     </div>
     <Footer className={styles.footerContainer} />
   </div>
@@ -30,27 +29,30 @@ export default ({ pageContext, data }) => {
 
 let Header = ({content}) => {
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.headerContent}>
-        <h1>Information and Support</h1>
-        <p>{content.body}</p>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
+    <div className={styles.header}>
+      <div>
+        <h1>{content.title}</h1>
+        <p>{content.feature_image_caption}</p>
+        <img src={content.feature_image} alt={content.feature_image_alt} className={styles.headerImage} />
       </div>
     </div>
     )
 }
 
-let ExerciseClasses = ({content}) => {
+let Cards = ({content}) => {
   return (
-    <div className={styles.exerciseClasses}>
-        <div>
-          <h2>Exercise Classes</h2>
-          <p>{content.body}</p>
-          <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
-        </div>
-        <Img fluid={content.image.url.childImageSharp.fluid} className={styles.exerciseClassesImage} />
-    </div>
-  )
+    <div className={styles.cards}>
+      {content.map( (entry, index) => (
+        <>
+          <div key={index}>
+            <h2>{entry.title}</h2>
+            <p>{entry.excerpt}</p>
+            <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
+          </div>
+          <img src={entry.feature_image} alt={entry.feature_image_alt} className={styles.cardImage} />
+        </>
+      ))}
+    </div>)
 }
 
 let MainContent = ({content}) => {
@@ -58,15 +60,16 @@ let MainContent = ({content}) => {
     <div className={styles.mainContent}>
       {content.map( (entry, index) => (
         <div key={index}>
-          <h2>{entry.heading}</h2>
-          <Img fluid={entry.image.url.childImageSharp.fluid} />
-          <p>{entry.body}</p>
+          <h2>{entry.title}</h2>
+          <img src={entry.feature_image} alt={entry.feature_image_alt} />
+          <p>{entry.excerpt}</p>
         </div>
       ))}
     </div>
   )
 }
 
+export default InformationSupport;
 export const query = graphql`
 query($slug: String!) {
   site {
@@ -75,46 +78,29 @@ query($slug: String!) {
       title
     }
   }
-  page: markdownRemark(fields: { slug: { eq: $slug } }) {
-    frontmatter {
+  page: ghostPage(slug: { eq: $slug }) {
+    title
+    html
+    feature_image
+    feature_image_alt
+    feature_image_caption
+  }
+  tiles: allGhostPost(sort: {fields: published_at, order: ASC}, filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#info-tile"}}}}) {
+    nodes {
       title
-      featured {
-        body
-        image {
-          url {
-            childImageSharp {
-              fluid(maxWidth: 1440, maxHeight: 960) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-      exerciseClasses {
-        body
-        image {
-          url {
-            childImageSharp {
-              fluid(maxWidth: 750) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-      main {
-        heading
-        body
-        image {
-          url {
-            childImageSharp {
-              fluid(maxWidth: 750) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
+      excerpt
+      feature_image
+      feature_image_alt
+      feature_image_caption
+    }
+  }
+  card: allGhostPost(sort: {fields: published_at, order: ASC}, filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#info-card"}}}}) {
+    nodes {
+      title
+      excerpt
+      feature_image
+      feature_image_alt
+      feature_image_caption
     }
   }
 }
