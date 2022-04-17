@@ -29,11 +29,19 @@ exports.createPages = async ({ graphql, actions }) => {
         if (node.slug == "index") {
           node.url = "/"
         }
+        if (node.slug == "information-support-exercise-classes") {
+          node.component = path.resolve(
+            `src/templates/exercise-classes.js`
+          )
+          node.url = "/information-support/exercise-classes/"
+        } else {
+          node.component = path.resolve(
+            `src/templates/${String(node.slug)}.js`
+          )
+        }
         createPage({
           path: node.url,
-          component: path.resolve(
-            `src/templates/${String(node.slug)}.js`
-          ),
+          component: node.component,
           context: {
             // Data passed to context is available
             // in page queries as GraphQL variables.

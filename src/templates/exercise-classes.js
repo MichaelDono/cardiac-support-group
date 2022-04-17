@@ -18,9 +18,10 @@ const ExerciseClasses = ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      <Header content={data.page.frontmatter.featured} />
+      {/* <Header content={data.page.frontmatter.featured} />
       <MainContent content={data.page.frontmatter.main} />
-      <Schedule schedule={data.page.frontmatter.schedule} />
+      <Schedule schedule={data.page.frontmatter.schedule} /> */}
+      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
     </div>
     <Footer />
   </div>
@@ -100,13 +101,10 @@ query($slug: String!) {
       title
     }
   }
-  page: allGhostPage(filter: {slug: {eq: $slug}}) {
-    edges {
-      node {
-        html
-        title
-      }
-    }
+  page: ghostPage(slug: { eq: $slug }) {
+    feature_image
+    html
+    title
   }
 }
 `

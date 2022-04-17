@@ -19,25 +19,12 @@ const InformationSupport = ({ pageContext, data }) => {
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
       <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
-      {/* <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />
-      <MainContent content={data.page.frontmatter.main} /> */}
+      {/* <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />*/}
+      <MainContent content={data.tiles.nodes} /> 
     </div>
     <Footer className={styles.footerContainer} />
   </div>
   )
-}
-
-let Header = ({content}) => {
-  const image = getImage(content.image.url);
-  return (
-    <div className={styles.headerContainer}>
-      <div className={styles.headerContent}>
-        <h1>Information and Support</h1>
-        <p>{content.body}</p>
-        <GatsbyImage image={image} alt="" className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
-      </div>
-    </div>
-    )
 }
 
 let ExerciseClasses = ({content}) => {
@@ -55,14 +42,14 @@ let ExerciseClasses = ({content}) => {
 }
 
 let MainContent = ({content}) => {
-  const image = getImage(content.image.url);
+  console.log(content)
   return (
     <div className={styles.mainContent}>
       {content.map( (entry, index) => (
         <div key={index}>
-          <h2>{entry.heading}</h2>
-          <GatsbyImage image={image} />
-          <p>{entry.body}</p>
+          <h2>{entry.title}</h2>
+          <img src={entry.feature_image} />
+          <p>{entry.excerpt}</p>
         </div>
       ))}
     </div>
@@ -81,6 +68,13 @@ query($slug: String!) {
   page: ghostPage(slug: { eq: $slug }) {
     html
     title
+  }
+  tiles: allGhostPost(sort: {fields: published_at, order: ASC}, filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#info-tile"}}}}) {
+    nodes {
+      feature_image
+      title
+      excerpt
+    }
   }
 }
 `

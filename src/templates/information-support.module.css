@@ -158,10 +158,6 @@
         padding-bottom: 0.3em;
     }
 
-    .exerciseClasses > div > p {
-        white-space: pre-wrap;
-    }
-
     .exerciseClassesImage {
         width: 65%;
         float: right;
@@ -215,6 +211,10 @@
     flex: 0 1 auto;
 }
 
+.mainContent img {
+    width: 100%;
+}
+
 
 .mainContent h2 {
     font-weight: 500;
@@ -222,7 +222,6 @@
 }
 
 .mainContent p {
-    white-space: pre-wrap;
     font-size: 1.1em;
     font-family: 'Open Sans';
     margin-top: 1em;

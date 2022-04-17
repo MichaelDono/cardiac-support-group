@@ -13,7 +13,7 @@
     "gatsby-plugin-sass": "^5.12.1",
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-source-filesystem": "^4.12.1",
-    "gatsby-source-ghost": "^4.2.4",
+    "@michaeldono/gatsby-source-ghost": "^4.3.0",
     "gatsby-transformer-sharp": "^4.12.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",

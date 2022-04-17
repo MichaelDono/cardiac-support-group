@@ -55,6 +55,12 @@
     font-weight: 600;
 }
 
+.main > img {
+    width: 100%;
+    max-height: 35em;
+    object-fit: scale-down;
+}
+
 .main > p {
     text-align: center;
 }

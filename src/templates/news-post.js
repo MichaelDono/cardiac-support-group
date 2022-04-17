@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql} from "gatsby"
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
@@ -9,7 +9,7 @@ import * as styles from './news-post.module.css'
 
 import '../components/fonts.css'
 
-export default ({ pageContext, data }) => {
+const NewsPost = ({ pageContext, data }) => {
   const { breadcrumb: { crumbs }} = pageContext;
   crumbs[1].crumbLabel = "News";
   crumbs[1].pathname = "/" // delete once news page is created
@@ -19,7 +19,7 @@ export default ({ pageContext, data }) => {
 
   return (
   <div className={styles.container}>
-    <SEO metadata={data.site.siteMetadata} />
+    <Seo metadata={data.site.siteMetadata} />
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
@@ -35,7 +35,7 @@ let Article = ({content}) => {
 
   return (
     <div className={styles.main}>
-      <img src={content.feature_image} />
+      <img src={content.feature_image} alt="Decorative Header" />
       <p>{publishDate}</p>
       <h1>{content.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: content.html }} />
@@ -43,8 +43,7 @@ let Article = ({content}) => {
   )
 }
 
-
-
+export default NewsPost;
 export const query = graphql`
 query($slug: String!) {
   site {
