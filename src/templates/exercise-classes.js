@@ -38,37 +38,6 @@ let Header = ({content}) => {
     )
 }
 
-let Schedule = ({schedule}) => {
-  return (
-    <div className={styles.main}>
-      <h2>When are classes held?</h2>
-      <p>Exercise classes take place on Mondays, Wednesdays and Thursdays. Please check the table below for our current schedule.</p>
-      <table className={styles.table + " table table-bordered my-3"}>
-        <thead>
-          <th>Day</th>
-          <th>Times</th>
-        </thead>
-        <tbody>
-          {schedule.map((entry, i) => {
-            return entry.sessions.map((session, index) => 
-              index === 0 ? (
-              <tr>
-                <td rowSpan={entry.sessions.length} key={i}>{entry.day}</td>
-                <td key={index}>{session}</td>
-              </tr>
-              ) : (
-              <tr>
-                <td key={index}>{session}</td>
-              </tr>
-              ))
-            })
-          }
-        </tbody>
-      </table>
-    </div>
-  )
-}
-
 export default ExerciseClasses;
 export const query = graphql`
 query($slug: String!) {

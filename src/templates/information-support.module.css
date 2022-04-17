@@ -24,6 +24,7 @@
 .header {
     background-color: #F8F9FB;
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2.2rem;
 }
 
 .header > div {
@@ -48,7 +49,7 @@
 .headerImage {
     height: 25em;
     width: 100%;
-    margin: 2.2em 0;
+    margin-top: 2.2em;
     object-fit: cover;
     object-position: 50% 10%;
 }
@@ -93,6 +94,12 @@
     font-weight: 600;
 }
 
+@media (min-width: 992px) {
+    .header {
+        margin-bottom: 4rem;
+    }
+}
+
 @media (min-width: 1200px) {
     .headerContainer {
         padding: 0 6em;
@@ -114,29 +121,49 @@
 
  /* exercise classes */ 
 
-.exerciseClasses {
-    /* padding: 1em 2em; */
+.cards {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    /* background-color: #7E4891; */
-    /* color: #FFFFFF; */
+    
  }
 
- .exerciseClasses div {
+ .cards div {
      flex: 1 0 auto;
  }
 
-.exerciseClasses > div:first-child {
+.cards > div:first-child {
     background-color: #7E4891;
     color: #FFFFFF;
     flex: 0 1 auto;
     padding: 1em 2em;
+    
+}
+
+.cards h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.cards p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cards .cardImage {
+    width: 100%;
+    object-fit: cover;
+    height: 22em;
 }
 
 
 @media (min-width: 768px) {
-    .exerciseClasses > div:first-child {
+    .cards {
+        background: none;
+        display: block;
+    }
+
+    .cards > div:first-child {
         background-color: #7E4891;
         color: #FFFFFF;
         width: 48%;
@@ -144,47 +171,50 @@
         position: relative;
         padding: 1.5em 2em;
         overflow: hidden;
+        min-height: 18em;
     }
 
-    .exerciseClasses > div > h2 {
+    .cards > div > h2 {
         font-weight: 400;
         padding-bottom: 0.3em;
     }
 
-    .exerciseClassesImage {
+    .cards .cardImage {
         width: 65%;
         float: right;
         position: relative;
+        object-fit: cover;
         top: -19em;
         margin-bottom: -15em;
         height: 22em;
     }
-
-    .exerciseClasses {
-        background: none;
-        display: block;
-        
-    }
 }
 
 @media (min-width: 992px) {
+    .cards .cardImage {
+        width: 60%;
+    }
 }
 
 @media (min-width: 1200px) {
-    .exerciseClasses {
+    .cards {
         padding: 0 6em;
+    }
+
+    .cards .cardImage {
+        width: 55%;
     }
 }
 
 
 @media (min-width: 1450px) {
-    .exerciseClasses {
-        padding: 0 16em;
+    .cards {
+        padding: 0 12em;
     }
 }
 
 @media (min-width: 1800px) {
-    .exerciseClasses {
+    .cards {
         padding: 0 24em;
     }
 }

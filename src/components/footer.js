@@ -36,7 +36,7 @@ const Footer = () => {
                     <Link to="/information-support/exercise-classes">Exercise Classes</Link>
                 </div>
                 <div>
-                    <Link to="/join">How to Join</Link>
+                    <Link to="/how-to-join">How to Join</Link>
                     <Link to="/">News &amp; Events</Link>
                 </div>
             </div>

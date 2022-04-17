@@ -5,7 +5,6 @@ import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
 import StyledButton from '../components/styledButton'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from './information-support.module.css'
 
 import '../components/fonts.css'
@@ -20,7 +19,7 @@ const InformationSupport = ({ pageContext, data }) => {
       <Breadcrumbs crumbs={crumbs} />
       <Header content={data.page} />
       <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
-      {/* <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />*/}
+      <Cards content={data.card.nodes} />
       <MainContent content={data.tiles.nodes} /> 
     </div>
     <Footer className={styles.footerContainer} />
@@ -40,28 +39,29 @@ let Header = ({content}) => {
     )
 }
 
-let ExerciseClasses = ({content}) => {
-  const image = getImage(content.image.url);
+let Cards = ({content}) => {
   return (
-    <div className={styles.exerciseClasses}>
-        <div>
-          <h2>Exercise Classes</h2>
-          <p>{content.body}</p>
-          <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
-        </div>
-        <GatsbyImage image={image} className={styles.exerciseClassesImage} />
-    </div>
-  )
+    <div className={styles.cards}>
+      {content.map( (entry, index) => (
+        <>
+          <div key={index}>
+            <h2>{entry.title}</h2>
+            <p>{entry.excerpt}</p>
+            <StyledButton variant="outlined" color="#ffffff" align="right" linkTo={"exercise-classes"} />
+          </div>
+          <img src={entry.feature_image} alt={entry.feature_image_alt} className={styles.cardImage} />
+        </>
+      ))}
+    </div>)
 }
 
 let MainContent = ({content}) => {
-  console.log(content)
   return (
     <div className={styles.mainContent}>
       {content.map( (entry, index) => (
         <div key={index}>
           <h2>{entry.title}</h2>
-          <img src={entry.feature_image} />
+          <img src={entry.feature_image} alt={entry.feature_image_alt} />
           <p>{entry.excerpt}</p>
         </div>
       ))}
@@ -90,6 +90,17 @@ query($slug: String!) {
       title
       excerpt
       feature_image
+      feature_image_alt
+      feature_image_caption
+    }
+  }
+  card: allGhostPost(sort: {fields: published_at, order: ASC}, filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#info-card"}}}}) {
+    nodes {
+      title
+      excerpt
+      feature_image
+      feature_image_alt
+      feature_image_caption
     }
   }
 }
