@@ -103,7 +103,7 @@ query($slug: String!) {
       }
     }
   }
-  tiles: allGhostPost(filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#tile"}}}}) {
+  tiles: allGhostPost(sort: {fields: published_at, order: ASC}, filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#tile"}}}}) {
     edges {
       node {
         feature_image

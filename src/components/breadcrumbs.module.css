@@ -22,6 +22,7 @@
 
 .breadcrumbs a {
     color: #676767;
+    text-decoration: none;
 }
 
 .content a.socialIcon {
