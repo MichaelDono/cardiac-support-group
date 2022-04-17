@@ -18,6 +18,7 @@ const InformationSupport = ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
+      <Header content={data.page} />
       <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
       {/* <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />*/}
       <MainContent content={data.tiles.nodes} /> 
@@ -25,6 +26,18 @@ const InformationSupport = ({ pageContext, data }) => {
     <Footer className={styles.footerContainer} />
   </div>
   )
+}
+
+let Header = ({content}) => {
+  return (
+    <div className={styles.header}>
+      <div>
+        <h1>{content.title}</h1>
+        <p>{content.feature_image_caption}</p>
+        <img src={content.feature_image} alt={content.feature_image_alt} className={styles.headerImage} />
+      </div>
+    </div>
+    )
 }
 
 let ExerciseClasses = ({content}) => {
@@ -66,14 +79,17 @@ query($slug: String!) {
     }
   }
   page: ghostPage(slug: { eq: $slug }) {
-    html
     title
+    html
+    feature_image
+    feature_image_alt
+    feature_image_caption
   }
   tiles: allGhostPost(sort: {fields: published_at, order: ASC}, filter: {visibility: {eq: "public"}, tags: {elemMatch: {name: {eq: "#info-tile"}}}}) {
     nodes {
-      feature_image
       title
       excerpt
+      feature_image
     }
   }
 }

@@ -4,9 +4,7 @@ import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Breadcrumbs from '../components/breadcrumbs'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from './exercise-classes.module.css'
-import {Link} from 'gatsby'
 
 import '../components/fonts.css'
 
@@ -18,47 +16,26 @@ const ExerciseClasses = ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      {/* <Header content={data.page.frontmatter.featured} />
-      <MainContent content={data.page.frontmatter.main} />
+       <Header content={data.page} />
+      {/*<MainContent content={data.page.frontmatter.main} />
       <Schedule schedule={data.page.frontmatter.schedule} /> */}
-      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
+      <div dangerouslySetInnerHTML={{__html: data.page.html}} className={styles.main} />
     </div>
     <Footer />
   </div>
   )
 }
 
-
-
-
 let Header = ({content}) => {
-  const image = getImage(content.image.url);
   return (
     <div className={styles.header}>
       <div>
         <h1>Exercise Classes</h1>
-        <p>{content.body}</p>
-        <GatsbyImage image={image} alt="" className={styles.headerImage} objectFit="cover" objectPosition="50% 10%" />
+        <p>{content.feature_image_caption}</p>
+        <img src={content.feature_image} alt={content.feature_image_alt} className={styles.headerImage} />
       </div>
     </div>
     )
-}
-
-let MainContent = ({content}) => {
-  return (
-    <div className={styles.main}>
-      {content.map( (entry, index) => (
-        <div key={index}>
-          <h2>{entry.heading}</h2>
-          <p>{entry.body}</p>
-          {entry.links && 
-          <div className={"mb-3"}>
-            <Link to={entry.links.url}>{entry.links.text}</Link>
-          </div>}
-        </div>
-      ))}
-    </div>
-  )
 }
 
 let Schedule = ({schedule}) => {
@@ -102,9 +79,11 @@ query($slug: String!) {
     }
   }
   page: ghostPage(slug: { eq: $slug }) {
-    feature_image
-    html
     title
+    html
+    feature_image
+    feature_image_alt
+    feature_image_caption
   }
 }
 `

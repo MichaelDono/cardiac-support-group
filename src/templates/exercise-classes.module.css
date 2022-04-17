@@ -19,6 +19,7 @@
 .header {
     background-color: #F8F9FB;
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2.2rem;
 }
 
 .header > div {
@@ -31,6 +32,7 @@
 .header > div > h1 {
     font-family: 'Tisa Sans Pro', sans-serif;
     font-weight: 400;
+    font-size: 2.5rem;
     color: #444444;
     padding: 1.2em 0 0.5em 0;
 }
@@ -39,33 +41,59 @@
     margin: 0 1em;
 }
 
-.headerImage{
+.headerImage {
     height: 25em;
-    margin: 2.2em 0;
+    width: 100%;
+    margin-top: 2.2em;
+    object-fit: cover;
+    object-position: 50% 10%;
 }
 
 .main h2 {
     font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 .main p, .main a {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.15em;
-    white-space: pre-wrap;
+    font-size: 1.15rem;
+    text-decoration: none;
 }
 
 .main a {
     color: #3C2F97;
     font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-.table thead {
+table {
+    margin: 1rem 0;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+table thead {
     font-weight: 600;
 }
 
-.table tbody, .table thead {
+table tbody, table thead {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.15em;
+}
+
+table thead th, table tbody td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
 }
 
 @media (min-width: 768px) {

@@ -16,11 +16,24 @@ const howToJoin =  ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
+      <Header content={data.page} />
+      <div dangerouslySetInnerHTML={{__html: data.page.html}} className={styles.main} />
     </div>
     <Footer />
   </div>
   )
+}
+
+let Header = ({content}) => {
+  return (
+    <div className={styles.header}>
+      <div>
+        <h1>{content.title}</h1>
+        <p>{content.feature_image_caption}</p>
+        <img src={content.feature_image} alt={content.feature_image_alt} className={styles.headerImage} />
+      </div>
+    </div>
+    )
 }
 
 export default howToJoin;
@@ -33,8 +46,11 @@ query($slug: String!) {
     }
   }
   page: ghostPage(slug: { eq: $slug }) {
-    html
     title
+    html
+    feature_image
+    feature_image_alt
+    feature_image_caption
   }
 }
 `

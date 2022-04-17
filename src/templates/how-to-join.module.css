@@ -24,27 +24,23 @@ body {
     background: #FFFFFF;
 }
 
-:global(.main) {
-    background-color: #ffffff;
-    padding: 0 1.55em;
-    font-family: 'Tisa Sans Pro', sans-serif;
-}
-
-:global(.header) {
+.header {
     background-color: #F8F9FB;
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2.2rem;
 }
 
-:global(.header) > div {
+.header > div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-:global(.header) > div > h1 {
+.header > div > h1 {
     font-family: 'Tisa Sans Pro', sans-serif;
     font-weight: 400;
+    font-size: 2.5rem;
     color: #444444;
     padding: 1.2em 0 0.5em 0;
     margin-bottom: 0.5rem;
@@ -52,31 +48,36 @@ body {
     font-size: 2.5rem;
 }
 
-:global(.header) > div > p {
+.header > div > p {
     margin: 0 1em;
 }
 
-:global(.headerImage) {
+.headerImage {
     width: 100%;
     height: 25em;
-    margin: 2.2em 0;
+    margin-top: 2.2em;
     object-fit: cover;
     object-position: 50% 100%;
 }
 
-:global(.main) h2 {
+.main {
+    background-color: #ffffff;
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
+.main h2 {
     font-weight: 400;
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
-:global(.main) p, :global(.main) a {
+.main p, .main a {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.15em;
 }
 
-:global(.main) a {
+.main a {
     color: #3C2F97;
     font-weight: 600;
 }
@@ -88,31 +89,31 @@ body {
 }
 
 @media (min-width: 1200px) {
-    :global(.main) {
+    .main {
         padding: 0 6em;
     }
 
-    :global(.header) {
+    .header {
         padding: 0 6em;
     }
 }
 
 @media (min-width: 1450px) {
-    :global(.main) {
+    .main {
         padding: 0 12em;
     }
 
-    :global(.header) {
+    .header {
         padding: 0 12em;
     }
 }
 
 @media (min-width: 1800px) {
-    :global(.main) {
+    .main {
         padding: 0 24em;
     }
 
-    :global(.header) {
+    .header {
         padding: 0 24em;
     }
 }
