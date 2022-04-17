@@ -50,7 +50,7 @@ const Footer = () => {
                         alt="Sunderland Cardiac Support Group Logo"/>
             </Link>
             <div className={styles.legal}>
-                <p>© 2021 Sunderland Cardiac Support Group.</p>
+                <p>© {new Date().getFullYear()} Sunderland Cardiac Support Group.</p>
                 <p>Registered charity in England and Wales (1126524).</p>
             </div>
         </div>
