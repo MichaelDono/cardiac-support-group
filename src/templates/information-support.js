@@ -18,9 +18,9 @@ const InformationSupport = ({ pageContext, data }) => {
     <Navbar />
     <div className={styles.content}>
       <Breadcrumbs crumbs={crumbs} />
-      <Header content={data.page.frontmatter.featured} />
-      <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />
-      <MainContent content={data.page.frontmatter.main} />
+      <div dangerouslySetInnerHTML={{__html: data.page.html}}></div>
+      {/* <ExerciseClasses content={data.page.frontmatter.exerciseClasses} />
+      <MainContent content={data.page.frontmatter.main} /> */}
     </div>
     <Footer className={styles.footerContainer} />
   </div>
@@ -78,13 +78,9 @@ query($slug: String!) {
       title
     }
   }
-  page: allGhostPage(filter: {slug: {eq: $slug}}) {
-    edges {
-      node {
-        html
-        title
-      }
-    }
+  page: ghostPage(slug: { eq: $slug }) {
+    html
+    title
   }
 }
 `

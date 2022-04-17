@@ -43,6 +43,63 @@
     font-size: 1em;
 }
 
+:global(.main) {
+    background-color: #ffffff;
+    padding: 0 1.55em;
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
+:global(.header) {
+    background-color: #F8F9FB;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:global(.header) > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+:global(.header) > div > h1 {
+    font-family: 'Tisa Sans Pro', sans-serif;
+    font-weight: 400;
+    color: #444444;
+    padding: 1.2em 0 0.5em 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-size: 2.5rem;
+}
+
+:global(.header) > div > p {
+    margin: 0 1em;
+}
+
+:global(.headerImage) {
+    width: 100%;
+    height: 25em;
+    margin: 2.2em 0;
+    object-fit: cover;
+    object-position: 50% 10%;
+}
+
+:global(.main) h2 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+:global(.main) p, :global(.main) a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15em;
+}
+
+:global(.main) a {
+    color: #3C2F97;
+    font-weight: 600;
+}
+
 @media (min-width: 1200px) {
     .headerContainer {
         padding: 0 6em;
