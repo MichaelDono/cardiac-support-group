@@ -3,7 +3,7 @@ module.exports = {
     title: `Sunderland Cardiac Support Group`,
     description: `We are a registered charity run by volunteers dedicated to providing help and support to the people of Sunderland and the surrounding districts who have or have suffered from some form of cardiac trauma. We provide exercise classes, walks, social evenings and much more.`,
     author: `Michael Dono`,
-    phone: `0191 5656892`,
+    phone: `07766664004`,
     email: `hello@sunderlandcardiac.org.uk`,
   },
   plugins: [
